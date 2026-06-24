@@ -123,8 +123,7 @@ img{max-width:100%;display:block;}
 #navbar.scrolled{padding:13px 0;background:rgba(5,9,15,0.94);border-bottom:1px solid var(--border);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;}
 .nav-brand{display:flex;align-items:center;gap:10px;}
-.nav-logo-img{height:54px;width:54px;object-fit:contain;}
-.nav-brand-name{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;line-height:1.25;letter-spacing:0.06em;color:var(--text);text-transform:uppercase;}
+.nav-logo-img{height:72px;width:72px;object-fit:contain;}
 .nav-links{display:flex;align-items:center;gap:32px;}
 .nav-links a{font-size:14.5px;font-weight:500;color:var(--text-muted);transition:color .2s;position:relative;}
 .nav-links a:hover{color:var(--accent-light);}
@@ -460,8 +459,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,[tabindex]:focus-visible
 <nav id="navbar">
   <div class="container nav-inner">
     <a href="#hero" class="nav-brand">
-      <img src="assets/img/logo-horizonte-blockchain.png" class="nav-logo-img" alt="Horizonte Blockchain" width="64" height="64">
-      <span class="nav-brand-name">HORIZONTE<br><span style="color:var(--accent);letter-spacing:0.08em;">BLOCKCHAIN</span></span>
+      <img src="assets/img/logo-horizonte-blockchain.png" class="nav-logo-img" alt="Horizonte Blockchain" width="80" height="80">
     </a>
     <div class="nav-links">
       <a href="#quienes">Quiénes somos</a>
@@ -576,10 +574,12 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,[tabindex]:focus-visible
 
 <!-- QUIENES SOMOS -->
 <section id="quienes" class="section">
-  <div class="container quienes-grid" style="display:grid;grid-template-columns:0.95fr 1.05fr;gap:60px;align-items:center;">
-    <div class="fade-up">
-      <div class="quienes-img-wrap" style="position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--border-strong);box-shadow:0 24px 60px rgba(0,0,0,0.5);">
-        <img src="assets/img/equipo-founders-horizonte-blockchain.png" alt="Founders Horizonte Blockchain" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;object-fit:cover;">
+  <div class="container" style="max-width:900px;margin:0 auto;">
+
+    <!-- FOTO PRIMERO - ancho completo -->
+    <div class="fade-up" style="margin-bottom:32px;">
+      <div style="border-radius:20px;overflow:hidden;border:1px solid var(--border-strong);box-shadow:0 24px 60px rgba(0,0,0,0.5);">
+        <img src="assets/img/equipo-founders-horizonte-blockchain.png" alt="Founders Horizonte Blockchain" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;">
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;">
         <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:14px 12px;text-align:center;">
@@ -596,16 +596,19 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,[tabindex]:focus-visible
         </div>
       </div>
     </div>
-    <div class="fade-up">
-      <div class="section-tag">Quiénes somos</div>
+
+    <!-- TEXTO DEBAJO -->
+    <div class="fade-up" style="text-align:center;">
+      <div class="section-tag mx-auto">Quiénes somos</div>
       <h2 class="section-title">La institución que conecta el talento Web3 de <span class="accent-text">toda Latinoamérica</span></h2>
-      <p class="section-sub" style="margin-bottom:24px;">Desde Perú, impulsamos la adopción tecnológica conectando comunidades, profesionales, empresas y gobiernos en torno a Blockchain, Bitcoin, Web3 e Inteligencia Artificial.</p>
-      <div class="mv-cards" style="display:grid;gap:18px;margin-top:30px;">
-        <div class="mv-card" style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius);padding:24px 26px;"><h4 style="font-size:15px;color:var(--accent-light);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Misión</h4><p style="color:var(--text-muted);font-size:15.5px;">Impulsar la transformación digital mediante la educación y adopción de la tecnología blockchain, conectando comunidades y generando oportunidades en todo Latam.</p></div>
-        <div class="mv-card" style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--violet);border-radius:var(--radius);padding:24px 26px;"><h4 style="font-size:15px;color:var(--accent-light);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Visión</h4><p style="color:var(--text-muted);font-size:15.5px;">Ser el enlace que une a las comunidades con la innovación tecnológica, construyendo el futuro descentralizado en nuestra región.</p></div>
-        <div class="mv-card" style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--bitcoin);border-radius:var(--radius);padding:24px 26px;"><h4 style="font-size:15px;color:var(--accent-light);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Visión 2030</h4><p style="color:var(--text-muted);font-size:15.5px;">Consolidarnos como la red educativa y colaborativa Web3 más influyente de Latinoamérica.</p></div>
+      <p class="section-sub mx-auto">Desde Perú, impulsamos la adopción tecnológica conectando comunidades, profesionales, empresas y gobiernos en torno a Blockchain, Bitcoin, Web3 e Inteligencia Artificial.</p>
+      <div class="mv-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:10px;text-align:left;">
+        <div class="mv-card" style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius);padding:24px 26px;"><h4 style="font-size:15px;color:var(--accent-light);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Misión</h4><p style="color:var(--text-muted);font-size:15px;">Impulsar la transformación digital mediante la educación y adopción de la tecnología blockchain, conectando comunidades y generando oportunidades en todo Latam.</p></div>
+        <div class="mv-card" style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--violet);border-radius:var(--radius);padding:24px 26px;"><h4 style="font-size:15px;color:var(--accent-light);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Visión</h4><p style="color:var(--text-muted);font-size:15px;">Ser el enlace que une a las comunidades con la innovación tecnológica, construyendo el futuro descentralizado en nuestra región.</p></div>
+        <div class="mv-card" style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--bitcoin);border-radius:var(--radius);padding:24px 26px;"><h4 style="font-size:15px;color:var(--accent-light);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Visión 2030</h4><p style="color:var(--text-muted);font-size:15px;">Consolidarnos como la red educativa y colaborativa Web3 más influyente de Latinoamérica.</p></div>
       </div>
     </div>
+
   </div>
 </section>
 
