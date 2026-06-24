@@ -123,7 +123,8 @@ img{max-width:100%;display:block;}
 #navbar.scrolled{padding:13px 0;background:rgba(5,9,15,0.94);border-bottom:1px solid var(--border);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;}
 .nav-brand{display:flex;align-items:center;gap:10px;}
-.nav-logo-img{height:38px;width:auto;}
+.nav-logo-img{height:54px;width:54px;object-fit:contain;}
+.nav-brand-name{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;line-height:1.25;letter-spacing:0.06em;color:var(--text);text-transform:uppercase;}
 .nav-links{display:flex;align-items:center;gap:32px;}
 .nav-links a{font-size:14.5px;font-weight:500;color:var(--text-muted);transition:color .2s;position:relative;}
 .nav-links a:hover{color:var(--accent-light);}
@@ -367,7 +368,7 @@ img{max-width:100%;display:block;}
 /* FOOTER */
 footer{background:var(--surface);border-top:1px solid var(--border);padding:70px 0 30px;}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;margin-bottom:50px;}
-.footer-brand-logo{height:40px;margin-bottom:16px;}
+.footer-brand-logo{height:44px;width:auto;max-width:200px;margin-bottom:16px;}
 .footer-col h5{font-size:14px;margin-bottom:18px;text-transform:uppercase;letter-spacing:0.05em;color:var(--accent-light);}
 .footer-col ul{display:grid;gap:11px;}
 .footer-col a{font-size:14px;color:var(--text-muted);}
@@ -443,7 +444,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,[tabindex]:focus-visible
   "url": "https://horizonteblockchain.org/",
   "logo": "https://horizonteblockchain.org/assets/img/logo-horizonte-blockchain.png",
   "description": "Institución líder en Latinoamérica en Blockchain, Bitcoin, Web3, Inteligencia Artificial, Tokenización de Activos y Consultoría Empresarial.",
-  "email": "contact@horizonteblockchain.org",
+  "email": "karla.aguero@horizonteblockchain.org",
   "sameAs": [
     "https://wa.me/51949170376"
   ],
@@ -459,7 +460,8 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,[tabindex]:focus-visible
 <nav id="navbar">
   <div class="container nav-inner">
     <a href="#hero" class="nav-brand">
-      <img src="assets/img/logo-horizonte-blockchain.png" class="nav-logo-img" alt="Horizonte Blockchain" width="38" height="38">
+      <img src="assets/img/logo-horizonte-blockchain.png" class="nav-logo-img" alt="Horizonte Blockchain" width="64" height="64">
+      <span class="nav-brand-name">HORIZONTE<br><span style="color:var(--accent);letter-spacing:0.08em;">BLOCKCHAIN</span></span>
     </a>
     <div class="nav-links">
       <a href="#quienes">Quiénes somos</a>
@@ -576,7 +578,23 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,[tabindex]:focus-visible
 <section id="quienes" class="section">
   <div class="container quienes-grid" style="display:grid;grid-template-columns:0.95fr 1.05fr;gap:60px;align-items:center;">
     <div class="fade-up">
-      <div class="quienes-img-wrap" style="position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--border-strong);"><img src="assets/img/comunidad-horizonte-blockchain.jpg" alt="Comunidad Horizonte Blockchain" width="356" height="117" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="quienes-img-wrap" style="position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--border-strong);box-shadow:0 24px 60px rgba(0,0,0,0.5);">
+        <img src="assets/img/equipo-founders-horizonte-blockchain.png" alt="Founders Horizonte Blockchain" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;object-fit:cover;">
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;">
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:14px 12px;text-align:center;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--bitcoin);margin-bottom:4px;">CMO</div>
+          <div style="font-size:13px;font-weight:600;">Karla Agüero</div>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border-strong);border-radius:12px;padding:14px 12px;text-align:center;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--accent-light);margin-bottom:4px;">CEO</div>
+          <div style="font-size:13px;font-weight:600;">Alexander Coral</div>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:14px 12px;text-align:center;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--violet);margin-bottom:4px;">Directora</div>
+          <div style="font-size:13px;font-weight:600;">Dayana Salinas</div>
+        </div>
+      </div>
     </div>
     <div class="fade-up">
       <div class="section-tag">Quiénes somos</div>
@@ -618,10 +636,10 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,[tabindex]:focus-visible
       <h2 class="section-title">Una sola comunidad, <span class="accent-text">presente en toda la región</span></h2>
       <p class="section-sub">Conecta con miles de profesionales, empresas e instituciones a través de nuestros canales oficiales.</p>
       <div class="channel-list">
-        <a href="https://wa.me/51949170376" target="_blank" class="channel-item"><div class="channel-icon" style="background:rgba(37,211,102,0.15);">💬</div><div><h4>WhatsApp Comunidad</h4><span>Soporte y novedades en tiempo real</span></div><span class="go">→</span></a>
-        <a href="#" target="_blank" class="channel-item"><div class="channel-icon" style="background:rgba(34,158,217,0.15);">📣</div><div><h4>Telegram</h4><span>Canal oficial de anuncios y eventos</span></div><span class="go">→</span></a>
-        <a href="#" target="_blank" class="channel-item"><div class="channel-icon" style="background:rgba(34,211,238,0.12);">in</div><div><h4>LinkedIn</h4><span>Networking profesional e institucional</span></div><span class="go">→</span></a>
-        <a href="#" target="_blank" class="channel-item"><div class="channel-icon" style="background:rgba(247,147,26,0.15);">📷</div><div><h4>Instagram</h4><span>Contenido, eventos y comunidad en vivo</span></div><span class="go">→</span></a>
+        <a href="https://chat.whatsapp.com/HRj4w4Kz6nW7QYqrQvRDAu" target="_blank" rel="noopener" class="channel-item"><div class="channel-icon" style="background:rgba(37,211,102,0.15);">💬</div><div><h4>WhatsApp Comunidad</h4><span>Soporte y novedades en tiempo real</span></div><span class="go">→</span></a>
+        <a href="https://t.me/HorizonteBlockchain/1" target="_blank" rel="noopener" class="channel-item"><div class="channel-icon" style="background:rgba(34,158,217,0.15);">📣</div><div><h4>Telegram</h4><span>Canal oficial de anuncios y eventos</span></div><span class="go">→</span></a>
+        <a href="https://www.linkedin.com/company/horizonte-blockchain/" target="_blank" rel="noopener" class="channel-item"><div class="channel-icon" style="background:rgba(34,211,238,0.12);">in</div><div><h4>LinkedIn</h4><span>Networking profesional e institucional</span></div><span class="go">→</span></a>
+        <a href="https://www.instagram.com/horizonteblockchain/" target="_blank" rel="noopener" class="channel-item"><div class="channel-icon" style="background:rgba(247,147,26,0.15);">📷</div><div><h4>Instagram</h4><span>Contenido, eventos y comunidad en vivo</span></div><span class="go">→</span></a>
       </div>
       <div class="chip-row">
         <span class="chip">🎓 Talleres Web3 y Bootcamps</span>
@@ -883,15 +901,16 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,[tabindex]:focus-visible
       </form>
     </div>
     <div class="fade-up">
-      <div class="contact-info-item"><div class="contact-info-icon">✉️</div><div><h4>Correo general</h4><a href="mailto:contact@horizonteblockchain.org">contact@horizonteblockchain.org</a></div></div>
+      <div class="contact-info-item"><div class="contact-info-icon">✉️</div><div><h4>Correo general</h4><a href="mailto:karla.aguero@horizonteblockchain.org">karla.aguero@horizonteblockchain.org</a></div></div>
       <div class="contact-info-item"><div class="contact-info-icon">🤝</div><div><h4>Alianzas institucionales</h4><a href="mailto:karla.aguero@horizonteblockchain.org">karla.aguero@horizonteblockchain.org</a></div></div>
       <div class="contact-info-item"><div class="contact-info-icon">💬</div><div><h4>WhatsApp oficial (Perú)</h4><a href="https://wa.me/51949170376" target="_blank">+51 949 170 376</a></div></div>
       <div class="contact-info-item"><div class="contact-info-icon">📍</div><div><h4>Sede</h4><p>Lima, Perú — con presencia institucional en toda Latinoamérica</p></div></div>
       <div class="social-row">
-        <a href="https://wa.me/51949170376" target="_blank" class="social-pill" title="WhatsApp">💬</a>
-        <a href="#" target="_blank" class="social-pill" title="Telegram">📣</a>
-        <a href="#" target="_blank" class="social-pill" title="LinkedIn">in</a>
-        <a href="#" target="_blank" class="social-pill" title="Instagram">📷</a>
+        <a href="https://chat.whatsapp.com/HRj4w4Kz6nW7QYqrQvRDAu" target="_blank" rel="noopener" class="social-pill" title="WhatsApp Comunidad">💬</a>
+        <a href="https://t.me/HorizonteBlockchain/1" target="_blank" rel="noopener" class="social-pill" title="Telegram">📣</a>
+        <a href="https://www.linkedin.com/company/horizonte-blockchain/" target="_blank" rel="noopener" class="social-pill" title="LinkedIn">in</a>
+        <a href="https://www.instagram.com/horizonteblockchain/" target="_blank" rel="noopener" class="social-pill" title="Instagram">📷</a>
+        <a href="https://x.com/HorizonteBlock" target="_blank" rel="noopener" class="social-pill" title="X / Twitter">𝕏</a>
       </div>
     </div>
   </div>
@@ -901,12 +920,12 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,[tabindex]:focus-visible
   <div class="container">
     <div class="footer-grid">
       <div>
-        <img src="assets/img/logo-horizonte-blockchain.png" class="footer-brand-logo" alt="Horizonte Blockchain" width="40" height="40" loading="lazy" decoding="async">
+        <img src="assets/img/logo-horizonte-blockchain.png" class="footer-brand-logo" alt="Horizonte Blockchain" width="64" height="64" loading="lazy" decoding="async">
         <p style="color:var(--text-muted);font-size:14px;max-width:300px;">Educamos, conectamos e impulsamos la adopción blockchain en Latinoamérica.</p>
       </div>
       <div class="footer-col"><h5>Plataforma</h5><ul><li><a href="#quienes">Quiénes somos</a></li><li><a href="#ecosistema">Ecosistema</a></li><li><a href="#comunidad">Comunidad</a></li><li><a href="#eventos">Eventos</a></li></ul></div>
       <div class="footer-col"><h5>Alianzas</h5><ul><li><a href="#alianzas">Comunidades aliadas</a></li><li><a href="#alianzas">Universidades</a></li><li><a href="#alianzas">Sponsors</a></li><li><a href="#blog">Blog</a></li></ul></div>
-      <div class="footer-col"><h5>Contacto</h5><ul><li><a href="mailto:contact@horizonteblockchain.org">contact@horizonteblockchain.org</a></li><li><a href="https://wa.me/51949170376" target="_blank">WhatsApp Perú</a></li><li><a href="#contacto">Formulario de contacto</a></li></ul></div>
+      <div class="footer-col"><h5>Contacto</h5><ul><li><a href="mailto:karla.aguero@horizonteblockchain.org">karla.aguero@horizonteblockchain.org</a></li><li><a href="https://wa.me/51949170376" target="_blank">WhatsApp Perú</a></li><li><a href="#contacto">Formulario de contacto</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Horizonte Blockchain. Todos los derechos reservados.</span>
