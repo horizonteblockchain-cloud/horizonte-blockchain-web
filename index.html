@@ -321,12 +321,15 @@ img{max-width:100%;display:block;}
 /* SPONSORS / INSTITUCIONES */
 .partner-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:10px;}
 .partner-logo{
-  height:88px;border:1px solid var(--border-strong);border-radius:var(--radius-sm);
-  display:flex;align-items:center;justify-content:center;text-align:center;
-  color:var(--text);font-size:14px;font-weight:700;letter-spacing:0.01em;padding:10px 14px;
+  height:100px;border:1px solid var(--border-strong);border-radius:var(--radius-sm);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:12px 10px;gap:5px;
   background:var(--surface2);transition:all .25s ease;
 }
 .partner-logo:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 26px rgba(34,211,238,.18);}
+.pl-icon{font-size:26px;line-height:1;}
+.pl-name{font-size:12px;font-weight:700;color:var(--text);line-height:1.25;}
+.pl-sub{font-size:10px;color:var(--text-muted);font-weight:400;}
 
 /* BLOG */
 .blog-card{overflow:hidden;padding:0;}
@@ -1021,20 +1024,20 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,[tabindex]:focus-visible
       <h3 class="center" style="margin-bottom:8px;font-size:19px;">Partners &amp; Sponsors Institucionales</h3>
       <p class="center" style="color:var(--text-muted);font-size:14px;max-width:580px;margin:0 auto 24px;">Empresas, fundaciones y comunidades que ya construyen el ecosistema Web3 de Latinoamérica junto a Horizonte Blockchain.</p>
       <div class="partner-grid">
-        <div class="partner-logo" style="border-color:rgba(34,211,238,0.4);color:var(--accent-light);filter:none;opacity:1;">🏛️ GBA<br><span style="font-size:10px;font-weight:400;color:var(--text-muted);">Gov. Blockchain Assoc.</span></div>
-        <div class="partner-logo">Syscoin Foundation</div>
-        <div class="partner-logo">Buda.com</div>
-        <div class="partner-logo">Takenos</div>
-        <div class="partner-logo">Criptococos</div>
-        <div class="partner-logo">IB1 Fintech</div>
-        <div class="partner-logo">NTT Data</div>
-        <div class="partner-logo">Aquafer</div>
-        <div class="partner-logo">Motiv</div>
-        <div class="partner-logo">ETH Lima</div>
-        <div class="partner-logo">Flyez</div>
-        <div class="partner-logo" style="border-color:rgba(247,147,26,0.4);color:var(--bitcoin);filter:none;opacity:1;">🇵🇪 Asoc. Blockchain<br><span style="font-size:10px;font-weight:400;color:var(--text-muted);">del Perú</span></div>
-        <div class="partner-logo" style="border-color:rgba(34,211,238,0.4);color:var(--accent-light);filter:none;opacity:1;">🇨🇱 Cámara Blockchain<br><span style="font-size:10px;font-weight:400;color:var(--text-muted);">de Chile</span></div>
-        <div class="partner-logo" style="border-color:rgba(99,102,241,0.4);color:#a78bfa;filter:none;opacity:1;">💎 DVZ Capital</div>
+        <div class="partner-logo"><div class="pl-icon">🏛️</div><div class="pl-name">GBA</div><div class="pl-sub">Gov. Blockchain Assoc.</div></div>
+        <div class="partner-logo"><div class="pl-icon">⛓️</div><div class="pl-name">Syscoin Foundation</div><div class="pl-sub">Blockchain & Web3</div></div>
+        <div class="partner-logo"><div class="pl-icon">💱</div><div class="pl-name">Buda.com</div><div class="pl-sub">Exchange Cripto LATAM</div></div>
+        <div class="partner-logo"><div class="pl-icon">🔐</div><div class="pl-name">Takenos</div><div class="pl-sub">Fintech & DeFi</div></div>
+        <div class="partner-logo"><div class="pl-icon">🥥</div><div class="pl-name">Criptococos</div><div class="pl-sub">Comunidad Crypto</div></div>
+        <div class="partner-logo"><div class="pl-icon">💳</div><div class="pl-name">IB1 Fintech</div><div class="pl-sub">Fintech Innovation</div></div>
+        <div class="partner-logo"><div class="pl-icon">🌐</div><div class="pl-name">NTT Data</div><div class="pl-sub">Digital Solutions</div></div>
+        <div class="partner-logo"><div class="pl-icon">💧</div><div class="pl-name">Aquafer</div><div class="pl-sub">Tech & Blockchain</div></div>
+        <div class="partner-logo"><div class="pl-icon">🚀</div><div class="pl-name">Motiv</div><div class="pl-sub">Web3 Growth</div></div>
+        <div class="partner-logo"><div class="pl-icon">♦️</div><div class="pl-name">ETH Lima</div><div class="pl-sub">Ethereum Perú</div></div>
+        <div class="partner-logo"><div class="pl-icon">✈️</div><div class="pl-name">Flyez</div><div class="pl-sub">Travel & Blockchain</div></div>
+        <div class="partner-logo"><div class="pl-icon">🇵🇪</div><div class="pl-name">Asoc. Blockchain Perú</div><div class="pl-sub">Partner Institucional</div></div>
+        <div class="partner-logo"><div class="pl-icon">🇨🇱</div><div class="pl-name">Cámara Blockchain Chile</div><div class="pl-sub">Partner Institucional</div></div>
+        <div class="partner-logo"><div class="pl-icon">💎</div><div class="pl-name">DVZ Capital</div><div class="pl-sub">Inversión Web3</div></div>
       </div>
       <p class="center" style="color:var(--text-muted);font-size:13.5px;margin-top:20px;">¿Tu empresa, gobierno o cámara empresarial quiere ser sponsor del ecosistema Web3 más grande de LATAM? <a href="#contacto" style="color:var(--accent-light);font-weight:600;">Hablemos →</a></p>
     </div>
