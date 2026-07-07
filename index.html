@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Horizonte Blockchain | Hub de Innovación Blockchain, Web3 e IA">
 <meta name="twitter:description" content="Capacitamos, conectamos y acompañamos a empresas, bancos, universidades e instituciones públicas en Latinoamérica.">
 <meta name="twitter:image" content="https://horizonteblockchain.org/assets/img/og-image.jpg">
-<meta name="theme-color" content="#060A13">
+<meta name="theme-color" content="#060B16">
 <meta name="color-scheme" content="dark">
 <script type="application/ld+json">
 {
@@ -53,22 +53,27 @@
 <style>
 :root{
   color-scheme: dark;
-  --bg:#060A13;
-  --bg-soft:#0A101C;
-  --card:#0D1524;
-  --card-hover:#111B2E;
-  --line:rgba(255,255,255,.07);
-  --text:#EEF2F8;
-  --muted:#93A0B5;
-  --accent:#F7931A;
-  --accent2:#FFB84D;
+  --bg:#060B16;
+  --bg-soft:#0A1120;
+  --card:#0D1626;
+  --card-hover:#12203A;
+  --line:rgba(120,180,225,.10);
+  --text:#EDF3FB;
+  --muted:#9FB2CB;
+  /* Primario: cyan tecnológico */
+  --accent:#2FD4E6;
+  --accent2:#6FE9F6;
+  /* Secundario: gold moderno (highlights, números, CTA) */
+  --gold:#FFB020;
+  --gold2:#FFCC61;
   --blue:#2E6BD6;
-  --accent-soft:rgba(247,147,26,.10);
+  --accent-soft:rgba(47,212,230,.12);
+  --gold-soft:rgba(255,176,32,.12);
   --radius:18px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
 h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.15;letter-spacing:-.01em}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -78,25 +83,57 @@ section{padding:110px 0;position:relative}
 .kicker::before{content:"";width:26px;height:1px;background:linear-gradient(90deg,var(--accent),transparent)}
 .section-title{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:700;max-width:760px;margin-bottom:14px}
 .section-lead{color:var(--muted);max-width:640px;font-size:1.02rem;margin-bottom:56px}
-.grad-text{background:linear-gradient(100deg,#FFFFFF 20%,var(--accent2) 50%,var(--accent) 80%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:shimmer 6s linear infinite}
+.grad-text{background:linear-gradient(100deg,#FFFFFF 18%,var(--gold2) 50%,var(--gold) 82%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:shimmer 6s linear infinite}
 @keyframes shimmer{to{background-position:200% center}}
+.hero-title-anim,.section-title,.mv-label{background:linear-gradient(100deg,#EDF3FB 0%,#EDF3FB 28%,var(--gold2) 40%,var(--gold) 48%,var(--accent2) 58%,#EDF3FB 72%,#EDF3FB 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:titleSweep 6.5s linear infinite}
+@keyframes titleSweep{from{background-position:0% center}to{background-position:-220% center}}
 .bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(148,163,184,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,black 30%,transparent 75%)}
+/* ===== FONDO AMBIENTAL (aurora + grano) ===== */
+.bg-aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg-aurora span{position:absolute;display:block;border-radius:50%;filter:blur(85px)}
+.bg-aurora .a1{width:min(62vw,760px);height:min(62vw,760px);background:radial-gradient(circle,rgba(47,212,230,.16),transparent 62%);top:-12%;left:-10%;animation:auroraDrift1 28s ease-in-out infinite}
+.bg-aurora .a2{width:min(56vw,680px);height:min(56vw,680px);background:radial-gradient(circle,rgba(255,176,32,.11),transparent 62%);bottom:-16%;right:-8%;animation:auroraDrift2 34s ease-in-out infinite}
+.bg-aurora .a3{width:min(50vw,640px);height:min(50vw,640px);background:radial-gradient(circle,rgba(46,107,214,.13),transparent 62%);top:36%;left:50%;animation:auroraDrift3 40s ease-in-out infinite}
+@keyframes auroraDrift1{0%,100%{transform:translate(0,0)}50%{transform:translate(55px,40px)}}
+@keyframes auroraDrift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-38px)}}
+@keyframes auroraDrift3{0%,100%{transform:translate(-50%,0) scale(1)}50%{transform:translate(calc(-50% - 40px),28px) scale(1.08)}}
+.bg-noise{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@media(max-width:720px){.bg-aurora span{filter:blur(60px)}.bg-aurora .a3{display:none}}
+/* Marca de agua giratoria fija (te sigue en todo el scroll) */
+.bg-logo{position:fixed;inset:0;z-index:0;pointer-events:none;display:flex;align-items:center;justify-content:center}
+.bg-logo span{display:block;width:min(72vw,560px);height:min(72vw,560px);background:url('assets/img/logo-hb-mark.png') no-repeat center/contain;opacity:.05;animation:logoSwing 16s ease-in-out infinite alternate}
+@media(max-width:720px){.bg-logo span{width:80vw;height:80vw;opacity:.045}}
 .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;z-index:0}
-.orb-a{width:520px;height:520px;background:radial-gradient(circle,rgba(247,147,26,.20),transparent 65%);top:-160px;right:-140px;animation:drift1 16s ease-in-out infinite}
+.orb-a{width:520px;height:520px;background:radial-gradient(circle,rgba(47,212,230,.20),transparent 65%);top:-160px;right:-140px;animation:drift1 16s ease-in-out infinite}
 .orb-b{width:460px;height:460px;background:radial-gradient(circle,rgba(46,107,214,.20),transparent 65%);bottom:-180px;left:-160px;animation:drift2 20s ease-in-out infinite}
 @keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(-60px,50px)}}
 @keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(70px,-45px)}}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
 .reveal.visible{opacity:1;transform:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
-#scrollProgress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:200;box-shadow:0 0 8px rgba(247,147,26,.4)}
+#scrollProgress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:200;box-shadow:0 0 8px rgba(47,212,230,.4)}
 /* ============ BARRA DE EVENTO ============ */
-#eventBar{position:fixed;top:0;left:0;right:0;height:46px;z-index:120;display:flex;align-items:center;justify-content:center;gap:14px;background:rgba(10,16,28,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(247,147,26,.3);font-size:.86rem;color:var(--text);padding:0 16px}
-#eventBar .ev-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 2s infinite;flex-shrink:0}
+#eventBar{position:fixed;top:0;left:0;right:0;height:46px;z-index:120;display:flex;align-items:center;justify-content:center;gap:14px;background:rgba(10,16,28,.94);backdrop-filter:blur(12px);font-size:.86rem;color:var(--text);padding:0 16px}
+/* Haz de luz que barre la barra */
+#eventBar::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 22%,rgba(47,212,230,.10) 44%,rgba(255,176,32,.13) 54%,transparent 78%);background-size:250% 100%;animation:evSheen 6s linear infinite;pointer-events:none;z-index:0}
+@keyframes evSheen{from{background-position:160% 0}to{background-position:-160% 0}}
+/* Línea inferior luminosa en movimiento */
+#eventBar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent) 30%,var(--gold) 50%,var(--accent) 70%,transparent);background-size:200% 100%;animation:evLine 4.5s linear infinite;pointer-events:none;z-index:1}
+@keyframes evLine{from{background-position:200% 0}to{background-position:-200% 0}}
+#eventBar>*{position:relative;z-index:2}
+#eventBar .ev-dot{position:relative;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 2s infinite;flex-shrink:0}
+#eventBar .ev-dot::after{content:"";position:absolute;top:50%;left:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;border:1.5px solid var(--accent);animation:evRing 2.2s ease-out infinite;pointer-events:none}
+@keyframes evRing{0%{transform:scale(.7);opacity:.9}100%{transform:scale(3.2);opacity:0}}
 #eventBar .ev-label{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.72rem;flex-shrink:0}
 #eventBar .ev-name{color:var(--text);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#eventBar .ev-btn{flex-shrink:0;padding:7px 16px;border-radius:8px;background:linear-gradient(120deg,#D8891F,#B26A10);color:#0B0E14;font-weight:700;font-size:.8rem;transition:transform .2s,box-shadow .2s}
-#eventBar .ev-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(216,137,31,.35)}
+#eventBar .ev-count{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;background:var(--gold-soft);border:1px solid rgba(255,176,32,.45);color:var(--gold2);font-weight:700;font-size:.72rem;letter-spacing:.02em;white-space:nowrap;animation:evCountPulse 2s ease-in-out infinite}
+#eventBar .ev-count::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);flex-shrink:0}
+@keyframes evCountPulse{0%,100%{border-color:rgba(255,176,32,.4);box-shadow:0 0 0 0 rgba(255,176,32,0)}50%{border-color:rgba(255,176,32,.85);box-shadow:0 0 13px rgba(255,176,32,.28)}}
+#eventBar .ev-btn{flex-shrink:0;padding:7px 16px;border-radius:8px;background:linear-gradient(120deg,#FFC24D,#F79A1E);color:#0B0E14;font-weight:700;font-size:.8rem;transition:transform .2s,box-shadow .2s;animation:evBtnPulse 2.4s ease-in-out infinite}
+#eventBar .ev-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(255,176,32,.5)}
+@keyframes evBtnPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,176,32,0),0 3px 12px rgba(255,176,32,.22)}50%{box-shadow:0 0 0 4px rgba(255,176,32,.14),0 5px 20px rgba(255,176,32,.48)}}
+#eventBar .ev-arrow{display:inline-block;animation:evArrow 1.4s ease-in-out infinite}
+@keyframes evArrow{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
 body.has-event nav{top:46px}
 body.has-event .hero{padding-top:246px}
 @media(max-width:720px){
@@ -108,30 +145,30 @@ body.has-event .hero{padding-top:246px}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,10,19,.72);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
 nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 .nav-inner{max-width:1150px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo img{height:42px;width:auto;filter:drop-shadow(0 0 14px rgba(247,147,26,.25))}
+.nav-logo img{height:42px;width:auto;filter:drop-shadow(0 0 14px rgba(47,212,230,.25))}
 .nav-links{display:flex;gap:30px;align-items:center}
 .nav-links a{font-size:.9rem;color:var(--muted);font-weight:500;transition:color .2s;position:relative}
 .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:width .25s;border-radius:2px}
 .nav-links a:not(.btn):hover{color:var(--text)}
 .nav-links a:not(.btn):hover::after{width:100%}
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:12px;font-weight:600;font-size:.93rem;transition:all .25s;cursor:pointer;border:none;overflow:hidden}
-.btn-primary{background:linear-gradient(120deg,#D8891F,#B26A10);color:#0B0E14;box-shadow:0 4px 16px rgba(0,0,0,.35)}
+.btn-primary{background:linear-gradient(120deg,#FFC24D,#F79A1E);color:#0B0E14;box-shadow:0 4px 16px rgba(0,0,0,.35)}
 .btn-primary::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(115deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);transition:left .6s ease}
 .btn-primary:hover::after{left:130%}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(216,137,31,.28)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,176,32,.32)}
 .btn-ghost{background:rgba(255,255,255,.02);color:var(--text);border:1px solid rgba(255,255,255,.18)}
-.btn-ghost:hover{border-color:rgba(216,137,31,.6);color:var(--accent2);box-shadow:none;transform:translateY(-2px)}
+.btn-ghost:hover{border-color:rgba(47,212,230,.6);color:var(--accent2);box-shadow:none;transform:translateY(-2px)}
 .btn-sm{padding:10px 20px;font-size:.87rem}
 .nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.6rem;cursor:pointer}
 /* ============ HERO ============ */
 .hero{padding:200px 0 130px;position:relative;overflow:hidden}
 #heroCanvas{position:absolute;inset:0;z-index:0;opacity:.85}
-.hero-glow{position:absolute;top:-240px;left:50%;transform:translateX(-50%);width:900px;height:620px;background:radial-gradient(ellipse,rgba(247,147,26,.10),transparent 65%);pointer-events:none;z-index:0}
+.hero-glow{position:absolute;top:-240px;left:50%;transform:translateX(-50%);width:900px;height:620px;background:radial-gradient(ellipse,rgba(47,212,230,.10),transparent 65%);pointer-events:none;z-index:0}
 .hero-inner{position:relative;z-index:2;max-width:840px;text-align:center;margin:0 auto}
 .hero-logo{display:flex;justify-content:center;margin-bottom:36px}
-.hero-logo img{height:clamp(64px,9vw,96px);width:auto;filter:drop-shadow(0 0 24px rgba(247,147,26,.22));animation:logoFloat 5s ease-in-out infinite}
+.hero-logo img{height:clamp(64px,9vw,96px);width:auto;filter:drop-shadow(0 0 24px rgba(47,212,230,.22));animation:logoFloat 5s ease-in-out infinite}
 @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:9px 18px;border-radius:100px;border:1px solid rgba(247,147,26,.25);background:rgba(247,147,26,.06);font-size:.82rem;color:var(--muted);margin-bottom:30px;backdrop-filter:blur(6px)}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:9px 18px;border-radius:100px;border:1px solid rgba(47,212,230,.25);background:rgba(47,212,230,.06);font-size:.82rem;color:var(--muted);margin-bottom:30px;backdrop-filter:blur(6px)}
 .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 2.2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.75)}}
 .hero .hero-sub{font-family:'Space Grotesk';font-size:clamp(1.9rem,4.6vw,3.3rem);font-weight:700;margin-bottom:26px;line-height:1.18}
@@ -139,33 +176,32 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
 /* ============ EVENTO DESTACADO ============ */
 .event-grid{display:grid;grid-template-columns:minmax(300px,460px) 1fr;gap:50px;align-items:center}
-.event-flyer{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(247,147,26,.35);box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 50px rgba(247,147,26,.10)}
+.event-flyer{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(47,212,230,.35);box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 50px rgba(47,212,230,.10)}
 .event-flyer img{width:100%;display:block}
 .event-info h2{font-size:clamp(1.5rem,2.8vw,2.1rem);margin-bottom:16px;line-height:1.2}
 .event-info .ev-row{display:flex;gap:12px;align-items:baseline;margin-bottom:10px;color:var(--muted);font-size:.97rem}
 .event-info .ev-row strong{color:var(--text);font-weight:600;min-width:86px;display:inline-block}
 .event-info .btn{margin-top:26px}
-@media(max-width:980px){.event-grid{grid-template-columns:1fr;gap:32px}.event-flyer{max-width:460px;margin:0 auto}.event-info{text-align:center}.event-info .ev-row{justify-content:center}}
+@media(max-width:980px){.event-grid{grid-template-columns:1fr;gap:32px}.event-flyer{max-width:460px;margin:0 auto}.event-info{text-align:center}.event-info .ev-row{flex-direction:column;align-items:center;gap:3px;margin-bottom:15px}.event-info .ev-row strong{min-width:0;display:block;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}}
 /* ============ QUÉ HACEMOS ============ */
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.grid-4{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
 .glass{background:linear-gradient(160deg,rgba(255,255,255,.035),rgba(255,255,255,.008));border:1px solid var(--line);border-radius:var(--radius);backdrop-filter:blur(8px);position:relative;overflow:hidden}
 .pillar{padding:36px 28px;transition:transform .35s,box-shadow .35s,border-color .35s}
 .pillar::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
 .pillar:hover::before{transform:scaleX(1)}
-.pillar:hover{transform:translateY(-8px);border-color:rgba(247,147,26,.35);box-shadow:0 26px 60px rgba(0,0,0,.5)}
-.pillar .icon{width:52px;height:52px;border-radius:14px;background:var(--accent-soft);border:1px solid rgba(247,147,26,.22);display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:transform .35s}
+.pillar:hover{transform:translateY(-8px);border-color:rgba(47,212,230,.35);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+.pillar .icon{width:52px;height:52px;border-radius:14px;background:var(--accent-soft);border:1px solid rgba(47,212,230,.22);display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:transform .35s}
 .pillar:hover .icon{transform:scale(1.12) rotate(-5deg)}
 .pillar .icon svg{width:25px;height:25px;stroke:var(--accent)}
 .pillar h3{font-size:1.08rem;margin-bottom:10px}
 .pillar p{color:var(--muted);font-size:.92rem}
 /* ============ IMPACTO ============ */
-.impact{background:linear-gradient(180deg,transparent,rgba(247,147,26,.03) 50%,transparent)}
-.impact .container::before{content:"";position:absolute;top:-40px;right:-60px;width:340px;height:340px;background:url('assets/img/logo-hb-mark.png') no-repeat center/contain;opacity:.05;pointer-events:none;animation:slowSpin 60s linear infinite}
-@keyframes slowSpin{to{transform:rotate(360deg)}}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.impact{background:linear-gradient(180deg,transparent,rgba(47,212,230,.03) 50%,transparent)}
+@keyframes logoSwing{from{transform:rotate(-90deg)}to{transform:rotate(90deg)}}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .metric{padding:38px 32px;transition:transform .3s,border-color .3s,box-shadow .3s}
-.metric:hover{border-color:rgba(247,147,26,.4);transform:translateY(-4px)}
-.metric .num{font-family:'Space Grotesk';font-size:2.6rem;font-weight:700;background:linear-gradient(120deg,var(--accent2),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:6px}
+.metric:hover{border-color:rgba(47,212,230,.4);transform:translateY(-4px)}
+.metric .num{font-family:'Space Grotesk';font-size:2.7rem;font-weight:700;background:linear-gradient(120deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
 .metric .label{color:var(--muted);font-size:.93rem}
 /* ============ MAPA ============ */
 .map-panel{max-width:700px;margin:60px auto 0;padding:38px 34px 30px;text-align:center}
@@ -176,37 +212,49 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 .hq-ring{transform-box:fill-box;transform-origin:center;animation:ring 2.8s ease-out infinite}
 @keyframes ring{0%{transform:scale(.4);opacity:.9}100%{transform:scale(2.4);opacity:0}}
 /* ============ MISIÓN / VISIÓN ============ */
-.mv{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:960px;margin:0 auto}
-.mv-card{padding:36px 32px}
-.mv-card .mv-label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-.mv-card p{color:var(--muted);font-size:.98rem}
+.mv{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:1000px;margin:0 auto}
+.mv-card{padding:44px 40px;position:relative;overflow:hidden}
+.mv-card::before{content:"";position:absolute;inset:0;border-radius:var(--radius);padding:1px;background:linear-gradient(135deg,var(--accent),transparent 48%,var(--gold));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.6;pointer-events:none}
+.mv-card::after{content:"";position:absolute;top:-70px;right:-60px;width:220px;height:220px;background:radial-gradient(circle,var(--accent-soft),transparent 70%);pointer-events:none}
+.mv-icon{width:56px;height:56px;border-radius:15px;background:var(--accent-soft);border:1px solid rgba(47,212,230,.28);display:flex;align-items:center;justify-content:center;margin-bottom:22px;position:relative;z-index:1}
+.mv-icon svg{width:28px;height:28px;stroke:var(--accent);fill:none}
+.mv-card .mv-label{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:700;letter-spacing:-.01em;text-transform:none;margin-bottom:14px;position:relative;z-index:1}
+.mv-card p{color:var(--muted);font-size:1.06rem;line-height:1.7;position:relative;z-index:1}
+/* ===== STATEMENT INSTITUCIONAL ===== */
+.statement{padding:0 0 110px}
+.statement-inner{max-width:1000px;margin:0 auto;position:relative;padding:48px 56px;border-radius:22px;background:linear-gradient(135deg,rgba(47,212,230,.08),rgba(255,176,32,.055));border:1px solid var(--line);overflow:hidden}
+.statement-inner::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--accent),var(--gold))}
+.statement-inner::after{content:"";position:absolute;top:-90px;right:-50px;width:300px;height:300px;background:radial-gradient(circle,var(--accent-soft),transparent 70%);pointer-events:none}
+.statement p{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.18rem,2.2vw,1.62rem);font-weight:500;line-height:1.5;color:var(--text);position:relative;z-index:1;max-width:840px}
+.statement p strong{color:var(--accent2);font-weight:700}
 /* ============ PROGRAMAS ============ */
 .programs{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .program{padding:36px 32px;display:flex;flex-direction:column;gap:12px;transition:transform .35s,border-color .35s,box-shadow .35s}
-.program:hover{transform:translateY(-6px);border-color:rgba(247,147,26,.35);box-shadow:0 24px 56px rgba(0,0,0,.5)}
-.program.featured{grid-column:1/-1;background:linear-gradient(120deg,rgba(255,255,255,.03) 50%,rgba(247,147,26,.09));border-color:rgba(247,147,26,.3)}
-.program.featured::after{content:"";position:absolute;top:-70px;right:-70px;width:260px;height:260px;background:radial-gradient(circle,rgba(247,147,26,.16),transparent 65%);pointer-events:none}
-.tag{display:inline-block;align-self:flex-start;padding:5px 14px;border-radius:100px;background:var(--accent-soft);border:1px solid rgba(247,147,26,.25);color:var(--accent);font-size:.75rem;font-weight:600;letter-spacing:.05em}
+.program:hover{transform:translateY(-6px);border-color:rgba(47,212,230,.35);box-shadow:0 24px 56px rgba(0,0,0,.5)}
+.program.featured{grid-column:1/-1;background:linear-gradient(120deg,rgba(255,255,255,.03) 50%,rgba(47,212,230,.09));border-color:rgba(47,212,230,.3)}
+.program.featured::after{content:"";position:absolute;top:-70px;right:-70px;width:260px;height:260px;background:radial-gradient(circle,rgba(47,212,230,.16),transparent 65%);pointer-events:none}
+.tag{display:inline-block;align-self:flex-start;padding:5px 14px;border-radius:100px;background:var(--accent-soft);border:1px solid rgba(47,212,230,.25);color:var(--accent);font-size:.75rem;font-weight:600;letter-spacing:.05em}
 .program h3{font-size:1.18rem}
 .program p{color:var(--muted);font-size:.94rem}
 .program .link{color:var(--accent);font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:6px}
 .program .link:hover{text-decoration:underline}
 .program .links-row{display:flex;gap:22px;flex-wrap:wrap;margin-top:auto}
 /* ============ PARA QUIÉN ============ */
-.audience{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.audience{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .aud-card{padding:32px 22px;text-align:center;transition:transform .3s,border-color .3s}
-.aud-card:hover{border-color:rgba(247,147,26,.35);transform:translateY(-6px)}
-.aud-card .icon{width:46px;height:46px;margin:0 auto 16px;border-radius:13px;background:var(--accent-soft);border:1px solid rgba(247,147,26,.2);display:flex;align-items:center;justify-content:center}
+.aud-card:hover{border-color:rgba(47,212,230,.35);transform:translateY(-6px)}
+.aud-card .icon{width:46px;height:46px;margin:0 auto 16px;border-radius:13px;background:var(--accent-soft);border:1px solid rgba(47,212,230,.2);display:flex;align-items:center;justify-content:center}
 .aud-card .icon svg{width:22px;height:22px;stroke:var(--accent)}
-.aud-card h3{font-size:.95rem;font-weight:600}
+.aud-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}
+.aud-card p{color:var(--muted);font-size:.86rem;line-height:1.55}
 /* ============ VIDEOS ============ */
 .videos-section{background:linear-gradient(180deg,transparent,rgba(46,107,214,.04) 50%,transparent)}
-.video-featured{margin-bottom:26px;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(247,147,26,.25);box-shadow:0 30px 80px rgba(0,0,0,.55);aspect-ratio:16/9;max-width:860px;margin-left:auto;margin-right:auto}
+.video-featured{margin-bottom:26px;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(47,212,230,.25);box-shadow:0 30px 80px rgba(0,0,0,.55);aspect-ratio:16/9;max-width:860px;margin-left:auto;margin-right:auto}
 .video-featured iframe{width:100%;height:100%;border:0;display:block}
 .video-note{text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:56px}
 .playlist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .playlist-card{overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,border-color .35s,box-shadow .35s}
-.playlist-card:hover{transform:translateY(-6px);border-color:rgba(247,147,26,.35);box-shadow:0 24px 56px rgba(0,0,0,.5)}
+.playlist-card:hover{transform:translateY(-6px);border-color:rgba(47,212,230,.35);box-shadow:0 24px 56px rgba(0,0,0,.5)}
 .playlist-card .player{aspect-ratio:16/9;background:#0d1626}
 .playlist-card .player iframe{width:100%;height:100%;border:0;display:block}
 .playlist-card .video-body{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
@@ -222,7 +270,7 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 .logo-marquee:hover .logo-track{animation-play-state:paused}
 @keyframes marquee{to{transform:translateX(-50%)}}
 .logo-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-width:230px;padding:26px 30px;background:#F7F9FC;border-radius:16px;transition:transform .3s,box-shadow .3s}
-.logo-item:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(247,147,26,.18)}
+.logo-item:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(47,212,230,.18)}
 .logo-item img{height:48px;width:auto;max-width:180px;object-fit:contain}
 .logo-item .lname{font-size:.78rem;font-weight:600;color:#33415C;text-align:center;line-height:1.3}
 .logo-item.txt{gap:6px}
@@ -231,7 +279,7 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 /* ============ EQUIPO ============ */
 .team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:940px;margin:0 auto}
 .member{overflow:hidden;text-align:center;transition:transform .35s,border-color .35s,box-shadow .35s}
-.member:hover{transform:translateY(-8px);border-color:rgba(247,147,26,.4);box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.member:hover{transform:translateY(-8px);border-color:rgba(47,212,230,.4);box-shadow:0 30px 70px rgba(0,0,0,.55)}
 .member .photo{position:relative;overflow:hidden}
 .member img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .5s}
 .member:hover img{transform:scale(1.05)}
@@ -241,7 +289,7 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 .member p{color:var(--accent);font-size:.86rem;font-weight:600}
 /* ============ CTA FINAL + FORM ============ */
 .cta-final{position:relative;overflow:hidden;text-align:center}
-.cta-final::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(247,147,26,.09),transparent 60%);pointer-events:none}
+.cta-final::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(47,212,230,.09),transparent 60%);pointer-events:none}
 .cta-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
 .cta-final h2{font-size:clamp(1.8rem,3.6vw,2.7rem);margin-bottom:22px}
 .cta-final>.container p{color:var(--muted);font-size:1.06rem;margin-bottom:42px}
@@ -253,7 +301,7 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 .form-group{margin-bottom:18px}
 .form-group label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:7px;font-weight:500}
 .form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(6,10,19,.6);border:1px solid var(--line);border-radius:11px;padding:13px 15px;color:var(--text);font-family:'Inter',sans-serif;font-size:.93rem;transition:border-color .2s,box-shadow .2s;outline:none}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(247,147,26,.12)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(47,212,230,.12)}
 .form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2393A0B5' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center}
 .form-group textarea{resize:vertical;min-height:110px}
 /* ============ FOOTER ============ */
@@ -298,10 +346,12 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
   .hero{padding:150px 0 90px}
   .grid-4,.programs{grid-template-columns:1fr}
   .audience{grid-template-columns:repeat(2,1fr)}
+  .audience .aud-card:last-child{grid-column:1/-1}
   .metrics{grid-template-columns:repeat(2,1fr);gap:14px}
+  .metrics .metric:last-child{grid-column:1/-1}
   .metric{padding:26px 20px}
-  .metric .num{font-size:2rem}
-  .metric .label{font-size:.82rem}
+  .metric .num{font-size:2.15rem}
+  .metric .label{font-size:.86rem}
   .team{grid-template-columns:1fr;max-width:380px;margin:0 auto}
   .member .info{padding:22px 18px}
   .member h3{font-size:1.05rem}
@@ -325,7 +375,10 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 <body>
 
 <div id="scrollProgress"></div>
+<div class="bg-aurora"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+<div class="bg-logo"><span></span></div>
 <div class="bg-grid"></div>
+<div class="bg-noise"></div>
 
 <!-- ================= NAV ================= -->
 <nav id="navbar">
@@ -353,11 +406,11 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
   <div class="container hero-inner">
     <div class="hero-logo reveal"><img src="assets/img/logo-hb-full.png" alt="Horizonte Blockchain"></div>
     <div class="hero-badge reveal d1"><span class="dot"></span> Perú · Costa Rica — Presencia en +10 países de Latinoamérica</div>
-    <h1 class="hero-sub reveal d2"><span class="grad-text">Hub de Innovación en Blockchain, Web3 e Inteligencia Artificial</span><br>para Latinoamérica</h1>
-    <p class="reveal d3">Capacitamos, conectamos y acompañamos a empresas, bancos, universidades e instituciones públicas en la adopción de tecnologías emergentes.</p>
+    <h1 class="hero-sub hero-title-anim reveal d2">El socio regional para empresas Web3, inteligencia artificial, fintechs e instituciones en Latinoamérica</h1>
+    <p class="reveal d3">Ayudamos a organizaciones a entrar, posicionarse y crecer en Latinoamérica mediante educación, comunidad, eventos, alianzas estratégicas y adopción tecnológica.</p>
     <div class="hero-ctas reveal d4">
-      <a href="#formulario" class="btn btn-primary">Trabajemos juntos</a>
-      <a href="#programas" class="btn btn-ghost">Ver programas</a>
+      <a href="#formulario" class="btn btn-primary">Solicitar reunión estratégica</a>
+      <a href="#programas" class="btn btn-ghost">Ver programas y casos de ejecución</a>
     </div>
   </div>
 </header>
@@ -387,30 +440,44 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 <section id="que-hacemos">
   <div class="orb orb-a"></div>
   <div class="container">
-    <span class="kicker reveal">Qué hacemos</span>
-    <h2 class="section-title reveal">Cuatro líneas de trabajo, una misma visión regional</h2>
-    <p class="section-lead reveal">Acompañamos a organizaciones en cada etapa de su adopción tecnológica: desde la formación de equipos hasta la ejecución de programas de innovación.</p>
+    <span class="kicker reveal">Soluciones</span>
+    <h2 class="section-title reveal">Cómo podemos ayudarte</h2>
+    <p class="section-lead reveal">Diseñamos y ejecutamos iniciativas para que empresas, fintechs e instituciones conviertan la innovación Web3, blockchain e inteligencia artificial en adopción real.</p>
     <div class="grid-4">
       <div class="pillar glass reveal">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-        <h3>Educación institucional</h3>
-        <p>Programas de formación en Blockchain, Web3 e IA para equipos ejecutivos, técnicos y académicos, con certificación blockchain verificable (POAP).</p>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
+        <h3>Posicionamiento regional</h3>
+        <p>Estrategias para que tu empresa Web3, fintech o tecnológica gane visibilidad, confianza y presencia en mercados clave de Latinoamérica.</p>
       </div>
       <div class="pillar glass reveal d1">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
-        <h3>Consultoría Blockchain, Web3 e IA</h3>
-        <p>Acompañamiento estratégico para explorar casos de uso, diseñar hojas de ruta de adopción e implementar soluciones con tecnologías emergentes.</p>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h3>Educación y adopción</h3>
+        <p>Programas para formar equipos ejecutivos, técnicos y comunidades en blockchain, IA, tokenización, stablecoins y Web3.</p>
       </div>
       <div class="pillar glass reveal d2">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <h3>Hackathons y laboratorios de innovación</h3>
-        <p>Retos de construcción real sobre blockchain, IA y tokenización que conectan talento técnico con desafíos de empresas e instituciones.</p>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
+        <h3>Eventos, summits y hackathons</h3>
+        <p>Diseño y ejecución de experiencias presenciales y virtuales que conectan empresas, talento, comunidad y oportunidades comerciales.</p>
       </div>
       <div class="pillar glass reveal d3">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Eventos y comunidad regional</h3>
-        <p>Summits, meetups y espacios de networking que reúnen a líderes empresariales, reguladores y builders de toda Latinoamérica.</p>
+        <h3>Alianzas institucionales</h3>
+        <p>Conexión con universidades, cámaras, gremios, comunidades, speakers, fundaciones y actores estratégicos del ecosistema regional.</p>
       </div>
+      <div class="pillar glass reveal d4">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5.5L5 18a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9.5V3"/><path d="M7.5 14h9"/></svg></div>
+        <h3>Laboratorios de innovación</h3>
+        <p>Espacios de trabajo donde empresas plantean desafíos reales y equipos multidisciplinarios desarrollan propuestas de solución en blockchain, IA, tokenización y tecnologías emergentes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATEMENT INSTITUCIONAL ================= -->
+<section class="statement">
+  <div class="container">
+    <div class="statement-inner reveal">
+      <p>No somos solo una comunidad Web3. Somos un <strong>operador regional de ecosistema</strong>: conectamos empresas, instituciones, talento y comunidad para acelerar la adopción blockchain, Web3 e inteligencia artificial en Latinoamérica.</p>
     </div>
   </div>
 </section>
@@ -422,14 +489,15 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
     <h2 class="section-title reveal">Ejecución real, medida en resultados</h2>
     <p class="section-lead reveal">Cifras construidas evento a evento, programa a programa, junto a organizaciones de toda la región.</p>
     <div class="metrics">
-      <div class="metric glass reveal"><div class="num counter" data-target="2500" data-suffix="+">0</div><div class="label">Asistentes en eventos presenciales</div></div>
-      <div class="metric glass reveal d1"><div class="num counter" data-target="1700" data-suffix="+">0</div><div class="label">Alumnos impactados</div></div>
-      <div class="metric glass reveal d2"><div class="num counter" data-target="90" data-suffix="+">0</div><div class="label">Equipos en hackathons</div></div>
-      <div class="metric glass reveal d3"><div class="num counter" data-target="100" data-suffix="+">0</div><div class="label">Eventos y programas educativos</div></div>
-      <div class="metric glass reveal"><div class="num counter" data-target="150" data-suffix="k+">0</div><div class="label">Alcance regional multicanal</div></div>
-      <div class="metric glass reveal d1"><div class="num counter" data-target="8" data-suffix="k+">0</div><div class="label">Miembros de comunidad</div></div>
-      <div class="metric glass reveal d2"><div class="num counter" data-target="30" data-suffix="+">0</div><div class="label">Speakers internacionales</div></div>
-      <div class="metric glass reveal d3"><div class="num counter" data-target="10" data-suffix="+">0</div><div class="label">Universidades aliadas</div></div>
+      <div class="metric glass reveal"><div class="num counter" data-target="2500" data-suffix="+">2,500+</div><div class="label">Asistentes en Fintech &amp; Web3 Trujillo Summit</div></div>
+      <div class="metric glass reveal d1"><div class="num counter" data-target="1700" data-suffix="+">1,700+</div><div class="label">Participantes en Proof of Builders Hackathon</div></div>
+      <div class="metric glass reveal d2"><div class="num counter" data-target="90" data-suffix="+">90+</div><div class="label">Equipos builders activados</div></div>
+      <div class="metric glass reveal d3"><div class="num counter" data-target="100" data-suffix="+">100+</div><div class="label">Experiencias educativas y de ecosistema</div></div>
+      <div class="metric glass reveal"><div class="num counter" data-target="150" data-suffix="K+">150K+</div><div class="label">Alcance regional multicanal</div></div>
+      <div class="metric glass reveal d1"><div class="num counter" data-target="8" data-suffix="K+">8K+</div><div class="label">Miembros de comunidad Web3 conectada</div></div>
+      <div class="metric glass reveal d2"><div class="num counter" data-target="30" data-suffix="+">30+</div><div class="label">Expertos internacionales convocados</div></div>
+      <div class="metric glass reveal d3"><div class="num counter" data-target="10" data-suffix="+">10+</div><div class="label">Universidades y aliados académicos</div></div>
+      <div class="metric glass reveal"><div class="num counter" data-target="15000" data-suffix="+">15,000+</div><div class="label">Personas impactadas en iniciativas, eventos, programas y comunidad</div></div>
     </div>
     <div class="map-panel glass reveal">
       <span class="map-title">Presencia regional · Red conectada desde Perú y Costa Rica</span>
@@ -455,474 +523,4 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
         <path d="M529 256 524 254 520 255 517 254 516 256 517 258 517 260 512 259 507 252 506 247 503 247 500 241 501 237 501 235 506 233 507 225 517 227 518 225 525 225 534 227 529 234 530 240 533 245 532 248 531 252 529 256Z"/>
         <path d="M355 276 356 283 354 288 345 297 335 300 330 307 328 313 323 316 320 312 316 311 313 312 313 309 315 307 314 303 319 297 317 294 314 297 309 294 310 291 309 284 312 283 313 277 316 272 316 269 320 267 326 263 335 268 336 268 338 272 345 273 348 272 352 274 355 276Z"/>
         <path d="M431 121 435 121 437 123 435 125 428 125 423 125 423 122 424 121 431 121Z"/>
-        <path d="M337 121 343 122 347 124 348 126 342 126 340 127 335 126 331 123 332 121 335 121 337 121Z"/>
-        <path d="M298 82 305 82 312 82 319 85 323 88 330 87 333 89 340 95 346 98 348 98 353 100 353 102 359 103 365 106 364 108 359 109 353 109 347 109 335 110 341 105 338 103 332 102 329 100 327 95 323 95 315 93 312 91 301 90 299 88 302 86 294 86 288 90 284 90 283 92 279 93 275 93 280 90 281 87 285 85 289 83 296 83 298 82Z"/>
-        <path d="M499 443 501 448 501 459 509 461 513 459 518 461 520 464 521 471 522 475 525 475 528 474 531 475 531 480 530 485 528 489 527 497 519 503 513 505 503 503 495 501 503 488 502 485 493 481 483 475 476 474 461 460 464 450 464 446 468 439 483 436 491 436 498 441 499 443Z"/>
-        <path d="M469 185 474 184 476 185 476 191 469 192 467 191 470 189 469 185Z"/>
-        </g><g fill="rgba(247,147,26,.16)" stroke="#F7931A" stroke-width="1.6" stroke-linejoin="round">
-        <path d="M401 311 393 310 392 312 385 313 376 319 375 323 373 326 374 330 369 333 369 336 367 338 370 345 375 350 373 354 379 354 382 359 389 359 396 354 395 367 399 368 404 366 411 380 409 382 409 388 409 395 406 400 407 403 405 406 409 413 403 422 401 426 397 428 389 423 388 420 371 411 356 402 350 397 346 390 348 388 341 377 333 361 325 345 321 341 319 335 312 330 306 326 309 322 305 314 308 309 314 303 315 307 313 309 313 312 316 311 320 312 323 316 328 313 330 307 335 300 345 297 354 288 356 283 355 276 357 275 363 279 366 283 370 286 374 294 381 295 385 293 388 295 393 294 400 298 394 306 397 306 401 311Z"/>
-        <path d="M295 195 292 196 292 199 294 201 293 202 293 203 292 205 292 206 287 205 286 203 287 201 286 200 284 198 281 196 278 195 277 192 275 191 276 193 274 195 272 193 269 192 268 191 268 188 270 185 267 184 269 183 270 182 276 184 278 183 280 183 282 185 284 186 286 184 288 188 292 192 295 195Z"/>
-        </g><g fill="none" stroke="#F7931A" stroke-width="1" opacity=".2">
-        <path d="M354 354 Q349 318 328 288"/>
-        <path d="M354 354 Q376 297 370 237"/>
-        <path d="M354 354 Q393 396 447 415"/>
-        <path d="M354 354 Q453 382 554 362"/>
-        <path d="M354 354 Q348 458 390 554"/>
-        <path d="M354 354 Q374 474 446 571"/>
-        <path d="M282 194 Q220 117 129 77"/>
-        <path d="M282 194 Q354 220 429 210"/>
-        </g>
-        <path d="M282 194 Q292 286 354 354" fill="none" stroke="#F7931A" stroke-width="2.2" opacity=".75" stroke-dasharray="7 5"/>
-        <circle cx="129" cy="77" r="5" fill="#8FA2BD"/>
-        <circle class="hq-ring" cx="282" cy="194" r="14" fill="none" stroke="#F7931A" stroke-width="2"/><circle cx="282" cy="194" r="7" fill="#F7931A"/>
-        <circle cx="370" cy="237" r="5" fill="#8FA2BD"/>
-        <circle cx="429" cy="210" r="5" fill="#8FA2BD"/>
-        <circle cx="328" cy="288" r="5" fill="#8FA2BD"/>
-        <circle class="hq-ring" cx="354" cy="354" r="14" fill="none" stroke="#F7931A" stroke-width="2"/><circle cx="354" cy="354" r="7" fill="#F7931A"/>
-        <circle cx="447" cy="415" r="5" fill="#8FA2BD"/>
-        <circle cx="554" cy="362" r="5" fill="#8FA2BD"/>
-        <circle cx="390" cy="554" r="5" fill="#8FA2BD"/>
-        <circle cx="446" cy="571" r="5" fill="#8FA2BD"/>
-        <text x="141" y="74" text-anchor="start">México</text>
-        <text class="hq" x="266" y="203" text-anchor="end">Costa Rica</text>
-        <text x="382" y="238" text-anchor="start">Colombia</text>
-        <text x="441" y="209" text-anchor="start">Venezuela</text>
-        <text x="316" y="297" text-anchor="end">Ecuador</text>
-        <text class="hq" x="338" y="381" text-anchor="end">Perú</text>
-        <text x="459" y="424" text-anchor="start">Bolivia</text>
-        <text x="566" y="367" text-anchor="start">Brasil</text>
-        <text x="378" y="563" text-anchor="end">Chile</text>
-        <text x="458" y="584" text-anchor="start">Argentina</text>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ================= MISIÓN Y VISIÓN ================= -->
-<section id="esencia" style="padding-top:0;padding-bottom:0">
-  <div class="container" style="padding-top:90px;padding-bottom:20px">
-    <div class="mv">
-      <div class="mv-card glass reveal">
-        <span class="mv-label">Misión</span>
-        <p>Impulsar la transformación digital mediante la educación y adopción de la tecnología blockchain, conectando comunidades y generando oportunidades en toda Latinoamérica.</p>
-      </div>
-      <div class="mv-card glass reveal d1">
-        <span class="mv-label">Visión</span>
-        <p>Ser el enlace que une a las comunidades con la innovación tecnológica, construyendo el futuro descentralizado de nuestra región.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 4. PROGRAMAS ================= -->
-<section id="programas">
-  <div class="orb orb-b"></div>
-  <div class="container">
-    <span class="kicker reveal">Programas destacados</span>
-    <h2 class="section-title reveal">Iniciativas que ya mueven al ecosistema</h2>
-    <p class="section-lead reveal">Programas diseñados y ejecutados junto a aliados institucionales, fundaciones y empresas de la región.</p>
-    <div class="programs">
-      <div class="program glass featured reveal">
-        <span class="tag">Evento insignia</span>
-        <h3>Fintech &amp; Web3 Trujillo Summit</h3>
-        <p>El encuentro empresarial más importante del norte del Perú: bancos, fintechs, gobiernos y builders Web3 en un solo escenario, con más de 2,500 asistentes.</p>
-        <a class="link" href="https://www.fintechtrujillosummit.com/" target="_blank" rel="noopener">Conocer el Summit →</a>
-      </div>
-      <div class="program glass reveal">
-        <span class="tag">Hackathons</span>
-        <h3>Proof of Builders</h3>
-        <p>Serie de hackathons co-organizada junto a Syscoin Foundation: retos de construcción real sobre blockchain, IA y tokenización con equipos de toda Latinoamérica.</p>
-        <a class="link" href="https://chat.whatsapp.com/IUwykQdxO4iK1cxvqoYiml" target="_blank" rel="noopener">Unirme al grupo →</a>
-      </div>
-      <div class="program glass reveal d1">
-        <span class="tag">Programa ejecutivo</span>
-        <h3>Blockchain 360</h3>
-        <p>Programa de formación integral en blockchain para el sector corporativo y financiero, desarrollado junto a instituciones como BCP / CIX.</p>
-      </div>
-      <div class="program glass reveal">
-        <span class="tag">Espacio mensual</span>
-        <h3>Café Blockchain</h3>
-        <p>Conversaciones mensuales con especialistas de la industria sobre adopción, regulación y tendencias del ecosistema en Latinoamérica.</p>
-        <div class="links-row">
-          <a class="link" href="https://chat.whatsapp.com/FN0uiKl5EjwBspYndRBAEF" target="_blank" rel="noopener">Unirme al grupo →</a>
-          <a class="link" href="https://www.youtube.com/playlist?list=PLTnIfzT5GIidy3GxQKEdhiiWt0Za-yTc6" target="_blank" rel="noopener">Ver en YouTube →</a>
-        </div>
-      </div>
-      <div class="program glass reveal d1">
-        <span class="tag">Comité regional</span>
-        <h3>CLIE — Comité Latinoamericano de Blockchain para la Innovación</h3>
-        <p>Espacio de alto nivel donde líderes, gobiernos y organizaciones de más de 10 países articulan la agenda blockchain regional.</p>
-        <div class="links-row">
-          <a class="link" href="https://chat.whatsapp.com/Ddk1B7ebOOX0vDmMI8Vev4" target="_blank" rel="noopener">Unirme al comité →</a>
-          <a class="link" href="https://www.youtube.com/playlist?list=PLTnIfzT5GIifkL4R-jIE7dYiXRo2Xr_ob" target="_blank" rel="noopener">Ver en YouTube →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 5. PARA QUIÉN ================= -->
-<section id="para-quien" style="padding-top:0">
-  <div class="container">
-    <span class="kicker reveal">Para quién trabajamos</span>
-    <h2 class="section-title reveal">Diseñado para quienes toman las decisiones</h2>
-    <p class="section-lead reveal">Trabajamos con los actores que definen la adopción tecnológica en la región.</p>
-    <div class="audience">
-      <div class="aud-card glass reveal">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M9 13h1M14 9h1M14 13h1M10 21v-4h4v4"/></svg></div>
-        <h3>Bancos y fintechs</h3>
-      </div>
-      <div class="aud-card glass reveal d1">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-        <h3>Empresas</h3>
-      </div>
-      <div class="aud-card glass reveal d2">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-        <h3>Universidades</h3>
-      </div>
-      <div class="aud-card glass reveal d3">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6M12 3v2"/></svg></div>
-        <h3>Gobiernos e instituciones públicas</h3>
-      </div>
-      <div class="aud-card glass reveal d4">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Cámaras y comunidades</h3>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 6. VIDEOS ================= -->
-<section class="videos-section" id="videos">
-  <div class="container">
-    <span class="kicker reveal">Videos y contenido educativo</span>
-    <h2 class="section-title reveal">Conocimiento abierto para toda la región</h2>
-    <p class="section-lead reveal">Cursos, masterclasses, webinars y sesiones de Café Blockchain y CLIE, disponibles en nuestro canal de YouTube.</p>
-    <div class="video-featured reveal">
-      <iframe src="https://www.youtube.com/embed/videoseries?list=UUKCwKNJQivzJM4D8mFyXdaA&rel=0" title="Horizonte Blockchain en YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <p class="video-note reveal">Últimas publicaciones del canal oficial de Horizonte Blockchain</p>
-    <div class="playlist-grid">
-      <div class="playlist-card glass reveal">
-        <div class="player">
-          <iframe src="https://www.youtube.com/embed/videoseries?list=PLTnIfzT5GIidy3GxQKEdhiiWt0Za-yTc6&rel=0" title="Café Blockchain — Temporada 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-body">
-          <span class="tag">Espacio mensual</span>
-          <h3>Café Blockchain — Temporada 1</h3>
-          <p>Conversaciones con especialistas sobre adopción, regulación y tendencias del ecosistema.</p>
-          <a class="btn btn-ghost btn-sm btn-yt" href="https://www.youtube.com/playlist?list=PLTnIfzT5GIidy3GxQKEdhiiWt0Za-yTc6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg> Ver lista en YouTube</a>
-        </div>
-      </div>
-      <div class="playlist-card glass reveal d1">
-        <div class="player">
-          <iframe src="https://www.youtube.com/embed/videoseries?list=PLTnIfzT5GIifkL4R-jIE7dYiXRo2Xr_ob&rel=0" title="CLIE — Comité Latinoamericano de Blockchain para la Innovación" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-body">
-          <span class="tag">Comité regional</span>
-          <h3>CLIE — Sesiones del comité</h3>
-          <p>Líderes, gobiernos y organizaciones de +10 países articulando la agenda blockchain regional.</p>
-          <a class="btn btn-ghost btn-sm btn-yt" href="https://www.youtube.com/playlist?list=PLTnIfzT5GIifkL4R-jIE7dYiXRo2Xr_ob" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg> Ver lista en YouTube</a>
-        </div>
-      </div>
-    </div>
-    <div class="videos-footer reveal">
-      <a href="https://www.youtube.com/@HorizonteBlockchainBTC" target="_blank" rel="noopener" class="btn btn-ghost">Ver todo el contenido en YouTube</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 7. ALIADOS ================= -->
-<section id="aliados">
-  <div class="orb orb-a" style="top:auto;bottom:-200px"></div>
-  <div class="container">
-    <span class="kicker reveal">Aliados</span>
-    <h2 class="section-title reveal">Organizaciones que han colaborado, participado o confiado en Horizonte Blockchain</h2>
-    <p class="section-lead reveal">Fundaciones, asociaciones, empresas y universidades con las que hemos ejecutado programas, eventos y alianzas.</p>
-    <div class="logo-marquee reveal">
-      <div class="logo-track" id="logoTrack">
-        <div class="logo-item"><img src="assets/img/aliados/syscoin.png" alt="Syscoin Foundation"><span class="lname">Syscoin Foundation · Co-organizador de hackathons</span></div>
-        <div class="logo-item"><img src="assets/img/aliados/gba.png" alt="Government Blockchain Association"><span class="lname">Government Blockchain Association</span></div>
-        <div class="logo-item"><img src="assets/img/aliados/camara-blockchain-chile.png" alt="Cámara Blockchain Chile"><span class="lname">Cámara Blockchain Chile</span></div>
-        <div class="logo-item"><img src="assets/img/aliados/abpe.png" alt="Asociación Blockchain & DLT Perú"><span class="lname">Asociación Blockchain &amp; DLT Perú</span></div>
-        <div class="logo-item"><img src="assets/img/aliados/blockchain-summit-latam.png" alt="Blockchain Summit Latam"><span class="lname">Blockchain Summit Latam</span></div>
-        <div class="logo-item"><img src="assets/img/aliados/criptolatin-fest.png" alt="CriptoLatin Fest"><span class="lname">CriptoLatin Fest</span></div>
-        <div class="logo-item"><img src="assets/img/aliados/bcp.png" alt="BCP / CIX"><span class="lname">BCP / CIX · Blockchain 360</span></div>
-        <div class="logo-item txt"><span class="big">CryptoCocos</span><span class="lname">Ecosistema Web3</span></div>
-        <div class="logo-item txt"><span class="big">Universidad César Vallejo</span><span class="lname">Aliado académico</span></div>
-        <div class="logo-item txt"><span class="big">Stamping.io</span><span class="lname">Certificación blockchain</span></div>
-        <div class="logo-item txt"><span class="big">IB1 Fintech</span><span class="lname">Innovación fintech</span></div>
-        <div class="logo-item txt"><span class="big">Motiv Perú</span><span class="lname">Impacto social Web3</span></div>
-        <div class="logo-item txt"><span class="big">Ibiza Tech Forum</span><span class="lname">Tech &amp; Blockchain</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 8. EQUIPO ================= -->
-<section id="equipo" style="padding-top:0">
-  <div class="container">
-    <span class="kicker reveal">Equipo</span>
-    <h2 class="section-title reveal">Liderazgo detrás de Horizonte Blockchain</h2>
-    <p class="section-lead reveal">Un equipo fundador con experiencia en educación, estrategia y ejecución de programas de innovación en Latinoamérica.</p>
-    <div class="team">
-      <div class="member glass reveal">
-        <div class="photo"><img src="dayana-oficina.jpg" alt="Dayana Salinas"></div>
-        <div class="info"><h3>Dayana Salinas</h3><p>Founder &amp; Directora Ejecutiva</p></div>
-      </div>
-      <div class="member glass reveal d1">
-        <div class="photo"><img src="alexander-oficina.jpg" alt="Alexander Coral"></div>
-        <div class="info"><h3>Alexander Coral</h3><p>CEO &amp; Gerente General</p></div>
-      </div>
-      <div class="member glass reveal d2">
-        <div class="photo"><img src="equipo-karla-v2.jpg" alt="Karla Agüero"></div>
-        <div class="info"><h3>Karla Agüero</h3><p>CCO &amp; Co-Founder</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 9. CTA FINAL + CONTACTO ================= -->
-<section class="cta-final" id="contacto">
-  <div class="container cta-inner">
-    <span class="kicker reveal" style="justify-content:center">Siguiente paso</span>
-    <h2 class="reveal"><span class="grad-text">Construyamos juntos</span> la próxima etapa de innovación en Latinoamérica</h2>
-    <p class="reveal">Si tu organización busca capacitar equipos, explorar casos de uso, organizar hackathons, desarrollar comunidad o implementar estrategias con Blockchain, Web3 e Inteligencia Artificial, Horizonte Blockchain puede ser tu aliado estratégico.</p>
-    <div class="hero-ctas reveal">
-      <!-- EDITABLE: reemplaza el mailto por tu enlace de Calendly cuando lo tengas -->
-      <a href="mailto:karla.aguero@horizonteblockchain.org?subject=Reuni%C3%B3n%20con%20Horizonte%20Blockchain" class="btn btn-primary">Agendar reunión</a>
-      <a href="https://wa.me/51949170376?text=Hola%20Horizonte%20Blockchain%2C%20quiero%20conversar%20sobre%20una%20colaboraci%C3%B3n" target="_blank" rel="noopener" class="btn btn-ghost">Escribir por WhatsApp</a>
-    </div>
-    <div class="contact-card glass reveal" id="formulario">
-      <h3>O cuéntanos directamente</h3>
-      <p class="sub">Completa el formulario y nuestro equipo te contactará en menos de 24 horas.</p>
-      <form id="leadForm">
-        <input type="hidden" name="access_key" value="04074a4d-8e42-4122-a1e7-23a2a11498ae">
-        <input type="hidden" name="subject" value="Nuevo lead desde horizonteblockchain.org">
-        <input type="hidden" name="from_name" value="Web Horizonte Blockchain">
-        <div class="form-group"><label>Nombre completo</label><input type="text" name="name" required placeholder="Tu nombre"></div>
-        <div class="form-group"><label>Correo electrónico</label><input type="email" name="email" required placeholder="tu@email.com"></div>
-        <div class="form-group"><label>WhatsApp / Teléfono</label><input type="tel" name="phone" placeholder="+51 999 999 999"></div>
-        <div class="form-group">
-          <label>¿Cómo quieres participar?</label>
-          <select name="participacion" required>
-            <option value="">Selecciona una opción</option>
-            <option>Soy banco / fintech y busco consultoría</option>
-            <option>Soy empresa y busco consultoría</option>
-            <option>Soy gobierno / entidad pública</option>
-            <option>Soy universidad y quiero aliarme</option>
-            <option>Soy cámara empresarial</option>
-            <option>Quiero organizar un hackathon o programa</option>
-            <option>Quiero ser Sponsor / Partner</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <div class="form-group"><label>Mensaje</label><textarea name="message" rows="4" placeholder="Cuéntanos un poco más..."></textarea></div>
-        <button type="submit" class="btn btn-primary" style="width:100%">Enviar mensaje</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/img/logo-hb-full.png" alt="Horizonte Blockchain">
-        <p>Hub de Innovación en Blockchain, Web3 e Inteligencia Artificial para Latinoamérica.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navegación</h4>
-        <a href="#que-hacemos">Qué hacemos</a>
-        <a href="#programas">Programas</a>
-        <a href="#videos">Contenido</a>
-        <a href="#aliados">Aliados</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <a href="mailto:karla.aguero@horizonteblockchain.org">karla.aguero@horizonteblockchain.org</a>
-        <a href="https://wa.me/51949170376" target="_blank" rel="noopener">WhatsApp +51 949 170 376</a>
-        <a href="#contacto">Perú · Costa Rica</a>
-      </div>
-      <div class="footer-col">
-        <h4>Comunidad</h4>
-        <a href="https://chat.whatsapp.com/HRj4w4Kz6nW7QYqrQvRDAu" target="_blank" rel="noopener">Comunidad en WhatsApp</a>
-        <a href="https://chat.whatsapp.com/IqDz3DbV4VILqhfOKkbjyN" target="_blank" rel="noopener">Women in Blockchain</a>
-        <a href="https://chat.whatsapp.com/J7Cis7V51B38vsJoZmIpVM" target="_blank" rel="noopener">Bitcoin Sin Fronteras</a>
-        <a href="https://t.me/+eGiEhsFjv3E0ZDRh" target="_blank" rel="noopener">Canal de Telegram</a>
-        <div class="socials" style="margin-top:14px">
-          <a href="https://www.linkedin.com/company/horizonte-blockchain/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.02 8h4.96V24H.02zM7.98 8h4.76v2.2h.07c.66-1.25 2.28-2.57 4.7-2.57 5.02 0 5.95 3.3 5.95 7.6V24h-4.96v-7.7c0-1.84-.03-4.2-2.56-4.2-2.56 0-2.95 2-2.95 4.06V24H7.98z"/></svg></a>
-          <a href="https://www.instagram.com/horizonteblockchain/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.7 21.31.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.4-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a>
-          <a href="https://www.youtube.com/@HorizonteBlockchainBTC" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg></a>
-          <a href="https://x.com/HorizonteBlock" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93zM17.6 20.64h2.04L6.49 3.24H4.3z"/></svg></a>
-          <a href="https://www.facebook.com/profile.php?id=100063593386480" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Horizonte Blockchain · HB Web3 Technologies S.A.C.S. Todos los derechos reservados.</span>
-      <span>Perú · Costa Rica — con presencia en toda Latinoamérica</span>
-    </div>
-  </div>
-</footer>
-
-<a href="https://wa.me/51949170376?text=Hola%20Horizonte%20Blockchain" target="_blank" rel="noopener" class="float-wa" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.87-9.9 9.87zm8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.47-8.41z"/></svg></a>
-
-<script>
-/* =====================================================
-   PRÓXIMO EVENTO — EDITA AQUÍ
-   Cambia nombre, enlace o botón cuando tengas un nuevo
-   evento. Pon activo: false para ocultar la barra.
-   ===================================================== */
-const EVENTO = {
-  activo: true,
-  etiqueta: "Próximo evento",
-  nombre: "Webinar CLIE: Estrategia de Datos — 8 de julio · 8:00 PM Perú",
-  enlace: "https://luma.com/jrmnm3xn",
-  boton: "Regístrate gratis"
-};
-if (EVENTO.activo) {
-  const bar = document.createElement("div");
-  bar.id = "eventBar";
-  bar.innerHTML = `
-    <span class="ev-dot"></span>
-    <span class="ev-label">${EVENTO.etiqueta}</span>
-    <span class="ev-name">${EVENTO.nombre}</span>
-    <a class="ev-btn" href="${EVENTO.enlace}" target="_blank" rel="noopener">${EVENTO.boton} →</a>`;
-  document.body.prepend(bar);
-  document.body.classList.add("has-event");
-} else {
-  const evSection = document.getElementById("proximo-evento");
-  if (evSection) evSection.remove();
-}
-
-/* ---------- Marquee de aliados: duplicar pista para loop infinito ---------- */
-const track = document.getElementById("logoTrack");
-track.innerHTML += track.innerHTML;
-
-/* ---------- Partículas de red (hero) ---------- */
-(function(){
-  const canvas = document.getElementById("heroCanvas");
-  const ctx = canvas.getContext("2d");
-  let W, H, particles = [], mouse = {x:-9999, y:-9999};
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  function resize(){
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-    const count = Math.min(Math.floor(W * H / 16000), 90);
-    particles = Array.from({length: count}, () => ({
-      x: Math.random()*W, y: Math.random()*H,
-      vx: (Math.random()-.5)*.35, vy: (Math.random()-.5)*.35,
-      r: Math.random()*1.8 + .6,
-      o: Math.random()*.5 + .25
-    }));
-  }
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    for(let i=0;i<particles.length;i++){
-      const p = particles[i];
-      p.x += p.vx; p.y += p.vy;
-      if(p.x<0||p.x>W) p.vx*=-1;
-      if(p.y<0||p.y>H) p.vy*=-1;
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle = `rgba(247,147,26,${p.o})`;
-      ctx.fill();
-      for(let j=i+1;j<particles.length;j++){
-        const q = particles[j];
-        const dx=p.x-q.x, dy=p.y-q.y, d=Math.hypot(dx,dy);
-        if(d<130){
-          ctx.beginPath();
-          ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y);
-          ctx.strokeStyle = `rgba(247,147,26,${(1-d/130)*.16})`;
-          ctx.lineWidth = .7;
-          ctx.stroke();
-        }
-      }
-      const dm = Math.hypot(p.x-mouse.x, p.y-mouse.y);
-      if(dm<160){
-        ctx.beginPath();
-        ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y);
-        ctx.strokeStyle = `rgba(255,184,77,${(1-dm/160)*.3})`;
-        ctx.lineWidth = .8;
-        ctx.stroke();
-      }
-    }
-    if(!reduced) requestAnimationFrame(draw);
-  }
-  window.addEventListener("resize", resize);
-  canvas.parentElement.addEventListener("mousemove", e => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left; mouse.y = e.clientY - rect.top;
-  });
-  canvas.parentElement.addEventListener("mouseleave", () => { mouse.x = -9999; mouse.y = -9999; });
-  resize(); draw();
-})();
-
-/* ---------- Reveal on scroll ---------- */
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
-}, { threshold: 0.12 });
-document.querySelectorAll(".reveal").forEach(el => io.observe(el));
-
-/* ---------- Contadores de impacto (valores reales) ---------- */
-function animateCounter(el){
-  const target = parseInt(el.dataset.target, 10);
-  const suffix = el.dataset.suffix || "";
-  const dur = 1600;
-  let start = null;
-  function step(ts){
-    if(!start) start = ts;
-    const p = Math.min((ts - start) / dur, 1);
-    const eased = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.floor(eased * target).toLocaleString("es-PE") + suffix;
-    if(p < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-const cio = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting){ animateCounter(e.target); cio.unobserve(e.target); } });
-}, { threshold: .5 });
-document.querySelectorAll(".counter").forEach(el => cio.observe(el));
-
-/* ---------- Nav + progreso de scroll ---------- */
-window.addEventListener("scroll", () => {
-  document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 60);
-  const h = document.documentElement;
-  document.getElementById("scrollProgress").style.width =
-    (window.scrollY / (h.scrollHeight - h.clientHeight)) * 100 + "%";
-});
-
-/* ---------- Menú móvil ---------- */
-document.getElementById("navToggle").addEventListener("click", () => {
-  document.getElementById("navLinks").classList.toggle("open");
-});
-document.querySelectorAll("#navLinks a").forEach(a =>
-  a.addEventListener("click", () => document.getElementById("navLinks").classList.remove("open"))
-);
-
-/* ---------- Formulario de contacto (Web3Forms → horizonteblockchain@gmail.com) ---------- */
-document.getElementById("leadForm").addEventListener("submit", async function(e){
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('button[type="submit"]');
-  const original = btn.textContent;
-  btn.textContent = "Enviando...";
-  btn.disabled = true;
-  try{
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: { "Accept": "application/json" },
-      body: new FormData(form)
-    });
-    const data = await res.json();
-    btn.textContent = data.success ? "Mensaje enviado. Gracias." : "Hubo un problema, intenta de nuevo";
-  }catch(err){
-    btn.textContent = "Error de conexión, intenta de nuevo";
-  }
-  setTimeout(() => { btn.textContent = original; btn.disabled = false; form.reset(); }, 2800);
-});
-</script>
-</body>
-</html>
+        <path d="M337 121 343 122 347 124 348 126 342 126 340 127 335 126 331 123 332 121 335 121 337 121Z"/
