@@ -64,8 +64,8 @@
   --accent:#2FD4E6;
   --accent2:#6FE9F6;
   /* Secundario: gold moderno (highlights, números, CTA) */
-  --gold:#FFB020;
-  --gold2:#FFCC61;
+  --gold:#FFBE33;
+  --gold2:#FFD873;
   --blue:#2E6BD6;
   --accent-soft:rgba(47,212,230,.12);
   --gold-soft:rgba(255,176,32,.12);
@@ -85,7 +85,7 @@ section{padding:110px 0;position:relative}
 .section-lead{color:var(--muted);max-width:640px;font-size:1.02rem;margin-bottom:56px}
 .grad-text{background:linear-gradient(100deg,#FFFFFF 18%,var(--gold2) 50%,var(--gold) 82%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:shimmer 6s linear infinite}
 @keyframes shimmer{to{background-position:200% center}}
-.hero-title-anim,.section-title,.mv-label{background:linear-gradient(100deg,#EDF3FB 0%,#EDF3FB 28%,var(--gold2) 40%,var(--gold) 48%,var(--accent2) 58%,#EDF3FB 72%,#EDF3FB 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:titleSweep 6.5s linear infinite}
+.hero-title-anim,.section-title,.mv-label{background:linear-gradient(100deg,#EDF3FB 0%,#EDF3FB 26%,var(--gold2) 40%,var(--gold) 48%,var(--accent2) 60%,#EDF3FB 74%,#EDF3FB 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#EDF3FB;animation:titleSweep 6.5s linear infinite}
 @keyframes titleSweep{from{background-position:0% center}to{background-position:-220% center}}
 .bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(148,163,184,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,black 30%,transparent 75%)}
 /* ===== FONDO AMBIENTAL (aurora + grano) ===== */
@@ -129,7 +129,7 @@ section{padding:110px 0;position:relative}
 #eventBar .ev-count{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;background:var(--gold-soft);border:1px solid rgba(255,176,32,.45);color:var(--gold2);font-weight:700;font-size:.72rem;letter-spacing:.02em;white-space:nowrap;animation:evCountPulse 2s ease-in-out infinite}
 #eventBar .ev-count::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);flex-shrink:0}
 @keyframes evCountPulse{0%,100%{border-color:rgba(255,176,32,.4);box-shadow:0 0 0 0 rgba(255,176,32,0)}50%{border-color:rgba(255,176,32,.85);box-shadow:0 0 13px rgba(255,176,32,.28)}}
-#eventBar .ev-btn{flex-shrink:0;padding:7px 16px;border-radius:8px;background:linear-gradient(120deg,#FFC24D,#F79A1E);color:#0B0E14;font-weight:700;font-size:.8rem;transition:transform .2s,box-shadow .2s;animation:evBtnPulse 2.4s ease-in-out infinite}
+#eventBar .ev-btn{flex-shrink:0;padding:7px 16px;border-radius:8px;background:linear-gradient(120deg,#FFCF5C,#FBAE33);color:#0B0E14;font-weight:700;font-size:.8rem;transition:transform .2s,box-shadow .2s;animation:evBtnPulse 2.4s ease-in-out infinite}
 #eventBar .ev-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(255,176,32,.5)}
 @keyframes evBtnPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,176,32,0),0 3px 12px rgba(255,176,32,.22)}50%{box-shadow:0 0 0 4px rgba(255,176,32,.14),0 5px 20px rgba(255,176,32,.48)}}
 #eventBar .ev-arrow{display:inline-block;animation:evArrow 1.4s ease-in-out infinite}
@@ -152,7 +152,7 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 .nav-links a:not(.btn):hover{color:var(--text)}
 .nav-links a:not(.btn):hover::after{width:100%}
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:12px;font-weight:600;font-size:.93rem;transition:all .25s;cursor:pointer;border:none;overflow:hidden}
-.btn-primary{background:linear-gradient(120deg,#FFC24D,#F79A1E);color:#0B0E14;box-shadow:0 4px 16px rgba(0,0,0,.35)}
+.btn-primary{background:linear-gradient(120deg,#FFCF5C,#FBAE33);color:#0B0E14;box-shadow:0 4px 16px rgba(0,0,0,.35)}
 .btn-primary::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(115deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);transition:left .6s ease}
 .btn-primary:hover::after{left:130%}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,176,32,.32)}
@@ -418,7 +418,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 }
 /* Móvil: títulos blancos sólidos (el degradado animado se veía gris) + logo blanco robusto */
 @media(max-width:820px){
-  .hero-title-anim,.section-title,.mv-label{background:none !important;-webkit-background-clip:border-box !important;background-clip:border-box !important;-webkit-text-fill-color:#F4F8FE !important;color:#F4F8FE !important;animation:none !important}
+  .hero-title-anim,.section-title,.mv-label{background:linear-gradient(100deg,var(--gold2),var(--accent2)) !important;background-size:auto !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent !important;color:var(--accent2) !important;animation:none !important}
   .event-card .ec-logo.mono img{-webkit-filter:brightness(0) invert(1) !important;filter:brightness(0) invert(1) !important}
 }
 @media(prefers-reduced-motion:reduce){
