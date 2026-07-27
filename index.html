@@ -203,9 +203,9 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 /* Evento propio destacado (banner) */
 .event-hero{display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap;padding:34px 40px;margin-bottom:24px;position:relative;overflow:hidden;border-color:rgba(247,148,29,.4)}
 .event-hero .eh-glow{position:absolute;top:-90px;right:-70px;width:340px;height:340px;background:radial-gradient(circle,rgba(247,148,29,.16),transparent 65%);pointer-events:none}
-.event-hero .eh-flyer{flex-shrink:0;width:280px;border-radius:16px;overflow:hidden;border:1px solid rgba(247,148,29,.35);box-shadow:0 20px 50px rgba(0,0,0,.5);display:block;position:relative;z-index:1;transition:transform .3s}
+.event-hero .eh-flyer{flex:0 0 auto;width:clamp(200px,24vw,280px);max-width:100%;aspect-ratio:1/1;border-radius:16px;overflow:hidden;border:1px solid rgba(247,148,29,.35);box-shadow:0 20px 50px rgba(0,0,0,.5);display:block;position:relative;z-index:1;transition:transform .3s;background:#0A1120}
 .event-hero .eh-flyer:hover{transform:translateY(-4px)}
-.event-hero .eh-flyer img{width:100%;display:block}
+.event-hero .eh-flyer img{width:100%;height:100%;max-width:100%;object-fit:cover;display:block}
 .event-hero .eh-info{flex:1;min-width:300px;position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start}
 .event-hero .eh-badge{display:inline-block;padding:6px 15px;border-radius:100px;background:var(--gold-soft);border:1px solid rgba(247,148,29,.4);color:var(--gold2);font-size:.78rem;font-weight:700;letter-spacing:.02em;margin-bottom:16px}
 .event-hero .eh-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:700;margin-bottom:8px;color:var(--text)}
@@ -216,7 +216,7 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 .event-hero .eh-speakers{color:var(--muted);font-size:.92rem;line-height:1.6;max-width:760px}
 .event-hero .eh-speakers b{color:var(--text)}
 .event-hero .eh-cta{position:relative;z-index:1;flex-shrink:0}
-@media(max-width:820px){.event-hero{flex-direction:column;align-items:flex-start;padding:28px 24px}.event-hero .eh-flyer{width:100%;max-width:340px;margin:0 auto}.event-hero .eh-info{align-items:stretch}.event-hero .eh-info .btn{align-self:stretch;justify-content:center}}
+@media(max-width:820px){.event-hero{flex-direction:column;align-items:stretch;padding:26px 20px;gap:24px}.event-hero .eh-flyer{width:min(100%,300px);margin:0 auto}.event-hero .eh-info{min-width:0;align-items:stretch;text-align:left}.event-hero .eh-meta{gap:6px 18px;font-size:.9rem}.event-hero .eh-info .btn{align-self:stretch;justify-content:center}}
 .event-card{display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
 .event-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
 .event-card:hover::before{transform:scaleX(1)}
@@ -493,7 +493,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
     <p class="section-lead reveal">Horizonte Blockchain organiza y participa en los encuentros más importantes de la región. Regístrate en nuestro próximo evento y aprovecha el beneficio para su comunidad.</p>
     <div class="event-hero glass reveal">
       <div class="eh-glow" aria-hidden="true"></div>
-      <a href="https://luma.com/veu45rqv" target="_blank" rel="noopener" class="eh-flyer"><img src="cafe-blockchain-6.jpg" alt="Café Blockchain 6ª Edición · Del Código a la Ley — 30 de julio" loading="lazy" width="900" height="900"></a>
+      <a href="https://luma.com/veu45rqv" target="_blank" rel="noopener" class="eh-flyer"><img src="cafe-blockchain-6.jpg" alt="Café Blockchain 6ª Edición · Del Código a la Ley — 30 de julio"></a>
       <div class="eh-info">
         <span class="eh-badge">☕ Evento propio · 6ª Edición · Vía Zoom</span>
         <h3 class="eh-title">Café Blockchain: <span>Del Código a la Ley</span></h3>
