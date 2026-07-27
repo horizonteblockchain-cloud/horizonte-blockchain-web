@@ -200,6 +200,23 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 .event-info .btn{margin-top:26px}
 /* ===== TARJETAS DE PRÓXIMOS EVENTOS ===== */
 .events-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:6px}
+/* Evento propio destacado (banner) */
+.event-hero{display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap;padding:34px 40px;margin-bottom:24px;position:relative;overflow:hidden;border-color:rgba(247,148,29,.4)}
+.event-hero .eh-glow{position:absolute;top:-90px;right:-70px;width:340px;height:340px;background:radial-gradient(circle,rgba(247,148,29,.16),transparent 65%);pointer-events:none}
+.event-hero .eh-flyer{flex-shrink:0;width:280px;border-radius:16px;overflow:hidden;border:1px solid rgba(247,148,29,.35);box-shadow:0 20px 50px rgba(0,0,0,.5);display:block;position:relative;z-index:1;transition:transform .3s}
+.event-hero .eh-flyer:hover{transform:translateY(-4px)}
+.event-hero .eh-flyer img{width:100%;display:block}
+.event-hero .eh-info{flex:1;min-width:300px;position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start}
+.event-hero .eh-badge{display:inline-block;padding:6px 15px;border-radius:100px;background:var(--gold-soft);border:1px solid rgba(247,148,29,.4);color:var(--gold2);font-size:.78rem;font-weight:700;letter-spacing:.02em;margin-bottom:16px}
+.event-hero .eh-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:700;margin-bottom:8px;color:var(--text)}
+.event-hero .eh-title span{background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.event-hero .eh-sub{color:var(--muted);font-size:1rem;margin-bottom:16px}
+.event-hero .eh-meta{display:flex;flex-wrap:wrap;gap:8px 26px;margin-bottom:14px;color:var(--text);font-size:.95rem}
+.event-hero .eh-meta b{color:var(--gold2)}
+.event-hero .eh-speakers{color:var(--muted);font-size:.92rem;line-height:1.6;max-width:760px}
+.event-hero .eh-speakers b{color:var(--text)}
+.event-hero .eh-cta{position:relative;z-index:1;flex-shrink:0}
+@media(max-width:820px){.event-hero{flex-direction:column;align-items:flex-start;padding:28px 24px}.event-hero .eh-flyer{width:100%;max-width:340px;margin:0 auto}.event-hero .eh-info{align-items:stretch}.event-hero .eh-info .btn{align-self:stretch;justify-content:center}}
 .event-card{display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
 .event-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
 .event-card:hover::before{transform:scaleX(1)}
@@ -473,7 +490,23 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
   <div class="container">
     <span class="kicker reveal">Próximos eventos</span>
     <h2 class="section-title reveal">Dónde estarás con nosotros</h2>
-    <p class="section-lead reveal">Horizonte Blockchain estará presente en los encuentros más importantes de la región — y trae descuento exclusivo para su comunidad. Compra tus entradas con beneficio.</p>
+    <p class="section-lead reveal">Horizonte Blockchain organiza y participa en los encuentros más importantes de la región. Regístrate en nuestro próximo evento y aprovecha el beneficio para su comunidad.</p>
+    <div class="event-hero glass reveal">
+      <div class="eh-glow" aria-hidden="true"></div>
+      <a href="https://luma.com/veu45rqv" target="_blank" rel="noopener" class="eh-flyer"><img src="assets/img/cafe-blockchain-6.jpg" alt="Café Blockchain 6ª Edición · Del Código a la Ley — 30 de julio" loading="lazy" width="900" height="900"></a>
+      <div class="eh-info">
+        <span class="eh-badge">☕ Evento propio · 6ª Edición · Vía Zoom</span>
+        <h3 class="eh-title">Café Blockchain: <span>Del Código a la Ley</span></h3>
+        <p class="eh-sub">Un espacio legal y estratégico para líderes de la industria · Tokenización · Regulación · Innovación</p>
+        <div class="eh-meta">
+          <span><b>Jueves 30 de julio</b></span>
+          <span>7:00 PM Costa Rica · 9:00 PM Chile</span>
+          <span>Vía Zoom</span>
+        </div>
+        <p class="eh-speakers">Con <b>Stephanie Sánchez</b> (Founder, BlockRock), <b>Karla Agüero</b> (Moderadora · CCO, Horizonte Blockchain) y <b>Alexis Franco</b> (Presidente, Cámara Blockchain Chile).</p>
+        <a href="https://luma.com/veu45rqv" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:20px">Regístrate gratis →</a>
+      </div>
+    </div>
     <div class="events-grid">
       <div class="event-card premium glass reveal">
         <div class="ec-shine" aria-hidden="true"></div>
@@ -942,11 +975,11 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 const EVENTO = {
   activo: true,
   etiqueta: "Próximo evento",
-  nombre: "Webinar CLIE: Estrategia de Datos — 8 de julio · 8:00 PM Perú",
-  enlace: "https://luma.com/jrmnm3xn",
+  nombre: "Café Blockchain 6ª · Del Código a la Ley — 30 de julio · 7PM Costa Rica / 9PM Chile",
+  enlace: "https://luma.com/veu45rqv",
   boton: "Regístrate gratis",
-  // Fecha y hora del evento (8 jul 2026, 8:00 PM Perú, UTC-5). Deja "" para ocultar la cuenta regresiva.
-  fecha: "2026-07-08T20:00:00-05:00"
+  // Fecha y hora del evento (30 jul 2026, 7:00 PM Costa Rica, UTC-6). Deja "" para ocultar la cuenta regresiva.
+  fecha: "2026-07-30T19:00:00-06:00"
 };
 
 /* Cuenta regresiva automática en días hasta el evento */
