@@ -491,7 +491,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
     <span class="kicker reveal">Próximos eventos</span>
     <h2 class="section-title reveal">Dónde estarás con nosotros</h2>
     <p class="section-lead reveal">Horizonte Blockchain organiza y participa en los encuentros más importantes de la región. Regístrate en nuestro próximo evento y aprovecha el beneficio para su comunidad.</p>
-    <div class="event-hero glass reveal">
+    <div class="event-hero glass reveal" id="eventoDestacado">
       <div class="eh-glow" aria-hidden="true"></div>
       <a href="https://luma.com/veu45rqv" target="_blank" rel="noopener" class="eh-flyer"><img src="cafe-blockchain-6.jpg" alt="Café Blockchain 6ª Edición · Del Código a la Ley — 30 de julio"></a>
       <div class="eh-info">
@@ -508,7 +508,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
       </div>
     </div>
     <div class="events-grid">
-      <div class="event-card premium glass reveal">
+      <div class="event-card premium glass reveal" data-hasta="2026-08-07">
         <div class="ec-shine" aria-hidden="true"></div>
         <div class="ec-top">
           <div class="ec-logo mono"><img src="assets/img/aliados/blockchain-summit-latam.png" alt="Blockchain Summit LATAM"></div>
@@ -523,7 +523,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
           <a href="https://blockchainsummit.la/chile2026/welcu/" target="_blank" rel="noopener" class="btn btn-primary">Comprar entradas con descuento →</a>
         </div>
       </div>
-      <div class="event-card premium glass reveal d1">
+      <div class="event-card premium glass reveal d1" data-hasta="2026-08-28">
         <div class="ec-shine" aria-hidden="true"></div>
         <div class="ec-top">
           <div class="ec-logo"><img src="assets/img/aliados/criptolatin-fest.png" alt="Cripto Latin Fest"></div>
@@ -1016,9 +1016,32 @@ if (eventoVigente) {
   document.body.prepend(bar);
   document.body.classList.add("has-event");
 } else {
+  /* El evento ya pasó (o está desactivado): se oculta el banner destacado
+     y la sección antigua, si existiera. */
+  const destacado = document.getElementById("eventoDestacado");
+  if (destacado) destacado.remove();
   const evSection = document.getElementById("proximo-evento");
   if (evSection) evSection.remove();
 }
+
+/* ---------- Limpieza automática de eventos vencidos ----------
+   Cada tarjeta con data-hasta="AAAA-MM-DD" desaparece sola al día
+   siguiente de esa fecha. Si no queda ningún evento, se oculta la
+   sección completa para que la web nunca muestre eventos pasados. */
+(function(){
+  try{
+    var hoy = new Date(); hoy.setHours(0,0,0,0);
+    document.querySelectorAll("[data-hasta]").forEach(function(card){
+      var partes = (card.getAttribute("data-hasta")||"").split("-");
+      if(partes.length !== 3) return;
+      var fin = new Date(+partes[0], +partes[1]-1, +partes[2]);
+      fin.setHours(0,0,0,0);
+      if(hoy > fin) card.remove();
+    });
+    var seccion = document.getElementById("eventos");
+    if(seccion && !seccion.querySelector(".event-card, .event-hero")) seccion.remove();
+  }catch(e){}
+})();
 
 /* ---------- Marquee de aliados: duplicar pista para loop infinito ---------- */
 const track = document.getElementById("logoTrack");
