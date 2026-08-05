@@ -160,6 +160,12 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 .btn-ghost:hover{border-color:rgba(47,212,230,.6);color:var(--accent2);box-shadow:none;transform:translateY(-2px)}
 .btn-sm{padding:10px 20px;font-size:.87rem}
 .nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.6rem;cursor:pointer}
+/* ===== Selector de idioma ===== */
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:100px;background:rgba(47,212,230,.07);border:1px solid rgba(47,212,230,.35);color:var(--accent2);font-family:'Inter',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:background .25s,border-color .25s,transform .2s}
+.lang-btn svg{width:16px;height:16px;flex-shrink:0}
+.lang-btn:hover{background:rgba(47,212,230,.16);border-color:rgba(47,212,230,.7);transform:translateY(-1px)}
+@media(max-width:420px){.lang-btn{padding:7px 11px;font-size:.76rem}.lang-btn svg{width:14px;height:14px}}
 /* ============ HERO ============ */
 .hero{padding:200px 0 130px;position:relative;overflow:hidden}
 #heroCanvas{position:absolute;inset:0;z-index:0;opacity:.85}
@@ -248,7 +254,7 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 @media(max-width:820px){.event-card .ec-logo img{max-height:66px}}
 @media(max-width:980px){.event-grid{grid-template-columns:1fr;gap:32px}.event-flyer{max-width:460px;margin:0 auto}.event-info{text-align:center}.event-info .ev-row{flex-direction:column;align-items:center;gap:3px;margin-bottom:15px}.event-info .ev-row strong{min-width:0;display:block;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}}
 /* ============ QUÉ HACEMOS ============ */
-.grid-4{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .glass{background:linear-gradient(160deg,rgba(255,255,255,.035),rgba(255,255,255,.008));border:1px solid var(--line);border-radius:var(--radius);backdrop-filter:blur(8px);position:relative;overflow:hidden}
 .pillar{padding:36px 28px;transition:transform .35s,box-shadow .35s,border-color .35s}
 .pillar::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
@@ -463,9 +469,15 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
       <a href="#videos">Contenido</a>
       <a href="#aliados">Aliados</a>
       <a href="#equipo">Equipo</a>
-      <a href="#formulario" class="btn btn-ghost btn-sm">Trabajemos juntos</a>
+      <a href="#formulario" class="btn btn-ghost btn-sm">Agendar reunión</a>
     </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    <div class="nav-right">
+      <button type="button" id="langBtn" class="lang-btn" aria-label="Cambiar idioma / Switch language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+        <span id="langLabel">EN</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    </div>
   </div>
 </nav>
 
@@ -556,21 +568,26 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
         <p>Estrategias para que tu empresa Web3, fintech o tecnológica gane visibilidad, confianza y presencia en mercados clave de Latinoamérica.</p>
       </div>
       <div class="pillar glass reveal d1">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><path d="M2 13h20"/></svg></div>
+        <h3>Consultoría estratégica</h3>
+        <p>Acompañamiento a empresas, gobiernos e instituciones para evaluar casos de uso, diseñar hojas de ruta y ejecutar proyectos de blockchain, tokenización e inteligencia artificial con visión regulatoria.</p>
+      </div>
+      <div class="pillar glass reveal d2">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
         <h3>Educación y adopción</h3>
         <p>Programas para formar equipos ejecutivos, técnicos y comunidades en blockchain, IA, tokenización, stablecoins y Web3.</p>
       </div>
-      <div class="pillar glass reveal d2">
+      <div class="pillar glass reveal">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
         <h3>Eventos, summits y hackathons</h3>
         <p>Diseño y ejecución de experiencias presenciales y virtuales que conectan empresas, talento, comunidad y oportunidades comerciales.</p>
       </div>
-      <div class="pillar glass reveal d3">
+      <div class="pillar glass reveal d1">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Alianzas institucionales</h3>
         <p>Conexión con universidades, cámaras, gremios, comunidades, speakers, fundaciones y actores estratégicos del ecosistema regional.</p>
       </div>
-      <div class="pillar glass reveal d4">
+      <div class="pillar glass reveal d2">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5.5L5 18a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9.5V3"/><path d="M7.5 14h9"/></svg></div>
         <h3>Laboratorios de innovación</h3>
         <p>Espacios de trabajo donde empresas plantean desafíos reales y equipos multidisciplinarios desarrollan propuestas de solución en blockchain, IA, tokenización y tecnologías emergentes.</p>
@@ -1157,7 +1174,7 @@ document.getElementById("leadForm").addEventListener("submit", async function(e)
   const form = e.target;
   const btn = form.querySelector('button[type="submit"]');
   const original = btn.textContent;
-  btn.textContent = "Enviando...";
+  btn.textContent = window.hbT ? window.hbT("Enviando...") : "Enviando...";
   btn.disabled = true;
   try{
     const res = await fetch("https://api.web3forms.com/submit", {
@@ -1166,12 +1183,241 @@ document.getElementById("leadForm").addEventListener("submit", async function(e)
       body: new FormData(form)
     });
     const data = await res.json();
-    btn.textContent = data.success ? "Mensaje enviado. Gracias." : "Hubo un problema, intenta de nuevo";
+    btn.textContent = window.hbT
+      ? (data.success ? window.hbT("Mensaje enviado. Gracias.") : window.hbT("Hubo un problema, intenta de nuevo"))
+      : (data.success ? "Mensaje enviado. Gracias." : "Hubo un problema, intenta de nuevo");
   }catch(err){
-    btn.textContent = "Error de conexión, intenta de nuevo";
+    btn.textContent = window.hbT ? window.hbT("Error de conexión, intenta de nuevo") : "Error de conexión, intenta de nuevo";
   }
   setTimeout(() => { btn.textContent = original; btn.disabled = false; form.reset(); }, 2800);
 });
+
+/* =====================================================
+   TRADUCTOR ES ⇄ EN
+   Para añadir o cambiar una traducción, edita el par
+   "Texto en español": "English text" en la lista DICT.
+   ===================================================== */
+(function(){
+try{
+var DICT = {
+/* --- Navegación --- */
+"Qué hacemos":"What we do","Eventos":"Events","Impacto":"Impact","Programas":"Programs",
+"Hackathons":"Hackathons","Contenido":"Content","Aliados":"Partners","Equipo":"Team",
+"Agendar reunión":"Book a meeting",
+/* --- Barra de evento --- */
+"Próximo evento":"Upcoming event","Regístrate gratis":"Register free","¡Es hoy!":"It's today!",
+/* --- Hero --- */
+"Perú · Costa Rica — Presencia en +10 países de Latinoamérica":"Peru · Costa Rica — Present in 10+ Latin American countries",
+"El socio regional para empresas Web3, inteligencia artificial, fintechs e instituciones en Latinoamérica":"The regional partner for Web3, artificial intelligence and fintech companies and institutions in Latin America",
+"Ayudamos a organizaciones a entrar, posicionarse y crecer en Latinoamérica mediante educación, comunidad, eventos, alianzas estratégicas y adopción tecnológica.":"We help organizations enter, position themselves and grow in Latin America through education, community, events, strategic alliances and technology adoption.",
+"Solicitar reunión estratégica":"Request a strategy meeting",
+"Ver programas y casos de ejecución":"See programs and case studies",
+/* --- Eventos --- */
+"Próximos eventos":"Upcoming events","Dónde estarás con nosotros":"Where you'll find us",
+"Horizonte Blockchain organiza y participa en los encuentros más importantes de la región. Regístrate en nuestro próximo evento y aprovecha el beneficio para su comunidad.":"Horizonte Blockchain hosts and takes part in the region's most important gatherings. Register for our next event and enjoy the benefit for our community.",
+"☕ Evento propio · 6ª Edición · Vía Zoom":"☕ Our own event · 6th Edition · Via Zoom",
+"Café Blockchain:":"Café Blockchain:","Del Código a la Ley":"From Code to Law",
+"Un espacio legal y estratégico para líderes de la industria · Tokenización · Regulación · Innovación":"A legal and strategic space for industry leaders · Tokenization · Regulation · Innovation",
+"Jueves 30 de julio":"Thursday, July 30","7:00 PM Costa Rica · 9:00 PM Chile":"7:00 PM Costa Rica · 9:00 PM Chile",
+"Vía Zoom":"Via Zoom","Regístrate gratis →":"Register free →",
+"Descuento comunidad HB":"HB community discount","Santiago · Chile":"Santiago · Chile",
+"5–7 Ago 2026":"Aug 5–7, 2026","Blockchain Summit LATAM · Chile":"Blockchain Summit LATAM · Chile",
+"El evento institucional más importante de la región, en la Universidad de Chile (FEN): bancos, autoridades y líderes Web3 de toda Latinoamérica.":"The region's most important institutional event, at Universidad de Chile (FEN): banks, regulators and Web3 leaders from across Latin America.",
+"Código de descuento":"Discount code","Copiar":"Copy","¡Copiado!":"Copied!",
+"Comprar entradas con descuento →":"Buy discounted tickets →",
+"Bogotá · Colombia":"Bogotá · Colombia","26–28 Ago 2026":"Aug 26–28, 2026",
+"Cripto Latin Fest · Bogotá":"Cripto Latin Fest · Bogotá",
+"9ª edición en Maloka: experiencia inmersiva sobre cripto, inteligencia artificial y finanzas, con más de 4.000 asistentes.":"9th edition at Maloka: an immersive experience on crypto, artificial intelligence and finance, with over 4,000 attendees.",
+"Beneficio comunidad HB":"HB community benefit","Entrada de cortesía":"Complimentary ticket",
+"Obtener entrada de cortesía →":"Get complimentary ticket →",
+/* --- Soluciones --- */
+"Soluciones":"Solutions","Cómo podemos ayudarte":"How we can help you",
+"Diseñamos y ejecutamos iniciativas para que empresas, fintechs e instituciones conviertan la innovación Web3, blockchain e inteligencia artificial en adopción real.":"We design and execute initiatives so companies, fintechs and institutions turn Web3, blockchain and AI innovation into real adoption.",
+"Posicionamiento regional":"Regional positioning",
+"Estrategias para que tu empresa Web3, fintech o tecnológica gane visibilidad, confianza y presencia en mercados clave de Latinoamérica.":"Strategies for your Web3, fintech or technology company to gain visibility, trust and presence in key Latin American markets.",
+"Consultoría estratégica":"Strategic consulting",
+"Acompañamiento a empresas, gobiernos e instituciones para evaluar casos de uso, diseñar hojas de ruta y ejecutar proyectos de blockchain, tokenización e inteligencia artificial con visión regulatoria.":"Advisory for companies, governments and institutions to assess use cases, design roadmaps and execute blockchain, tokenization and AI projects with a regulatory perspective.",
+"Educación y adopción":"Education and adoption",
+"Programas para formar equipos ejecutivos, técnicos y comunidades en blockchain, IA, tokenización, stablecoins y Web3.":"Programs to train executive teams, technical teams and communities in blockchain, AI, tokenization, stablecoins and Web3.",
+"Eventos, summits y hackathons":"Events, summits and hackathons",
+"Diseño y ejecución de experiencias presenciales y virtuales que conectan empresas, talento, comunidad y oportunidades comerciales.":"Design and execution of in-person and virtual experiences that connect companies, talent, community and business opportunities.",
+"Alianzas institucionales":"Institutional alliances",
+"Conexión con universidades, cámaras, gremios, comunidades, speakers, fundaciones y actores estratégicos del ecosistema regional.":"Connections with universities, chambers of commerce, trade associations, communities, speakers, foundations and strategic players across the regional ecosystem.",
+"Laboratorios de innovación":"Innovation labs",
+"Espacios de trabajo donde empresas plantean desafíos reales y equipos multidisciplinarios desarrollan propuestas de solución en blockchain, IA, tokenización y tecnologías emergentes.":"Workspaces where companies present real challenges and multidisciplinary teams develop solutions in blockchain, AI, tokenization and emerging technologies.",
+/* --- Statement --- */
+"Somos un":"We are a","operador regional de ecosistema":"regional ecosystem operator",
+": conectamos empresas, instituciones, talento y comunidad para acelerar la adopción blockchain, Web3 e inteligencia artificial en Latinoamérica.":": we connect companies, institutions, talent and community to accelerate blockchain, Web3 and artificial intelligence adoption across Latin America.",
+/* --- Impacto --- */
+"Ejecución real, medida en resultados":"Real execution, measured in results",
+"Cifras construidas evento a evento, programa a programa, junto a organizaciones de toda la región.":"Figures built event by event, program by program, alongside organizations across the region.",
+"Asistentes en Fintech & Web3 Trujillo Summit":"Attendees at Fintech & Web3 Trujillo Summit",
+"Participantes en Proof of Builders Hackathon":"Participants in Proof of Builders Hackathon",
+"Equipos builders activados":"Builder teams activated",
+"Experiencias educativas y de ecosistema":"Educational and ecosystem experiences",
+"Alcance regional multicanal":"Multichannel regional reach",
+"Miembros de comunidad Web3 conectada":"Connected Web3 community members",
+"Expertos internacionales convocados":"International experts convened",
+"Universidades y aliados académicos":"Universities and academic partners",
+"Personas impactadas en iniciativas, eventos, programas y comunidad":"People reached through initiatives, events, programs and community",
+"Presencia regional · Red conectada desde Perú y Costa Rica":"Regional presence · Network connected from Peru and Costa Rica",
+"México":"Mexico","Costa Rica":"Costa Rica","Colombia":"Colombia","Venezuela":"Venezuela",
+"Ecuador":"Ecuador","Perú":"Peru","Bolivia":"Bolivia","Brasil":"Brazil","Chile":"Chile","Argentina":"Argentina",
+/* --- Misión / Visión --- */
+"Misión":"Mission","Visión":"Vision",
+"Impulsar la transformación digital mediante la educación y adopción de la tecnología blockchain, conectando comunidades y generando oportunidades en toda Latinoamérica.":"To drive digital transformation through education and blockchain adoption, connecting communities and creating opportunities across Latin America.",
+"Ser el enlace que une a las comunidades con la innovación tecnológica, construyendo el futuro descentralizado de nuestra región.":"To be the link between communities and technological innovation, building the decentralized future of our region.",
+/* --- Casos de ejecución --- */
+"Trayectoria":"Track record","Casos de ejecución regional":"Regional case studies",
+"Programas diseñados y ejecutados para conectar empresas, instituciones, talento y comunidad alrededor de la adopción blockchain, Web3 e inteligencia artificial en Latinoamérica.":"Programs designed and executed to connect companies, institutions, talent and community around blockchain, Web3 and AI adoption in Latin America.",
+"Evento insignia":"Flagship event",
+"Foro institucional de blockchain, fintech, regulación e innovación con más de 2,500 asistentes, participación empresarial y articulación del ecosistema regional.":"An institutional forum on blockchain, fintech, regulation and innovation with over 2,500 attendees, corporate participation and regional ecosystem coordination.",
+"Conocer el Summit →":"Discover the Summit →",
+"Hackathon regional Web3 con más de 1,700 participantes, 90+ equipos builders activados y retos orientados a construcción real.":"A regional Web3 hackathon with over 1,700 participants, 90+ builder teams activated and challenges focused on real building.",
+"Ver galería de hackathons →":"View hackathon gallery →","Unirme al grupo →":"Join the group →",
+"Programa ejecutivo":"Executive program",
+"Programa ejecutivo de formación e innovación para equipos corporativos, financieros e institucionales que buscan comprender, evaluar y aplicar blockchain en casos de uso reales. Integra visión estratégica, fundamentos técnicos, análisis de oportunidades, riesgos, regulación, tokenización, stablecoins y modelos de adopción empresarial.":"An executive training and innovation program for corporate, financial and institutional teams seeking to understand, assess and apply blockchain in real use cases. It combines strategic vision, technical fundamentals, opportunity and risk analysis, regulation, tokenization, stablecoins and enterprise adoption models.",
+"Espacio mensual":"Monthly space",
+"Espacio mensual de conversación estratégica con especialistas sobre regulación, adopción, tokenización, stablecoins, inteligencia artificial y tendencias Web3 en Latinoamérica.":"A monthly strategic conversation with specialists on regulation, adoption, tokenization, stablecoins, artificial intelligence and Web3 trends in Latin America.",
+"Ver en YouTube →":"Watch on YouTube →","Comité regional":"Regional committee",
+"CLIE — Comité Latinoamericano de Blockchain para la Innovación":"CLIE — Latin American Blockchain Committee for Innovation",
+"Espacio regional de alto nivel donde líderes, empresas, gobiernos y organizaciones articulan conversación, educación y adopción tecnológica.":"A high-level regional space where leaders, companies, governments and organizations align conversation, education and technology adoption.",
+"Unirme al comité →":"Join the committee →",
+/* --- Para quién --- */
+"Para quién trabajamos":"Who we work with",
+"Diseñado para organizaciones que quieren liderar la adopción tecnológica en Latinoamérica":"Built for organizations that want to lead technology adoption in Latin America",
+"Trabajamos con actores que necesitan educar mercado, activar comunidad, abrir oportunidades y construir confianza institucional.":"We work with players who need to educate the market, activate community, open opportunities and build institutional trust.",
+"Empresas Web3":"Web3 companies",
+"Para compañías que buscan entrar, crecer o posicionarse en Latinoamérica mediante comunidad, educación, alianzas y adopción.":"For companies seeking to enter, grow or position themselves in Latin America through community, education, alliances and adoption.",
+"Inteligencia artificial y agentes IA":"Artificial intelligence and AI agents",
+"Para soluciones de IA, automatización y agentes inteligentes que buscan abrir mercado, conectar con empresas e implementar casos de uso reales.":"For AI, automation and intelligent agent solutions looking to open markets, connect with companies and deploy real use cases.",
+"Fintechs, wallets y exchanges":"Fintechs, wallets and exchanges",
+"Para soluciones que necesitan educación, confianza, comunidad y adopción de usuarios.":"For solutions that need education, trust, community and user adoption.",
+"Bancos e instituciones financieras":"Banks and financial institutions",
+"Para equipos que buscan comprender blockchain, tokenización, stablecoins, pagos digitales, inteligencia artificial e innovación regulada.":"For teams seeking to understand blockchain, tokenization, stablecoins, digital payments, artificial intelligence and regulated innovation.",
+"Universidades y gremios":"Universities and trade associations",
+"Para organizaciones que quieren formar talento, crear comunidad y conectar con el ecosistema tecnológico.":"For organizations that want to train talent, build community and connect with the technology ecosystem.",
+"Gobiernos e instituciones públicas":"Governments and public institutions",
+"Para entidades interesadas en explorar identidad digital, trazabilidad, transparencia, tokenización, regulación e innovación pública.":"For entities interested in exploring digital identity, traceability, transparency, tokenization, regulation and public innovation.",
+"Fundaciones blockchain y protocolos":"Blockchain foundations and protocols",
+"Para ecosistemas que necesitan activar builders, comunidad, educación, hackathons, programas de adopción y presencia regional.":"For ecosystems that need to activate builders, community, education, hackathons, adoption programs and regional presence.",
+/* --- Videos --- */
+"Videos y contenido educativo":"Videos and educational content",
+"Conocimiento abierto para toda la región":"Open knowledge for the entire region",
+"Cursos, masterclasses, webinars y sesiones de Café Blockchain y CLIE, disponibles en nuestro canal de YouTube.":"Courses, masterclasses, webinars and Café Blockchain and CLIE sessions, available on our YouTube channel.",
+"Últimas publicaciones del canal oficial de Horizonte Blockchain":"Latest posts from the official Horizonte Blockchain channel",
+"Café Blockchain — Temporada 1":"Café Blockchain — Season 1",
+"Conversaciones con especialistas sobre adopción, regulación y tendencias del ecosistema.":"Conversations with specialists on adoption, regulation and ecosystem trends.",
+"Ver lista en YouTube":"View playlist on YouTube","CLIE — Sesiones del comité":"CLIE — Committee sessions",
+"Líderes, gobiernos y organizaciones de +10 países articulando la agenda blockchain regional.":"Leaders, governments and organizations from 10+ countries shaping the regional blockchain agenda.",
+"Ver todo el contenido en YouTube":"See all content on YouTube",
+/* --- Aliados --- */
+"Organizaciones que han colaborado, participado o confiado en Horizonte Blockchain":"Organizations that have collaborated, taken part in or trusted Horizonte Blockchain",
+"Fundaciones, asociaciones, empresas y universidades con las que hemos ejecutado programas, eventos y alianzas.":"Foundations, associations, companies and universities with whom we have run programs, events and alliances.",
+"Syscoin Foundation · Co-organizador de hackathons":"Syscoin Foundation · Hackathon co-organizer",
+"Cámara Blockchain Chile":"Cámara Blockchain Chile","Asociación Blockchain & DLT Perú":"Blockchain & DLT Association of Peru",
+"Ecosistema Web3":"Web3 ecosystem","Aliado académico":"Academic partner",
+"Certificación blockchain":"Blockchain certification","Innovación fintech":"Fintech innovation",
+"Impacto social Web3":"Web3 social impact",
+/* --- Equipo --- */
+"Liderazgo detrás de Horizonte Blockchain":"The leadership behind Horizonte Blockchain",
+"Un equipo fundador con experiencia en educación, estrategia y ejecución de programas de innovación en Latinoamérica.":"A founding team experienced in education, strategy and the execution of innovation programs across Latin America.",
+"Founder & Directora Ejecutiva":"Founder & Executive Director","CEO & Gerente General":"CEO & General Manager",
+"CCO & Co-Founder":"CCO & Co-Founder",
+/* --- CTA + formulario --- */
+"Siguiente paso":"Next step",
+"Diseñemos la estrategia tecnológica de tu organización en Latinoamérica":"Let's design your organization's technology strategy in Latin America",
+"Agenda una reunión con Horizonte Blockchain y evaluemos cómo podemos ayudarte a posicionarte, educar mercado, activar comunidad, desarrollar alianzas o ejecutar iniciativas de adopción blockchain, Web3 e inteligencia artificial en la región.":"Book a meeting with Horizonte Blockchain and let's assess how we can help you position your brand, educate the market, activate community, develop alliances or execute blockchain, Web3 and AI adoption initiatives across the region.",
+"Escribir por WhatsApp":"Message us on WhatsApp","O cuéntanos directamente":"Or tell us directly",
+"Completa el formulario y nuestro equipo te contactará en menos de 24 horas.":"Fill in the form and our team will contact you within 24 hours.",
+"Nombre completo":"Full name","Correo electrónico":"Email address","WhatsApp / Teléfono":"WhatsApp / Phone",
+"¿Qué necesita tu organización?":"What does your organization need?","Selecciona una opción":"Select an option",
+"Entrar o crecer en Latinoamérica":"Enter or grow in Latin America","Capacitar equipos":"Train our teams",
+"Organizar un hackathon o laboratorio de innovación":"Host a hackathon or innovation lab",
+"Diseñar una estrategia de adopción blockchain/Web3":"Design a blockchain/Web3 adoption strategy",
+"Explorar tokenización o activos digitales":"Explore tokenization or digital assets",
+"Implementar soluciones de inteligencia artificial o agentes IA":"Implement AI solutions or AI agents",
+"Activar comunidad o posicionamiento regional":"Activate community or regional positioning",
+"Explorar alianzas institucionales":"Explore institutional alliances",
+"Ser sponsor o partner":"Become a sponsor or partner","Otro":"Other","Mensaje":"Message",
+"Enviar mensaje":"Send message","Enviando...":"Sending...",
+"Mensaje enviado. Gracias.":"Message sent. Thank you.",
+"Hubo un problema, intenta de nuevo":"Something went wrong, please try again",
+"Error de conexión, intenta de nuevo":"Connection error, please try again",
+/* --- Footer --- */
+"Hub de Innovación en Blockchain, Web3 e Inteligencia Artificial para Latinoamérica.":"Innovation Hub for Blockchain, Web3 and Artificial Intelligence in Latin America.",
+"Navegación":"Navigation","Contacto":"Contact","Comunidad":"Community",
+"Comunidad en WhatsApp":"WhatsApp community","Women in Blockchain":"Women in Blockchain",
+"Bitcoin Sin Fronteras":"Bitcoin Without Borders","Canal de Telegram":"Telegram channel",
+"Perú · Costa Rica":"Peru · Costa Rica",
+"© 2026 Horizonte Blockchain · HB Web3 Technologies S.A.C.S. Todos los derechos reservados.":"© 2026 Horizonte Blockchain · HB Web3 Technologies S.A.C.S. All rights reserved.",
+"Perú · Costa Rica — con presencia en toda Latinoamérica":"Peru · Costa Rica — with presence across Latin America"
+};
+
+/* Placeholders del formulario */
+var PH = {"Tu nombre":"Your name","tu@email.com":"you@email.com",
+"+51 999 999 999":"+51 999 999 999","Cuéntanos un poco más...":"Tell us a bit more..."};
+
+var originals = new Map(), phOriginals = new Map(), lang = "es";
+
+function eachTextNode(fn){
+  var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode:function(n){
+      var p = n.parentNode;
+      if(!p) return NodeFilter.FILTER_REJECT;
+      var t = p.nodeName;
+      if(t==="SCRIPT"||t==="STYLE"||t==="NOSCRIPT") return NodeFilter.FILTER_REJECT;
+      return n.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    }
+  });
+  var n; while((n = w.nextNode())) fn(n);
+}
+
+function toEnglish(){
+  eachTextNode(function(n){
+    var m = n.nodeValue.match(/^(\s*)([\s\S]*?)(\s*)$/), key = m[2];
+    if(DICT[key]){ if(!originals.has(n)) originals.set(n, n.nodeValue); n.nodeValue = m[1]+DICT[key]+m[3]; return; }
+    /* Cuenta regresiva dinámica */
+    var d = key.match(/^Faltan\s+(\d+)\s+días$/);
+    if(d){ if(!originals.has(n)) originals.set(n, n.nodeValue); n.nodeValue = m[1]+d[1]+" days left"+m[3]; return; }
+    if(key === "Falta 1 día"){ if(!originals.has(n)) originals.set(n, n.nodeValue); n.nodeValue = m[1]+"1 day left"+m[3]; }
+  });
+  document.querySelectorAll("[placeholder]").forEach(function(el){
+    var v = el.getAttribute("placeholder");
+    if(PH[v]){ if(!phOriginals.has(el)) phOriginals.set(el, v); el.setAttribute("placeholder", PH[v]); }
+  });
+  document.documentElement.lang = "en";
+}
+
+function toSpanish(){
+  originals.forEach(function(v,n){ n.nodeValue = v; });
+  phOriginals.forEach(function(v,el){ el.setAttribute("placeholder", v); });
+  document.documentElement.lang = "es";
+}
+
+function setLang(l){
+  lang = l;
+  window.hbLang = l;
+  if(l === "en") toEnglish(); else toSpanish();
+  var lbl = document.getElementById("langLabel");
+  if(lbl) lbl.textContent = (l === "en") ? "ES" : "EN";
+  try{ localStorage.setItem("hb_lang", l); }catch(e){}
+}
+
+/* Traduce textos que se generan en vivo (formulario, botón copiar) */
+window.hbLang = "es";
+window.hbT = function(es){ return (window.hbLang === "en" && DICT[es]) ? DICT[es] : es; };
+
+var btn = document.getElementById("langBtn");
+if(btn) btn.addEventListener("click", function(){ setLang(lang === "es" ? "en" : "es"); });
+
+/* Idioma guardado o detectado por el navegador */
+var guardado = null;
+try{ guardado = localStorage.getItem("hb_lang"); }catch(e){}
+if(guardado === "en") setLang("en");
+else if(!guardado && navigator.language && navigator.language.slice(0,2) !== "es") setLang("en");
+}catch(e){}
+})();
 
 /* ---------- Interacciones premium (tilt 3D + brillo + parallax) ---------- */
 (function(){
@@ -1207,7 +1453,7 @@ document.getElementById("leadForm").addEventListener("submit", async function(e)
     document.querySelectorAll('.ec-copy').forEach(function(btn){
       btn.addEventListener('click',function(){
         var code=btn.getAttribute('data-code')||'';
-        var done=function(){ var t=btn.textContent; btn.textContent='¡Copiado!'; setTimeout(function(){ btn.textContent=t; },1600); };
+        var done=function(){ var t=btn.textContent; btn.textContent=(window.hbT?window.hbT('¡Copiado!'):'¡Copiado!'); setTimeout(function(){ btn.textContent=t; },1600); };
         if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(code).then(done).catch(done); }
         else { done(); }
       });
