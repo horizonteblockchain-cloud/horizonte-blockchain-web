@@ -137,16 +137,26 @@ section{padding:110px 0;position:relative}
 body.has-event nav{top:46px}
 body.has-event .hero{padding-top:246px}
 @media(max-width:720px){
-  #eventBar{gap:10px;font-size:.78rem}
+  #eventBar{gap:10px;font-size:.78rem;padding:0 12px}
   #eventBar .ev-label{display:none}
+  #eventBar .ev-count{padding:4px 9px;font-size:.66rem}
+  #eventBar .ev-btn{padding:6px 12px;font-size:.74rem}
   body.has-event .hero{padding-top:196px}
+}
+@media(max-width:520px){
+  #eventBar{gap:8px;padding:0 9px}
+  #eventBar .ev-name{font-size:.74rem}
+  #eventBar .ev-count{padding:3px 8px;font-size:.62rem;letter-spacing:0}
+  #eventBar .ev-btn{padding:6px 10px;font-size:.7rem}
 }
 /* ============ NAV ============ */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,10,19,.72);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
 nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
-.nav-inner{max-width:1150px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between}
+.nav-inner{max-width:1480px;margin:0 auto;padding:0 34px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
 .nav-logo img{height:42px;width:auto;filter:drop-shadow(0 0 14px rgba(47,212,230,.25))}
-.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links{display:flex;gap:26px;align-items:center;white-space:nowrap}
+.nav-logo{flex-shrink:0}
+.nav-links a{white-space:nowrap}
 .nav-links a{font-size:.9rem;color:var(--muted);font-weight:500;transition:color .2s;position:relative}
 .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:width .25s;border-radius:2px}
 .nav-links a:not(.btn):hover{color:var(--text)}
@@ -395,7 +405,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 .float-wa svg{width:26px;height:26px;fill:#fff}
 /* ============ RESPONSIVE ============ */
 /* Tablet (hasta 1024px): menú colapsado para evitar desbordes */
-@media(max-width:1024px){
+@media(max-width:1200px){
   .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;padding:24px;gap:20px;align-items:flex-start}
   .nav-links.open{display:flex}
   .nav-toggle{display:block}
@@ -412,6 +422,8 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
   .mv{grid-template-columns:1fr}
 }
 @media(max-width:720px){
+  .nav-inner{padding:0 18px;gap:12px}
+  .nav-logo img{height:36px}
   section{padding:80px 0}
   .hero{padding:150px 0 90px}
   .grid-4,.programs{grid-template-columns:1fr}
@@ -516,7 +528,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
           <span>Vía Zoom · Streaming a YouTube</span>
         </div>
         <p class="eh-speakers">Con <b>Dr. Carlos Reusser Monsálvez</b> (Abogado, Doctor en Derecho y redactor de la Ley de Transformación Digital del Estado de Chile). Moderan <b>Dayana Salinas</b> y <b>Alexis Franco</b>. Una alianza <b>Cámara Blockchain Chile A.G. × Horizonte Blockchain</b>.</p>
-        <a href="https://luma.com/v4jhlpos" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:20px">Inscríbete en Luma →</a>
+        <a href="https://luma.com/v4jhlpos" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:20px">Inscríbete aquí →</a>
       </div>
     </div>
     <div class="events-grid">
@@ -1221,7 +1233,7 @@ var DICT = {
 "¿Puede un algoritmo tomar una decisión judicial? ¿Qué peso legal tiene hoy la evidencia registrada en blockchain? Un espacio legal y estratégico sobre cómo la IA y blockchain transforman la justicia en la era digital.":"Can an algorithm make a judicial decision? What legal weight does blockchain-recorded evidence carry today? A legal and strategic space on how AI and blockchain are transforming justice in the digital age.",
 "Martes 25 de agosto":"Tuesday, August 25","7:00 PM Perú · 8:00 PM Chile":"7:00 PM Peru · 8:00 PM Chile",
 "Vía Zoom · Streaming a YouTube":"Via Zoom · Streamed on YouTube",
-"Inscríbete en Luma →":"Register on Luma →","Inscríbete gratis":"Register free",
+"Inscríbete aquí →":"Register here →","Inscríbete gratis":"Register free",
 "Con":"With","(Abogado, Doctor en Derecho y redactor de la Ley de Transformación Digital del Estado de Chile). Moderan":"(Attorney, Doctor of Law and drafter of Chile's State Digital Transformation Act). Moderated by",
 "Dr. Carlos Reusser Monsálvez":"Dr. Carlos Reusser Monsálvez",
 "Dayana Salinas":"Dayana Salinas","Alexis Franco":"Alexis Franco",
