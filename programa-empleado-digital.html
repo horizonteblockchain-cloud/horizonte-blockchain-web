@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>Programa Empleado Digital · Horizonte Blockchain × AINI</title>
+<meta name="description" content="Implementa un agente de IA que ejecuta trabajo real en tu organización en 8 semanas. Entrevista de diagnóstico sin costo. Inicio 6 de octubre.">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Horizonte Blockchain">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="Programa Empleado Digital · 8 semanas · Horizonte Blockchain × AINI">
+<meta property="og:description" content="Tu equipo recupera las horas que hoy se van en tareas repetitivas. Agenda tu entrevista de diagnóstico sin costo. Inicio 6 de octubre · 30 cupos.">
+<meta property="og:url" content="https://horizonteblockchain.org/programa-empleado-digital.html">
+<meta property="og:image" content="https://horizonteblockchain.org/og-empleado-digital.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Programa Empleado Digital · Horizonte Blockchain × AINI">
+<meta name="twitter:description" content="Implementa un agente de IA que ejecuta trabajo real en tu organización. Entrevista de diagnóstico sin costo.">
+<meta name="twitter:image" content="https://horizonteblockchain.org/og-empleado-digital.jpg">
+
+<link rel="icon" href="/favicon-32x32.png" type="image/png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:26px;
+background:radial-gradient(900px 520px at 50% 0%,rgba(47,212,230,.11),transparent 62%),
+           radial-gradient(700px 420px at 90% 100%,rgba(247,148,29,.08),transparent 60%),#060B16;
+font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:#E7ECF5;text-align:center}
+.box{max-width:470px;width:100%}
+.logo{height:52px;width:auto;margin-bottom:26px;opacity:.95}
+.ring{width:52px;height:52px;margin:0 auto 22px;border-radius:50%;
+border:3px solid rgba(47,212,230,.2);border-top-color:#2FD4E6;animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pill{display:inline-block;padding:6px 15px;border-radius:100px;background:rgba(47,212,230,.12);
+border:1px solid rgba(47,212,230,.4);color:#6FE9F6;font-size:.74rem;font-weight:700;
+letter-spacing:.03em;margin-bottom:16px}
+h1{font-size:1.3rem;font-weight:800;line-height:1.38;margin-bottom:10px}
+h1 span{background:linear-gradient(135deg,#2FD4E6,#6FE9F6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.meta{color:#96A3B8;font-size:.92rem;line-height:1.65;margin-bottom:26px}
+.meta b{color:#E7ECF5}
+a.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+background:linear-gradient(135deg,#2FD4E6,#6FE9F6);color:#04121A;text-decoration:none;
+font-weight:800;font-size:.96rem;padding:15px 30px;border-radius:14px;
+box-shadow:0 14px 34px rgba(47,212,230,.32);transition:transform .25s}
+a.btn:hover{transform:translateY(-3px)}
+a.alt{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:none;
+border:1px solid rgba(47,212,230,.4);color:#2FD4E6;text-decoration:none;font-weight:700;
+font-size:.92rem;padding:13px 26px;border-radius:14px;transition:all .25s}
+a.alt:hover{background:rgba(47,212,230,.1)}
+a.back{display:block;margin-top:20px;color:#5C6B82;font-size:.8rem;text-decoration:none}
+a.back:hover{color:#2FD4E6}
+.hide{display:none}
+</style>
+</head>
+<body>
+
+<div class="box" id="vivo">
+  <img class="logo" src="/assets/img/logo-hb-full.png" alt="Horizonte Blockchain">
+  <div class="ring"></div>
+  <span class="pill">Postulaciones abiertas · 30 cupos</span>
+  <h1>Te estamos llevando a tu <span>entrevista de diagnóstico</span></h1>
+  <p class="meta"><b>Programa Empleado Digital</b><br>Horizonte Blockchain × AINI · Inicio 6 de octubre<br>Videollamada de 45 minutos, sin costo.</p>
+  <a class="btn" id="irBtn" href="https://www.ainilac.com/academia/postular" rel="noopener">Continuar con mi postulación →</a>
+  <a class="back" href="/#empleado-digital">← Volver a horizonteblockchain.org</a>
+</div>
+
+<div class="box hide" id="pasado">
+  <img class="logo" src="/assets/img/logo-hb-full.png" alt="Horizonte Blockchain">
+  <span class="pill">Cohorte fundadora cerrada</span>
+  <h1>Las postulaciones de esta cohorte <span>ya cerraron</span></h1>
+  <p class="meta">Únete a la comunidad para enterarte primero de la apertura de la siguiente cohorte y de las clases gratuitas semanales.</p>
+  <a class="alt" href="/unete-whatsapp.html">Unirme a la comunidad</a>
+  <a class="back" href="/#empleado-digital">← Ver el programa</a>
+</div>
+
+<script>
+(function(){
+  var CIERRE  = "2026-10-02";
+  var DESTINO = "https://www.ainilac.com/academia/postular"
+              + "?utm_source=horizonteblockchain&utm_medium=partner&utm_campaign=empleado-digital-c1";
+
+  var p = CIERRE.split("-");
+  var fin = new Date(+p[0], +p[1]-1, +p[2]); fin.setHours(23,59,59,999);
+
+  if (new Date() > fin) {
+    document.getElementById("vivo").classList.add("hide");
+    document.getElementById("pasado").classList.remove("hide");
+    return;
+  }
+  document.getElementById("irBtn").href = DESTINO;
+  setTimeout(function(){ location.replace(DESTINO); }, 1400);
+})();
+</script>
+</body>
+</html>

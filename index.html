@@ -154,7 +154,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,10,19,.72)
 nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 .nav-inner{max-width:1480px;margin:0 auto;padding:0 34px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
 .nav-logo img{height:42px;width:auto;filter:drop-shadow(0 0 14px rgba(47,212,230,.25))}
-.nav-links{display:flex;gap:26px;align-items:center;white-space:nowrap}
+.nav-links{display:flex;gap:21px;align-items:center;white-space:nowrap}
 .nav-logo{flex-shrink:0}
 .nav-links a{white-space:nowrap}
 .nav-links a{font-size:.9rem;color:var(--muted);font-weight:500;transition:color .2s;position:relative}
@@ -219,9 +219,9 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 /* Evento propio destacado (banner) */
 .event-hero{display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap;padding:34px 40px;margin-bottom:24px;position:relative;overflow:hidden;border-color:rgba(247,148,29,.4)}
 .event-hero .eh-glow{position:absolute;top:-90px;right:-70px;width:340px;height:340px;background:radial-gradient(circle,rgba(247,148,29,.16),transparent 65%);pointer-events:none}
-.event-hero .eh-flyer{flex:0 0 auto;width:clamp(200px,24vw,280px);max-width:100%;aspect-ratio:1/1;border-radius:16px;overflow:hidden;border:1px solid rgba(247,148,29,.35);box-shadow:0 20px 50px rgba(0,0,0,.5);display:block;position:relative;z-index:1;transition:transform .3s;background:#0A1120}
+.event-hero .eh-flyer{flex:0 0 auto;width:clamp(200px,24vw,280px);max-width:100%;border-radius:16px;overflow:hidden;border:1px solid rgba(247,148,29,.35);box-shadow:0 20px 50px rgba(0,0,0,.5);display:block;position:relative;z-index:1;transition:transform .3s;background:#0A1120;line-height:0}
 .event-hero .eh-flyer:hover{transform:translateY(-4px)}
-.event-hero .eh-flyer img{width:100%;height:100%;max-width:100%;object-fit:cover;display:block}
+.event-hero .eh-flyer img{width:100%;height:auto;max-width:100%;object-fit:contain;display:block}
 .event-hero .eh-info{flex:1;min-width:300px;position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start}
 .event-hero .eh-badge{display:inline-block;padding:6px 15px;border-radius:100px;background:var(--gold-soft);border:1px solid rgba(247,148,29,.4);color:var(--gold2);font-size:.78rem;font-weight:700;letter-spacing:.02em;margin-bottom:16px}
 .event-hero .eh-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:700;margin-bottom:8px;color:var(--text)}
@@ -400,12 +400,86 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 .socials svg{width:17px;height:17px;fill:var(--muted)}
 .socials a:hover svg{fill:var(--accent)}
 /* ============ FLOAT WHATSAPP ============ */
-.float-wa{position:fixed;bottom:26px;right:26px;z-index:90;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,.4);transition:transform .25s}
-.float-wa:hover{transform:translateY(-4px) scale(1.06)}
-.float-wa svg{width:26px;height:26px;fill:#fff}
+/* ===== Programa Empleado Digital (AINI) ===== */
+.ed-card{position:relative;overflow:hidden;padding:40px 44px;border-color:rgba(47,212,230,.34);box-shadow:0 0 0 1px rgba(47,212,230,.08),0 26px 64px rgba(0,0,0,.5)}
+.ed-card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:linear-gradient(130deg,var(--accent),transparent 38%,transparent 62%,var(--gold));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;animation:premGlow 4s ease-in-out infinite}
+.ed-glow{position:absolute;top:-120px;right:-90px;width:380px;height:380px;background:radial-gradient(circle,rgba(47,212,230,.14),transparent 65%);pointer-events:none}
+.ed-card>*:not(.ed-glow){position:relative;z-index:1}
+.ed-lead{font-size:1.05rem;line-height:1.75;color:var(--muted);max-width:900px;margin-bottom:30px}
+.ed-lead b{color:var(--text)}
+.ed-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:34px}
+.ed-fact{background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:14px;padding:15px 18px;display:flex;flex-direction:column;gap:5px}
+.ed-fact span{font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+.ed-fact b{font-size:.95rem;color:var(--text);font-weight:600;line-height:1.4}
+.ed-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:34px;margin-bottom:36px}
+.ed-col h3{font-size:1.05rem;margin-bottom:16px;color:var(--text)}
+.ed-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:14px}
+.ed-list li{position:relative;padding-left:26px;color:var(--muted);font-size:.95rem;line-height:1.6}
+.ed-list li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--gold))}
+.ed-note{font-size:.86rem;color:var(--gold2);line-height:1.6}
+.ed-cta{text-align:center;padding:30px 0 6px;border-top:1px solid var(--line)}
+.ed-btn{font-size:1rem;padding:16px 34px}
+.ed-cta-note{max-width:620px;margin:16px auto 20px;color:var(--muted);font-size:.9rem;line-height:1.65}
+.ed-free{display:flex;flex-direction:column;align-items:center;gap:7px;max-width:560px;margin:0 auto;padding:22px 26px;border-radius:16px;border:1px dashed rgba(47,212,230,.42);background:rgba(47,212,230,.05);transition:all .28s}
+.ed-free:hover{background:rgba(47,212,230,.1);border-color:var(--accent);transform:translateY(-3px)}
+.ed-free-tag{font-size:.66rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);padding:4px 12px;border-radius:100px;background:var(--accent-soft)}
+.ed-free-title{font-size:1rem;font-weight:700;color:var(--text);line-height:1.4}
+.ed-free-sub{font-size:.88rem;color:var(--muted);line-height:1.6;max-width:440px}
+.ed-free-go{font-size:.9rem;font-weight:700;color:var(--accent2);margin-top:4px}
+.ed-deadline{margin-top:30px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 16px;padding:14px 20px;border-radius:14px;background:var(--gold-soft);border:1px solid rgba(247,148,29,.35);color:var(--text);font-size:.92rem}
+.ed-deadline b{color:var(--gold2)}
+.ed-dot{width:9px;height:9px;border-radius:50%;background:var(--gold2);box-shadow:0 0 0 0 rgba(255,201,72,.6);animation:edPulse 2s infinite}
+@keyframes edPulse{70%{box-shadow:0 0 0 12px rgba(255,201,72,0)}100%{box-shadow:0 0 0 0 rgba(255,201,72,0)}}
+.ed-count{font-weight:800;color:var(--gold2);white-space:nowrap}
+@media(max-width:820px){
+  .ed-card{padding:28px 20px}
+  .ed-lead{font-size:.98rem;margin-bottom:24px}
+  .ed-facts{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+  .ed-fact{padding:12px 14px}
+  .ed-fact b{font-size:.88rem}
+  .ed-cols{gap:26px;margin-bottom:28px}
+  .ed-btn{width:100%;justify-content:center}
+  .ed-deadline{font-size:.86rem;padding:13px 16px}
+}
+@media(max-width:420px){.ed-facts{grid-template-columns:1fr}}
+/* ===== Barra de redes sociales (colores originales) ===== */
+.social-bar{margin-top:46px;padding-top:36px;border-top:1px solid var(--line);text-align:center}
+.sb-title{display:block;font-size:.74rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+.sb-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.sb-item{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:14px;border:1px solid var(--bc);background:rgba(255,255,255,.025);color:var(--text);font-size:.92rem;font-weight:700;transition:transform .25s,background .25s,box-shadow .25s,color .25s}
+.sb-item svg{width:20px;height:20px;fill:var(--bc);transition:fill .25s;flex-shrink:0}
+.sb-item:hover{background:var(--bc);transform:translateY(-4px);box-shadow:0 14px 30px var(--bs);color:#fff}
+.sb-item:hover svg{fill:#fff}
+.sb-ig{--bc:#E1306C;--bs:rgba(225,48,108,.4)}
+.sb-fb{--bc:#1877F2;--bs:rgba(24,119,242,.4)}
+.sb-in{--bc:#0A66C2;--bs:rgba(10,102,194,.4)}
+.sb-x{--bc:#FFFFFF;--bs:rgba(255,255,255,.28)}
+.sb-yt{--bc:#FF0000;--bs:rgba(255,0,0,.4)}
+.sb-x:hover{color:#0A0F1A}
+.sb-x:hover svg{fill:#0A0F1A}
+@media(max-width:720px){
+  .social-bar{margin-top:34px;padding-top:28px}
+  .sb-grid{gap:10px}
+  .sb-item{padding:11px 16px;font-size:.84rem;gap:8px}
+  .sb-item svg{width:18px;height:18px}
+}
+/* ===== Widget fijo de comunidad (WhatsApp + Telegram) ===== */
+.community-float{position:fixed;bottom:24px;right:24px;z-index:95;display:flex;flex-direction:column;align-items:center;gap:10px}
+.cf-label{background:rgba(10,17,32,.94);border:1px solid rgba(47,212,230,.4);color:var(--text);font-size:.72rem;font-weight:700;letter-spacing:.02em;padding:7px 13px;border-radius:100px;white-space:nowrap;backdrop-filter:blur(10px);box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.cf-btn{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .25s,box-shadow .25s}
+.cf-btn svg{width:27px;height:27px;fill:#fff}
+.cf-btn:hover{transform:translateY(-4px) scale(1.06)}
+.cf-wa{background:#25D366;box-shadow:0 10px 28px rgba(37,211,102,.45)}
+.cf-tg{background:#229ED9;box-shadow:0 10px 28px rgba(34,158,217,.45)}
+@media(max-width:720px){
+  .community-float{bottom:16px;right:16px;gap:8px}
+  .cf-label{font-size:.65rem;padding:6px 10px}
+  .cf-btn{width:48px;height:48px}
+  .cf-btn svg{width:24px;height:24px}
+}
 /* ============ RESPONSIVE ============ */
 /* Tablet (hasta 1024px): menú colapsado para evitar desbordes */
-@media(max-width:1200px){
+@media(max-width:1340px){
   .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;padding:24px;gap:20px;align-items:flex-start}
   .nav-links.open{display:flex}
   .nav-toggle{display:block}
@@ -475,6 +549,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
     <div class="nav-links" id="navLinks">
       <a href="#que-hacemos">Qué hacemos</a>
       <a href="#eventos">Eventos</a>
+      <a href="#empleado-digital">Empleado Digital</a>
       <a href="#impacto">Impacto</a>
       <a href="#programas">Programas</a>
       <a href="hackathons.html">Hackathons</a>
@@ -515,20 +590,20 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
     <span class="kicker reveal">Próximos eventos</span>
     <h2 class="section-title reveal">Dónde estarás con nosotros</h2>
     <p class="section-lead reveal">Horizonte Blockchain organiza y participa en los encuentros más importantes de la región. Regístrate en nuestro próximo evento y aprovecha el beneficio para su comunidad.</p>
-    <div class="event-hero glass reveal" id="eventoDestacado">
+    <div class="event-hero glass reveal" id="eventoDestacado" data-hasta="2026-09-24">
       <div class="eh-glow" aria-hidden="true"></div>
-      <a href="https://luma.com/v4jhlpos" target="_blank" rel="noopener" class="eh-flyer"><img src="cafe-blockchain-7.jpg" alt="Café Blockchain 7ª Edición · IA, Blockchain y el Futuro de la Justicia — 25 de agosto"></a>
+      <a href="evento-ruta-del-dinero.html" target="_blank" rel="noopener" class="eh-flyer" data-hb-track="evento-ruta-del-dinero-flyer"><img src="ruta-del-dinero.jpg" alt="La Ruta del Dinero · Universidad Ricardo Palma — 24 de septiembre"></a>
       <div class="eh-info">
-        <span class="eh-badge">☕ Evento propio · 7ª Edición · Vía Zoom</span>
-        <h3 class="eh-title">Café Blockchain: <span>IA, Blockchain y el Futuro de la Justicia</span></h3>
-        <p class="eh-sub">¿Puede un algoritmo tomar una decisión judicial? ¿Qué peso legal tiene hoy la evidencia registrada en blockchain? Un espacio legal y estratégico sobre cómo la IA y blockchain transforman la justicia en la era digital.</p>
+        <span class="eh-badge">🎓 Evento presencial · Lima, Perú · Cóctel de cierre</span>
+        <h3 class="eh-title">La Ruta <span>del Dinero</span></h3>
+        <p class="eh-sub">Un encuentro presencial de alto nivel sobre economía, tributación y activos virtuales, con especialistas en derecho tributario, constitucional y finanzas.</p>
         <div class="eh-meta">
-          <span><b>Martes 25 de agosto</b></span>
-          <span>7:00 PM Perú · 8:00 PM Chile</span>
-          <span>Vía Zoom · Streaming a YouTube</span>
+          <span><b>Jueves 24 de septiembre</b></span>
+          <span>4:00 PM</span>
+          <span>Universidad Ricardo Palma · Auditorio Ollantaytambo</span>
         </div>
-        <p class="eh-speakers">Con <b>Dr. Carlos Reusser Monsálvez</b> (Abogado, Doctor en Derecho y redactor de la Ley de Transformación Digital del Estado de Chile). Moderan <b>Dayana Salinas</b> y <b>Alexis Franco</b>. Una alianza <b>Cámara Blockchain Chile A.G. × Horizonte Blockchain</b>.</p>
-        <a href="https://luma.com/v4jhlpos" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:20px">Inscríbete aquí →</a>
+        <p class="eh-speakers">Ponentes: <b>Jorge González Izquierdo</b> (M.A. in Economics, University of Chicago), <b>Mauricio Aguilar</b> (Ing. especialista en activos virtuales), <b>Álvaro Bocanegra</b> (Mag. en Derecho Tributario) y <b>Humberto Abanto Sagástegui</b> (Mag. en Derecho Constitucional). Organizan <b>Horizonte Blockchain × Instituto Latinoamericano de Finanzas y Tributación</b>. Sponsor: <b>IB1 Investment Business One</b>.</p>
+        <a href="evento-ruta-del-dinero.html" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:20px" data-hb-track="evento-ruta-del-dinero">Inscríbete aquí →</a>
       </div>
     </div>
     <div class="events-grid">
@@ -561,6 +636,69 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
           <div class="ec-code"><span>Beneficio comunidad HB</span><b>Entrada de cortesía</b></div>
           <a href="https://www.hallos.io/event/cripto-latin-fest-2026-9-edicin-bogot/checkout?ticket=corpgenr5r&amp;ref=HORIZONTE-BLOCKCHAIN" target="_blank" rel="noopener" class="btn btn-primary">Obtener entrada de cortesía →</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROGRAMA EMPLEADO DIGITAL (AINI) ================= -->
+<section id="empleado-digital" style="padding-top:70px">
+  <div class="container">
+    <span class="kicker reveal">Convenio Horizonte Blockchain × AINI</span>
+    <h2 class="section-title reveal">Programa Empleado Digital</h2>
+    <p class="section-lead reveal">Tu equipo recupera las horas que hoy se van en tareas repetitivas. En ocho semanas implementas un agente de inteligencia artificial que ejecuta trabajo real dentro de tu organización.</p>
+
+    <div class="ed-card glass reveal">
+      <div class="ed-glow" aria-hidden="true"></div>
+
+      <p class="ed-lead">Un empleado digital <b>amplía la capacidad de tu equipo actual</b>. Se hace cargo de lo repetitivo y sistematizable, y libera a tus personas para lo que decide resultados: criterio, relación con clientes y crecimiento.</p>
+
+      <div class="ed-facts">
+        <div class="ed-fact"><span>Inicio</span><b>6 de octubre</b></div>
+        <div class="ed-fact"><span>Duración</span><b>8 semanas · 16 sesiones en vivo</b></div>
+        <div class="ed-fact"><span>Sesiones</span><b>Martes y jueves · 8 p.m. (GMT-5)</b></div>
+        <div class="ed-fact"><span>Modalidad</span><b>100% online · en español</b></div>
+        <div class="ed-fact"><span>Cupos</span><b>30 en la cohorte fundadora</b></div>
+        <div class="ed-fact"><span>Certificación</span><b>Certificado AINI</b></div>
+      </div>
+
+      <div class="ed-cols">
+        <div class="ed-col">
+          <h3>Para quién funciona</h3>
+          <ul class="ed-list">
+            <li>Socios, fundadores y CEO</li>
+            <li>Ejecutivos de gerencia a C-Level</li>
+            <li>Líderes y funcionarios de instituciones públicas</li>
+          </ul>
+          <p class="ed-note">Funciona sin conocimientos de programación.</p>
+        </div>
+        <div class="ed-col">
+          <h3>Qué te llevas</h3>
+          <ul class="ed-list">
+            <li>Un agente configurado y corriendo sobre un proceso real de tu organización</li>
+            <li>Canal de dudas directo con los instructores durante todo el programa</li>
+            <li>Proyecto acompañado con dos entregas publicadas</li>
+            <li>Certificado AINI y evento presencial de networking en Lima</li>
+          </ul>
+          <p class="ed-note">Garantía: si tras la primera semana esto no es para ti, se devuelve el 100%.</p>
+        </div>
+      </div>
+
+      <div class="ed-cta">
+        <a href="programa-empleado-digital.html" target="_blank" rel="noopener" class="btn btn-primary ed-btn" data-hb-track="empleado-digital-entrevista">Agenda tu entrevista de diagnóstico →</a>
+        <p class="ed-cta-note">Videollamada de 45 minutos, sin costo. Conversamos tu caso, definimos qué proceso conviene automatizar primero y las condiciones de la cohorte fundadora.</p>
+        <a href="clases-gratuitas-ia.html" target="_blank" rel="noopener" class="ed-free" data-hb-track="empleado-digital-clases-gratis">
+          <span class="ed-free-tag">Acceso libre</span>
+          <span class="ed-free-title">8 clases gratuitas en vivo, todos los jueves</span>
+          <span class="ed-free-sub">Al registrarte desbloqueas también las clases anteriores grabadas. Empieza hoy mismo, sin costo.</span>
+          <span class="ed-free-go">Registrarme en las clases →</span>
+        </a>
+      </div>
+
+      <div class="ed-deadline" data-hasta="2026-10-02">
+        <span class="ed-dot" aria-hidden="true"></span>
+        <span>Las postulaciones cierran el <b>2 de octubre</b></span>
+        <span class="ed-count" id="edCount"></span>
       </div>
     </div>
   </div>
@@ -973,17 +1111,28 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
       </div>
       <div class="footer-col">
         <h4>Comunidad</h4>
-        <a href="https://chat.whatsapp.com/HRj4w4Kz6nW7QYqrQvRDAu" target="_blank" rel="noopener">Comunidad en WhatsApp</a>
-        <a href="https://chat.whatsapp.com/IqDz3DbV4VILqhfOKkbjyN" target="_blank" rel="noopener">Women in Blockchain</a>
-        <a href="https://chat.whatsapp.com/J7Cis7V51B38vsJoZmIpVM" target="_blank" rel="noopener">Bitcoin Sin Fronteras</a>
-        <a href="https://t.me/+eGiEhsFjv3E0ZDRh" target="_blank" rel="noopener">Canal de Telegram</a>
-        <div class="socials" style="margin-top:14px">
+        <a href="/unete-whatsapp.html" target="_blank" rel="noopener" data-hb-track="comunidad-whatsapp-footer">Comunidad en WhatsApp</a>
+        <a href="https://chat.whatsapp.com/IqDz3DbV4VILqhfOKkbjyN" target="_blank" rel="noopener" data-hb-track="women-in-blockchain">Women in Blockchain</a>
+        <a href="https://chat.whatsapp.com/J7Cis7V51B38vsJoZmIpVM" target="_blank" rel="noopener" data-hb-track="bitcoin-sin-fronteras">Bitcoin Sin Fronteras</a>
+        <a href="/unete-telegram.html" target="_blank" rel="noopener" data-hb-track="comunidad-telegram-footer">Canal de Telegram</a>
+        <div class="socials" style="display:none">
           <a href="https://www.linkedin.com/company/horizonte-blockchain/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.02 8h4.96V24H.02zM7.98 8h4.76v2.2h.07c.66-1.25 2.28-2.57 4.7-2.57 5.02 0 5.95 3.3 5.95 7.6V24h-4.96v-7.7c0-1.84-.03-4.2-2.56-4.2-2.56 0-2.95 2-2.95 4.06V24H7.98z"/></svg></a>
           <a href="https://www.instagram.com/horizonteblockchain/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.7 21.31.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.4-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a>
           <a href="https://www.youtube.com/@HorizonteBlockchainBTC" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg></a>
           <a href="https://x.com/HorizonteBlock" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93zM17.6 20.64h2.04L6.49 3.24H4.3z"/></svg></a>
           <a href="https://www.facebook.com/profile.php?id=100063593386480" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg></a>
         </div>
+      </div>
+    </div>
+    <!-- ===== Redes sociales destacadas ===== -->
+    <div class="social-bar">
+      <span class="sb-title">Síguenos en redes</span>
+      <div class="sb-grid">
+        <a class="sb-item sb-ig" href="https://www.instagram.com/horizonteblockchain/" target="_blank" rel="noopener" data-hb-track="seguir-instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.7 21.31.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.4-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg><span>Instagram</span></a>
+        <a class="sb-item sb-fb" href="https://www.facebook.com/profile.php?id=100063593386480" target="_blank" rel="noopener" data-hb-track="seguir-facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg><span>Facebook</span></a>
+        <a class="sb-item sb-in" href="https://www.linkedin.com/company/horizonte-blockchain/" target="_blank" rel="noopener" data-hb-track="seguir-linkedin"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.02 8h4.96V24H.02zM7.98 8h4.76v2.2h.07c.66-1.25 2.28-2.57 4.7-2.57 5.02 0 5.95 3.3 5.95 7.6V24h-4.96v-7.7c0-1.84-.03-4.2-2.56-4.2-2.56 0-2.95 2-2.95 4.06V24H7.98z"/></svg><span>LinkedIn</span></a>
+        <a class="sb-item sb-x" href="https://x.com/HorizonteBlock" target="_blank" rel="noopener" data-hb-track="seguir-x"><svg viewBox="0 0 24 24"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93zM17.6 20.64h2.04L6.49 3.24H4.3z"/></svg><span>X</span></a>
+        <a class="sb-item sb-yt" href="https://www.youtube.com/@HorizonteBlockchainBTC" target="_blank" rel="noopener" data-hb-track="seguir-youtube"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg><span>YouTube</span></a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -993,7 +1142,12 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
   </div>
 </footer>
 
-<a href="https://wa.me/51949170376?text=Hola%20Horizonte%20Blockchain" target="_blank" rel="noopener" class="float-wa" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.87-9.9 9.87zm8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.47-8.41z"/></svg></a>
+<!-- ===== Widget fijo: únete a la comunidad ===== -->
+<div class="community-float" aria-label="Únete a la comunidad">
+  <span class="cf-label">Únete a la comunidad</span>
+  <a href="/unete-whatsapp.html" target="_blank" rel="noopener" class="cf-btn cf-wa" data-hb-track="comunidad-whatsapp-flotante" aria-label="Comunidad en WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.87-9.9 9.87zm8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.47-8.41z"/></svg></a>
+  <a href="/unete-telegram.html" target="_blank" rel="noopener" class="cf-btn cf-tg" data-hb-track="comunidad-telegram-flotante" aria-label="Canal de Telegram"><svg viewBox="0 0 24 24"><path d="M23.91 3.79 20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.54 1.73z"/></svg></a>
+</div>
 
 <script data-cfasync="false">
 /* =====================================================
@@ -1004,11 +1158,11 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 const EVENTO = {
   activo: true,
   etiqueta: "Próximo evento",
-  nombre: "Café Blockchain 7ª · IA, Blockchain y el Futuro de la Justicia — 25 de agosto · 7PM Perú / 8PM Chile",
-  enlace: "https://luma.com/v4jhlpos",
-  boton: "Inscríbete gratis",
-  // Fecha y hora del evento (25 ago 2026, 7:00 PM Perú, UTC-5). Deja "" para ocultar la cuenta regresiva.
-  fecha: "2026-08-25T19:00:00-05:00"
+  nombre: "La Ruta del Dinero — 24 de septiembre · 4:00 PM · Universidad Ricardo Palma, Lima",
+  enlace: "evento-ruta-del-dinero.html",
+  boton: "Inscríbete aquí",
+  // Fecha y hora del evento (24 set 2026, 4:00 PM Perú, UTC-5). Deja "" para ocultar la cuenta regresiva.
+  fecha: "2026-09-24T16:00:00-05:00"
 };
 
 /* Cuenta regresiva automática en días hasta el evento */
@@ -1041,7 +1195,7 @@ if (eventoVigente) {
     <span class="ev-label">${EVENTO.etiqueta}</span>
     <span class="ev-name">${EVENTO.nombre}</span>
     ${cuenta ? `<span class="ev-count">${cuenta}</span>` : ""}
-    <a class="ev-btn" href="${EVENTO.enlace}" target="_blank" rel="noopener">${EVENTO.boton} <span class="ev-arrow">→</span></a>`;
+    <a class="ev-btn" href="${EVENTO.enlace}" target="_blank" rel="noopener" data-hb-track="evento-barra-superior">${EVENTO.boton} <span class="ev-arrow">→</span></a>`;
   document.body.prepend(bar);
   document.body.classList.add("has-event");
 } else {
@@ -1227,18 +1381,20 @@ var DICT = {
 /* --- Eventos --- */
 "Próximos eventos":"Upcoming events","Dónde estarás con nosotros":"Where you'll find us",
 "Horizonte Blockchain organiza y participa en los encuentros más importantes de la región. Regístrate en nuestro próximo evento y aprovecha el beneficio para su comunidad.":"Horizonte Blockchain hosts and takes part in the region's most important gatherings. Register for our next event and enjoy the benefit for our community.",
-"☕ Evento propio · 7ª Edición · Vía Zoom":"☕ Our own event · 7th Edition · Via Zoom",
-"Café Blockchain:":"Café Blockchain:",
-"IA, Blockchain y el Futuro de la Justicia":"AI, Blockchain and the Future of Justice",
-"¿Puede un algoritmo tomar una decisión judicial? ¿Qué peso legal tiene hoy la evidencia registrada en blockchain? Un espacio legal y estratégico sobre cómo la IA y blockchain transforman la justicia en la era digital.":"Can an algorithm make a judicial decision? What legal weight does blockchain-recorded evidence carry today? A legal and strategic space on how AI and blockchain are transforming justice in the digital age.",
-"Martes 25 de agosto":"Tuesday, August 25","7:00 PM Perú · 8:00 PM Chile":"7:00 PM Peru · 8:00 PM Chile",
-"Vía Zoom · Streaming a YouTube":"Via Zoom · Streamed on YouTube",
-"Inscríbete aquí →":"Register here →","Inscríbete gratis":"Register free",
-"Con":"With","(Abogado, Doctor en Derecho y redactor de la Ley de Transformación Digital del Estado de Chile). Moderan":"(Attorney, Doctor of Law and drafter of Chile's State Digital Transformation Act). Moderated by",
-"Dr. Carlos Reusser Monsálvez":"Dr. Carlos Reusser Monsálvez",
-"Dayana Salinas":"Dayana Salinas","Alexis Franco":"Alexis Franco",
-"Cámara Blockchain Chile A.G. × Horizonte Blockchain":"Cámara Blockchain Chile A.G. × Horizonte Blockchain",
-". Una alianza":". An alliance between","Vía Zoom":"Via Zoom",
+"🎓 Evento presencial · Lima, Perú · Cóctel de cierre":"🎓 In-person event · Lima, Peru · Closing cocktail",
+"La Ruta":"The Money","del Dinero":"Trail",
+"Un encuentro presencial de alto nivel sobre economía, tributación y activos virtuales, con especialistas en derecho tributario, constitucional y finanzas.":"A high-level in-person gathering on economics, taxation and virtual assets, with specialists in tax law, constitutional law and finance.",
+"Jueves 24 de septiembre":"Thursday, September 24","4:00 PM":"4:00 PM",
+"Universidad Ricardo Palma · Auditorio Ollantaytambo":"Universidad Ricardo Palma · Ollantaytambo Auditorium",
+"Inscríbete aquí →":"Register here →","Inscríbete aquí":"Register here",
+"Ponentes:":"Speakers:",
+"(M.A. in Economics, University of Chicago),":"(M.A. in Economics, University of Chicago),",
+"(Ing. especialista en activos virtuales),":"(Engineer specialized in virtual assets),",
+"(Mag. en Derecho Tributario) y":"(LL.M. in Tax Law) and",
+"(Mag. en Derecho Constitucional). Organizan":"(LL.M. in Constitutional Law). Organized by",
+"Horizonte Blockchain × Instituto Latinoamericano de Finanzas y Tributación":"Horizonte Blockchain × Latin American Institute of Finance and Taxation",
+". Sponsor:":". Sponsor:","IB1 Investment Business One":"IB1 Investment Business One",
+"Vía Zoom":"Via Zoom",
 "Descuento comunidad HB":"HB community discount","Santiago · Chile":"Santiago · Chile",
 "5–7 Ago 2026":"Aug 5–7, 2026","Blockchain Summit LATAM · Chile":"Blockchain Summit LATAM · Chile",
 "El evento institucional más importante de la región, en la Universidad de Chile (FEN): bancos, autoridades y líderes Web3 de toda Latinoamérica.":"The region's most important institutional event, at Universidad de Chile (FEN): banks, regulators and Web3 leaders from across Latin America.",
@@ -1370,7 +1526,42 @@ var DICT = {
 "Bitcoin Sin Fronteras":"Bitcoin Without Borders","Canal de Telegram":"Telegram channel",
 "Perú · Costa Rica":"Peru · Costa Rica",
 "© 2026 Horizonte Blockchain · HB Web3 Technologies S.A.C.S. Todos los derechos reservados.":"© 2026 Horizonte Blockchain · HB Web3 Technologies S.A.C.S. All rights reserved.",
-"Perú · Costa Rica — con presencia en toda Latinoamérica":"Peru · Costa Rica — with presence across Latin America"
+"Perú · Costa Rica — con presencia en toda Latinoamérica":"Peru · Costa Rica — with presence across Latin America",
+/* --- Comunidad y redes --- */
+"Únete a la comunidad":"Join the community",
+"Síguenos en redes":"Follow us on social media",
+/* --- Programa Empleado Digital --- */
+"Convenio Horizonte Blockchain × AINI":"Horizonte Blockchain × AINI partnership",
+"Programa Empleado Digital":"Digital Employee Program",
+"Empleado Digital":"Digital Employee",
+"Tu equipo recupera las horas que hoy se van en tareas repetitivas. En ocho semanas implementas un agente de inteligencia artificial que ejecuta trabajo real dentro de tu organización.":"Your team gets back the hours that repetitive tasks consume today. In eight weeks you implement an AI agent that performs real work inside your organization.",
+"amplía la capacidad de tu equipo actual":"expands your current team's capacity",
+"Se hace cargo de lo repetitivo y sistematizable, y libera a tus personas para lo que decide resultados: criterio, relación con clientes y crecimiento.":"It takes over what is repetitive and systematizable, freeing your people for what drives results: judgment, client relationships and growth.",
+"Inicio":"Start date","Duración":"Duration","Sesiones":"Sessions","Modalidad":"Format","Cupos":"Seats","Certificación":"Certification",
+"6 de octubre":"October 6",
+"8 semanas · 16 sesiones en vivo":"8 weeks · 16 live sessions",
+"Martes y jueves · 8 p.m. (GMT-5)":"Tuesdays and Thursdays · 8 p.m. (GMT-5)",
+"100% online · en español":"100% online · in Spanish",
+"30 en la cohorte fundadora":"30 in the founding cohort",
+"Certificado AINI":"AINI certificate",
+"Para quién funciona":"Who it works for",
+"Socios, fundadores y CEO":"Partners, founders and CEOs",
+"Ejecutivos de gerencia a C-Level":"Executives from management to C-Level",
+"Líderes y funcionarios de instituciones públicas":"Leaders and officials of public institutions",
+"Funciona sin conocimientos de programación.":"It works without any programming background.",
+"Qué te llevas":"What you take away",
+"Un agente configurado y corriendo sobre un proceso real de tu organización":"An agent configured and running on a real process in your organization",
+"Canal de dudas directo con los instructores durante todo el programa":"A direct question channel with the instructors throughout the program",
+"Proyecto acompañado con dos entregas publicadas":"A guided project with two published deliverables",
+"Certificado AINI y evento presencial de networking en Lima":"AINI certificate and an in-person networking event in Lima",
+"Garantía: si tras la primera semana esto no es para ti, se devuelve el 100%.":"Guarantee: if after the first week this is not for you, you get a 100% refund.",
+"Agenda tu entrevista de diagnóstico →":"Book your diagnostic interview →",
+"Videollamada de 45 minutos, sin costo. Conversamos tu caso, definimos qué proceso conviene automatizar primero y las condiciones de la cohorte fundadora.":"A free 45-minute video call. We review your case, define which process to automate first and the founding cohort terms.",
+"Acceso libre":"Free access",
+"8 clases gratuitas en vivo, todos los jueves":"8 free live classes, every Thursday",
+"Al registrarte desbloqueas también las clases anteriores grabadas. Empieza hoy mismo, sin costo.":"Registering also unlocks the previously recorded classes. Start today, at no cost.",
+"Registrarme en las clases →":"Register for the classes →",
+"2 de octubre":"October 2"
 };
 
 /* Placeholders del formulario */
@@ -1478,6 +1669,112 @@ else if(!guardado && navigator.language && navigator.language.slice(0,2) !== "es
       });
     });
   }catch(e){}
+})();
+
+/* Cuenta regresiva del cierre de postulaciones — Programa Empleado Digital */
+(function(){ try{
+  var el = document.getElementById("edCount");
+  if(!el) return;
+  var cierre = new Date(2026, 9, 2); cierre.setHours(23,59,59,999);  /* 2 de octubre */
+  var hoy = new Date();
+  var dias = Math.ceil((cierre - hoy) / 86400000);
+  if(dias > 1)       el.textContent = "· quedan " + dias + " días";
+  else if(dias === 1)el.textContent = "· último día";
+  else               el.textContent = "";
+}catch(e){} })();
+
+/* =========================================================
+   MEDICIÓN DE CONVERSIÓN A COMUNIDAD Y REDES
+   - Cuenta clics en cualquier elemento con data-hb-track
+   - Guarda en localStorage (sin cookies, sin terceros)
+   - Panel de resultados: abre la web con  #hb-stats
+   - Los datos agregados de TODOS los visitantes se ven en
+     Cloudflare Web Analytics: páginas /unete-whatsapp.html
+     y /unete-telegram.html = personas que entraron a la comunidad
+   ========================================================= */
+(function(){
+  var KEY = "hb_metrics_v1";
+
+  function load(){
+    try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; }
+  }
+  function save(d){
+    try{ localStorage.setItem(KEY, JSON.stringify(d)); }catch(e){}
+  }
+
+  /* Marca la visita (denominador para calcular el % de conversión) */
+  try{
+    var d0 = load();
+    d0.__visitas = (d0.__visitas || 0) + 1;
+    d0.__desde = d0.__desde || new Date().toISOString().slice(0,10);
+    save(d0);
+  }catch(e){}
+
+  /* Registra cada clic marcado */
+  document.addEventListener("click", function(ev){
+    try{
+      var el = ev.target.closest("[data-hb-track]");
+      if(!el) return;
+      var id = el.getAttribute("data-hb-track");
+      var d = load();
+      d[id] = (d[id] || 0) + 1;
+      save(d);
+    }catch(e){}
+  }, true);
+
+  /* Panel de estadísticas: horizonteblockchain.org/#hb-stats */
+  function panel(){
+    if(document.getElementById("hbStatsPanel")) return;
+    var d = load();
+    var visitas = d.__visitas || 0;
+    var comunidad = (d["comunidad-whatsapp-flotante"]||0) + (d["comunidad-telegram-flotante"]||0) +
+                    (d["comunidad-whatsapp-footer"]||0) + (d["comunidad-telegram-footer"]||0) +
+                    (d["women-in-blockchain"]||0) + (d["bitcoin-sin-fronteras"]||0);
+    var redes = (d["seguir-instagram"]||0) + (d["seguir-facebook"]||0) +
+                (d["seguir-linkedin"]||0) + (d["seguir-x"]||0) + (d["seguir-youtube"]||0);
+    var pct = visitas ? ((comunidad / visitas) * 100).toFixed(1) : "0.0";
+
+    var filas = "";
+    Object.keys(d).sort().forEach(function(k){
+      if(k.indexOf("__") === 0) return;
+      filas += '<tr><td style="padding:6px 12px 6px 0;color:#96A3B8">' + k +
+               '</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#2FD4E6">' + d[k] + '</td></tr>';
+    });
+    if(!filas) filas = '<tr><td style="padding:6px 0;color:#5C6B82" colspan="2">Aún sin clics registrados en este dispositivo.</td></tr>';
+
+    var box = document.createElement("div");
+    box.id = "hbStatsPanel";
+    box.style.cssText = "position:fixed;inset:0;z-index:9999;background:rgba(4,8,16,.9);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px;overflow:auto";
+    box.innerHTML =
+      '<div style="background:#0D1626;border:1px solid rgba(47,212,230,.3);border-radius:20px;padding:30px;max-width:520px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.6);font-family:inherit">' +
+        '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:6px">' +
+          '<h3 style="margin:0;font-size:1.1rem;color:#E7ECF5">Métricas de comunidad</h3>' +
+          '<button id="hbStatsClose" style="background:none;border:none;color:#96A3B8;font-size:1.5rem;line-height:1;cursor:pointer;padding:0">&times;</button>' +
+        '</div>' +
+        '<p style="margin:0 0 20px;color:#5C6B82;font-size:.76rem;line-height:1.5">Datos de <b>este dispositivo</b> desde ' + (d.__desde || "hoy") + '. Para el total de todos los visitantes usa Cloudflare Web Analytics.</p>' +
+        '<div style="display:flex;gap:12px;margin-bottom:22px;flex-wrap:wrap">' +
+          '<div style="flex:1;min-width:120px;background:rgba(47,212,230,.08);border:1px solid rgba(47,212,230,.25);border-radius:14px;padding:14px"><div style="font-size:1.6rem;font-weight:800;color:#2FD4E6">' + visitas + '</div><div style="font-size:.7rem;color:#96A3B8;text-transform:uppercase;letter-spacing:.08em">Visitas</div></div>' +
+          '<div style="flex:1;min-width:120px;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.25);border-radius:14px;padding:14px"><div style="font-size:1.6rem;font-weight:800;color:#25D366">' + pct + '%</div><div style="font-size:.7rem;color:#96A3B8;text-transform:uppercase;letter-spacing:.08em">A comunidad</div></div>' +
+          '<div style="flex:1;min-width:120px;background:rgba(255,201,72,.08);border:1px solid rgba(255,201,72,.25);border-radius:14px;padding:14px"><div style="font-size:1.6rem;font-weight:800;color:#FFC948">' + redes + '</div><div style="font-size:.7rem;color:#96A3B8;text-transform:uppercase;letter-spacing:.08em">Follows</div></div>' +
+        '</div>' +
+        '<table style="width:100%;border-collapse:collapse;font-size:.84rem">' + filas + '</table>' +
+        '<button id="hbStatsReset" style="margin-top:22px;width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:#96A3B8;border-radius:12px;padding:11px;font-size:.82rem;font-weight:600;cursor:pointer">Reiniciar contadores de este dispositivo</button>' +
+      '</div>';
+    document.body.appendChild(box);
+
+    document.getElementById("hbStatsClose").onclick = function(){
+      box.remove();
+      if(location.hash === "#hb-stats"){ history.replaceState(null, "", location.pathname); }
+    };
+    document.getElementById("hbStatsReset").onclick = function(){
+      try{ localStorage.removeItem(KEY); }catch(e){}
+      box.remove(); panel();
+    };
+  }
+
+  if(location.hash === "#hb-stats") setTimeout(panel, 250);
+  window.addEventListener("hashchange", function(){ if(location.hash === "#hb-stats") panel(); });
+  window.hbStats = panel;
 })();
 </script>
 </body>
