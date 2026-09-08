@@ -327,77 +327,47 @@ nav.scrolled{border-color:var(--line);background:rgba(6,10,19,.9)}
 .aud-card .icon svg{width:22px;height:22px;stroke:var(--accent)}
 .aud-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}
 .aud-card p{color:var(--muted);font-size:.86rem;line-height:1.55}
-/* ============ VIDEOTECA ============ */
+/* ============ CONTENIDO EDUCATIVO ============ */
 .videos-section{background:linear-gradient(180deg,transparent,rgba(46,107,214,.04) 50%,transparent)}
-.vt-hero{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(47,212,230,.25);box-shadow:0 30px 80px rgba(0,0,0,.55);margin-bottom:34px;cursor:pointer;background:#0d1626;display:block}
-.vt-hero img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
-.vt-hero:hover img{transform:scale(1.035)}
-.vt-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,8,16,.94) 0%,rgba(4,8,16,.5) 44%,rgba(4,8,16,.08) 100%)}
-.vt-hero-body{position:absolute;left:0;right:0;bottom:0;padding:34px;display:flex;flex-direction:column;gap:11px}
-.vt-hero-body h3{font-size:clamp(1.1rem,2.1vw,1.55rem);max-width:740px;line-height:1.25}
-.vt-meta{display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:var(--muted);font-size:.81rem}
-.vt-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--muted);opacity:.6}
-.vt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;background:rgba(6,10,19,.58);border:1px solid rgba(47,212,230,.5);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:background .3s,box-shadow .3s;pointer-events:none}
-.vt-play svg{width:25px;height:25px;fill:var(--accent2);margin-left:4px;transition:fill .3s}
-.vt-hero:hover .vt-play,.vt-card:hover .vt-play{background:var(--accent);box-shadow:0 0 0 12px rgba(47,212,230,.10)}
-.vt-hero:hover .vt-play svg,.vt-card:hover .vt-play svg{fill:#04121a}
-.vt-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
-.vt-chip{padding:9px 18px;border-radius:100px;border:1px solid var(--line);background:rgba(255,255,255,.025);color:var(--muted);font-size:.84rem;font-weight:600;cursor:pointer;transition:border-color .25s,color .25s,background .25s;font-family:inherit}
-.vt-chip:hover{border-color:rgba(47,212,230,.45);color:var(--text)}
-.vt-chip.on{background:var(--accent-soft);border-color:rgba(47,212,230,.55);color:var(--accent2)}
-.vt-chip .n{opacity:.55;margin-left:7px;font-size:.76rem;font-weight:600}
-.vt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.vt-card{display:flex;flex-direction:column;cursor:pointer;overflow:hidden;text-align:left;padding:0;font-family:inherit;transition:transform .35s,border-color .35s,box-shadow .35s}
-.vt-card:hover{transform:translateY(-6px);border-color:rgba(47,212,230,.35);box-shadow:0 24px 56px rgba(0,0,0,.5)}
-.vt-shot{position:relative;aspect-ratio:16/9;background:#0d1626;overflow:hidden}
+.vt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;background:rgba(6,10,19,.6);border:1px solid rgba(47,212,230,.5);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:background .3s,box-shadow .3s;pointer-events:none;z-index:2}
+.vt-play svg{width:26px;height:26px;fill:var(--accent2);transition:fill .3s}
+.vt-shot{display:block;position:relative;aspect-ratio:16/9;background:#0d1626;overflow:hidden}
 .vt-shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.vt-card:hover .vt-shot img{transform:scale(1.05)}
-.vt-card .vt-play{width:52px;height:52px}
-.vt-card .vt-play svg{width:17px;height:17px}
-.vt-dur{position:absolute;right:9px;bottom:9px;background:rgba(4,8,16,.88);color:#fff;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:6px;letter-spacing:.02em}
-.vt-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
-.vt-body h3{font-size:.97rem;line-height:1.38;font-weight:600;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.btn-yt{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
-.btn-yt svg{width:16px;height:16px;fill:currentColor;flex:0 0 auto}
-.vt-more{text-align:center;margin-top:38px}
-.vt-cta{margin-top:52px;padding:34px 38px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;border-color:rgba(47,212,230,.22)}
-.vt-cta-txt{flex:1;min-width:260px}
-.vt-cta-txt h3{font-size:1.18rem;margin-bottom:8px}
-.vt-cta-txt p{color:var(--muted);font-size:.92rem;max-width:520px}
-.vt-cta-btns{display:flex;flex-wrap:wrap;gap:12px}
-.vt-cta.pulse{animation:vtPulse 1.5s ease-out 2}
-@keyframes vtPulse{0%,100%{box-shadow:0 0 0 0 rgba(47,212,230,0)}50%{box-shadow:0 0 0 8px rgba(47,212,230,.14)}}
-.vt-modal{position:fixed;inset:0;z-index:9999;background:rgba(3,6,13,.95);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .28s}
-.vt-modal.on{opacity:1}
-.vt-modal-inner{width:min(1080px,100%);position:relative}
-.vt-frame{aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid rgba(47,212,230,.25);box-shadow:0 40px 100px rgba(0,0,0,.75);background:#000}
-.vt-frame iframe{width:100%;height:100%;border:0;display:block}
-.vt-modal h4{margin-top:18px;font-size:1.02rem;font-weight:600;color:var(--text);font-family:'Space Grotesk',sans-serif}
-.vt-close{position:absolute;top:-46px;right:0;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid var(--line);color:var(--text);font-size:1.4rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s}
-.vt-close:hover{background:rgba(255,255,255,.15);transform:rotate(90deg)}
-body.vt-open{overflow:hidden}
-body.vt-open .community-float{opacity:0;pointer-events:none;transition:opacity .25s}
-@media(max-width:1024px){.vt-grid{grid-template-columns:repeat(2,1fr)}}
+.vt-series{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.vt-serie{display:flex;flex-direction:column;overflow:hidden;color:inherit;text-decoration:none;transition:transform .35s,border-color .35s,box-shadow .35s}
+.vt-serie:hover{transform:translateY(-6px);border-color:rgba(47,212,230,.35);box-shadow:0 24px 56px rgba(0,0,0,.5)}
+.vt-serie:hover .vt-shot img{transform:scale(1.05)}
+.vt-serie:hover .vt-play{background:var(--accent);box-shadow:0 0 0 12px rgba(47,212,230,.10)}
+.vt-serie:hover .vt-play svg{fill:#04121a}
+.vt-serie:hover .vt-link{color:var(--accent)}
+.vt-body{display:flex;flex-direction:column;gap:11px;flex:1;padding:22px 24px 24px}
+.vt-t{font-family:'Space Grotesk',sans-serif;font-size:1.08rem;font-weight:600;line-height:1.3;color:var(--text)}
+.vt-p{color:var(--muted);font-size:.9rem;line-height:1.55}
+.vt-link{margin-top:auto;padding-top:6px;color:var(--accent2);font-size:.88rem;font-weight:600;transition:color .25s}
 @media(max-width:640px){
-  .vt-grid{grid-template-columns:1fr;gap:18px}
-  .vt-hero-body{padding:20px}
-  .vt-play{width:56px;height:56px}.vt-play svg{width:19px;height:19px}
-  .vt-cta{padding:26px 22px;flex-direction:column;align-items:stretch;text-align:center}
-  .vt-cta-txt p{margin:0 auto}
-  .vt-cta-btns{justify-content:center}
-  .vt-modal{padding:16px}
-  .vt-close{top:-42px}
-  .vt-filters{gap:8px}.vt-chip{padding:8px 14px;font-size:.79rem}
+  .vt-series{grid-template-columns:1fr;gap:18px}
+  .vt-play{width:56px;height:56px}.vt-play svg{width:20px;height:20px}
 }
+.ec-banner{display:block;margin:0 26px 26px;border-radius:12px;overflow:hidden;border:1px solid rgba(47,212,230,.18);background:#0d1626;transition:border-color .3s,box-shadow .3s}
+@media(max-width:820px){.ec-banner{margin:0 20px 20px}}
+.ec-banner img{width:100%;height:auto;display:block}
+.ec-banner:hover{border-color:rgba(47,212,230,.5);box-shadow:0 0 0 3px rgba(47,212,230,.10)}
+.ec-auto{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;pointer-events:none;opacity:0;transition:opacity .7s ease;z-index:1}
+.ec-vid.playing .ec-auto{opacity:1}
+.ec-vid .vt-play,.ec-vid .vt-dur,.ec-hint{z-index:2}
+.ec-vid.playing .vt-play{background:rgba(6,10,19,.35);border-color:rgba(47,212,230,.35)}
+.ec-hint{position:absolute;left:9px;bottom:9px;background:rgba(4,8,16,.82);backdrop-filter:blur(6px);border:1px solid rgba(47,212,230,.3);color:var(--accent2);font-size:.7rem;font-weight:600;padding:4px 10px;border-radius:100px;letter-spacing:.01em}
+@media(max-width:520px){.ec-hint{display:none}}
 /* tarjeta de evento con video */
-.event-card.ec-video{grid-column:1/-1;flex-direction:row;align-items:stretch}
+.event-card.ec-video{grid-column:1/-1;flex-direction:column;align-items:stretch}
+.ec-row{display:flex;align-items:stretch}
 .event-card.ec-video .ec-body{padding:30px 34px;justify-content:center}
 .ec-vid{position:relative;flex:0 0 44%;align-self:center;aspect-ratio:16/9;margin:26px 0 26px 26px;cursor:pointer;overflow:hidden;background:#0d1626;border-radius:14px;border:1px solid rgba(47,212,230,.22)}
 .ec-vid img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
 .event-card.ec-video:hover .ec-vid img{transform:scale(1.045)}
 .event-card.ec-video:hover .vt-play{background:var(--accent);box-shadow:0 0 0 12px rgba(47,212,230,.10)}
 .event-card.ec-video:hover .vt-play svg{fill:#04121a}
-@media(max-width:820px){.event-card.ec-video{flex-direction:column}.ec-vid{flex:none;aspect-ratio:16/9;margin:20px 20px 0}.event-card.ec-video .ec-body{padding:22px 24px 28px}}
+@media(max-width:820px){.ec-row{flex-direction:column}.ec-vid{flex:none;aspect-ratio:16/9;margin:20px 20px 0}.event-card.ec-video .ec-body{padding:22px 24px 28px}}
 /* series completas */
 .vt-series{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-bottom:44px}
 .vt-serie{display:flex;flex-direction:column;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
@@ -707,13 +677,14 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
           <a href="https://www.hallos.io/event/cripto-latin-fest-2026-9-edicin-bogot/checkout?ticket=corpgenr5r&amp;ref=HORIZONTE-BLOCKCHAIN" target="_blank" rel="noopener" class="btn btn-primary">Obtener entrada de cortesía →</a>
         </div>
       </div>
-      <div class="event-card premium ec-video glass reveal" data-hasta="2027-03-17">
+      <div class="event-card premium ec-video glass" data-hasta="2027-03-17">
         <div class="ec-shine" aria-hidden="true"></div>
-        <div class="ec-vid" data-hb-video="ZHWrs5phQNs" data-hb-name="GITEX AI LATAM llega a São Paulo" role="button" tabindex="0" aria-label="Reproducir video de GITEX AI LATAM São Paulo 2027" data-hb-track="evento-gitex-video">
+        <div class="ec-row">
+        <a class="ec-vid" href="https://www.youtube.com/watch?v=ZHWrs5phQNs" target="_blank" rel="noopener" data-hb-auto="ZHWrs5phQNs" data-hb-track="evento-gitex-video" aria-label="Ver el video de GITEX AI LATAM São Paulo 2027 en YouTube">
           <img src="https://i.ytimg.com/vi/ZHWrs5phQNs/maxresdefault.jpg" alt="GITEX AI LATAM · São Paulo 2027" loading="lazy" decoding="async" width="1280" height="720">
-          <span class="vt-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-          <span class="vt-dur">0:50</span>
-        </div>
+          <span class="vt-play"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg></span>
+          <span class="ec-hint">Ver en YouTube</span>
+        </a>
         <div class="ec-body">
           <span class="ec-city">São Paulo · Brasil</span>
           <div class="ec-date">16–17 Mar 2027</div>
@@ -722,6 +693,10 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
           <div class="ec-code"><span>Horizonte Blockchain</span><b>Delegación LATAM</b></div>
           <a href="#formulario" class="btn btn-primary" data-hb-track="evento-gitex-interes">Quiero participar →</a>
         </div>
+        </div>
+        <a class="ec-banner" href="#formulario" data-hasta="2027-03-17" data-hb-track="gitex-banner" aria-label="GITEX AI LATAM São Paulo 2027 — Conectando al mundo con el futuro digital de América Latina">
+        <img src="data:image/jpeg;base64,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" alt="GITEX AI LATAM · São Paulo · 16–17 de marzo 2027 · Centro de Convenciones Anhembi · Socio oficial: Municipalidad de São Paulo" width="970" height="90" loading="lazy" decoding="async">
+      </a>
       </div>
     </div>
   </div>
@@ -1043,67 +1018,41 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
   </div>
 </section>
 
-<!-- ================= 6. VIDEOTECA ================= -->
+<!-- ================= 6. CONTENIDO EDUCATIVO ================= -->
 <section class="videos-section" id="videos">
   <div class="container">
-    <span class="kicker reveal">Videos y contenido educativo</span>
+    <span class="kicker reveal">Contenido educativo</span>
     <h2 class="section-title reveal">Conocimiento abierto para toda la región</h2>
-    <p class="section-lead reveal">Café Blockchain, sesiones del CLIE, masterclasses y demos de producto. Toda la biblioteca se reproduce aquí mismo, sin salir del sitio.</p>
+    <p class="section-lead reveal">Dos series en vivo, gratuitas y abiertas: una conversación mensual con especialistas y las sesiones del comité regional.</p>
 
-    <div id="vtHero" class="reveal"></div>
     <div class="vt-series reveal">
-      <div class="vt-serie glass">
-        <div class="vt-shot" data-hb-playlist="PLTnIfzT5GIidy3GxQKEdhiiWt0Za-yTc6" data-hb-name="Café Blockchain" data-hb-cover="u0I_sE0v6Uk" role="button" tabindex="0" aria-label="Reproducir la serie Café Blockchain completa" data-hb-track="serie-cafe-blockchain">
-          <span class="vt-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-          <span class="vt-dur" data-hb-count="cafe"></span>
-        </div>
-        <div class="vt-body">
+      <a class="vt-serie glass" href="https://www.youtube.com/playlist?list=PLTnIfzT5GIidy3GxQKEdhiiWt0Za-yTc6" target="_blank" rel="noopener" data-hb-track="serie-cafe-blockchain">
+        <span class="vt-shot">
+          <img src="https://i.ytimg.com/vi/u0I_sE0v6Uk/maxresdefault.jpg" alt="Café Blockchain" loading="lazy" decoding="async" width="1280" height="720">
+          <span class="vt-play"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg></span>
+        </span>
+        <span class="vt-body">
           <span class="tag">Espacio mensual</span>
-          <h3>Café Blockchain</h3>
-          <p>Conversaciones con especialistas sobre adopción, regulación y tendencias del ecosistema. Se reproduce la lista completa, episodio tras episodio.</p>
-          <a class="btn btn-ghost btn-sm btn-yt" href="https://www.youtube.com/playlist?list=PLTnIfzT5GIidy3GxQKEdhiiWt0Za-yTc6" target="_blank" rel="noopener" data-hb-track="serie-cafe-youtube"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg> Ver lista en YouTube</a>
-        </div>
-      </div>
-      <div class="vt-serie glass">
-        <div class="vt-shot" data-hb-playlist="PLTnIfzT5GIifkL4R-jIE7dYiXRo2Xr_ob" data-hb-name="CLIE — Sesiones del comité" data-hb-cover="wa7fPNoxKDY" role="button" tabindex="0" aria-label="Reproducir la serie CLIE completa" data-hb-track="serie-clie">
-          <span class="vt-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-          <span class="vt-dur" data-hb-count="clie"></span>
-        </div>
-        <div class="vt-body">
+          <span class="vt-t">Café Blockchain</span>
+          <span class="vt-p">Conversaciones con especialistas sobre adopción, regulación y tendencias del ecosistema.</span>
+          <span class="vt-link">Ver la serie en YouTube →</span>
+        </span>
+      </a>
+      <a class="vt-serie glass" href="https://www.youtube.com/playlist?list=PLTnIfzT5GIifkL4R-jIE7dYiXRo2Xr_ob" target="_blank" rel="noopener" data-hb-track="serie-clie">
+        <span class="vt-shot">
+          <img src="https://i.ytimg.com/vi/wa7fPNoxKDY/maxresdefault.jpg" alt="CLIE" loading="lazy" decoding="async" width="1280" height="720">
+          <span class="vt-play"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg></span>
+        </span>
+        <span class="vt-body">
           <span class="tag">Comité regional</span>
-          <h3>CLIE — Sesiones del comité</h3>
-          <p>Líderes, gobiernos y organizaciones de +10 países articulando la agenda blockchain regional. La serie completa, en orden.</p>
-          <a class="btn btn-ghost btn-sm btn-yt" href="https://www.youtube.com/playlist?list=PLTnIfzT5GIifkL4R-jIE7dYiXRo2Xr_ob" target="_blank" rel="noopener" data-hb-track="serie-clie-youtube"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg> Ver lista en YouTube</a>
-        </div>
-      </div>
-    </div>
-
-    <span class="vt-sub reveal">Todos los videos, uno por uno</span>
-    <div id="vtFilters" class="vt-filters reveal" role="group" aria-label="Filtrar videos por serie"></div>
-    <div id="vtGrid" class="vt-grid"></div>
-    <div class="vt-more"><button type="button" class="btn btn-ghost" id="vtMore">Ver más videos</button></div>
-
-    <div class="vt-cta glass reveal" id="vtCta">
-      <div class="vt-cta-txt">
-        <h3>Cada sesión nueva, primero en tu bolsillo</h3>
-        <p>Publicamos una edición nueva cada mes. Únete a la comunidad y recibe el enlace, el resumen y los materiales antes de que salgan al público.</p>
-      </div>
-      <div class="vt-cta-btns">
-        <a href="/unete-whatsapp.html" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-hb-track="videoteca-whatsapp">Recibir por WhatsApp</a>
-        <a href="/unete-telegram.html" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-hb-track="videoteca-telegram">Canal de Telegram</a>
-        <a href="https://www.youtube.com/@HorizonteBlockchainBTC?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-ghost btn-sm btn-yt" data-hb-track="videoteca-suscribirse"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg> Suscribirme</a>
-      </div>
+          <span class="vt-t">CLIE — Sesiones del comité</span>
+          <span class="vt-p">Líderes, gobiernos y organizaciones de +10 países articulando la agenda blockchain regional.</span>
+          <span class="vt-link">Ver la serie en YouTube →</span>
+        </span>
+      </a>
     </div>
   </div>
 </section>
-
-<div class="vt-modal" id="vtModal" role="dialog" aria-modal="true" aria-label="Reproductor de video" hidden>
-  <div class="vt-modal-inner">
-    <button type="button" class="vt-close" id="vtClose" aria-label="Cerrar reproductor">&times;</button>
-    <div class="vt-frame" id="vtFrame"></div>
-    <h4 id="vtTitle"></h4>
-  </div>
-</div>
 
 <!-- ================= 7. ALIADOS ================= -->
 <section id="aliados">
@@ -1590,23 +1539,18 @@ var DICT = {
 "Para entidades interesadas en explorar identidad digital, trazabilidad, transparencia, tokenización, regulación e innovación pública.":"For entities interested in exploring digital identity, traceability, transparency, tokenization, regulation and public innovation.",
 "Fundaciones blockchain y protocolos":"Blockchain foundations and protocols",
 "Para ecosistemas que necesitan activar builders, comunidad, educación, hackathons, programas de adopción y presencia regional.":"For ecosystems that need to activate builders, community, education, hackathons, adoption programs and regional presence.",
-"Todos los videos, uno por uno":"Every video, one by one",
-"episodio":"episode","episodios":"episodes",
 "Café Blockchain":"Café Blockchain","Espacio mensual":"Monthly space",
 "Conversaciones con especialistas sobre adopción, regulación y tendencias del ecosistema. Se reproduce la lista completa, episodio tras episodio.":"Conversations with specialists on adoption, regulation and ecosystem trends. Plays the full list, episode after episode.",
 "CLIE — Sesiones del comité":"CLIE — Committee sessions","Comité regional":"Regional committee",
 "Líderes, gobiernos y organizaciones de +10 países articulando la agenda blockchain regional. La serie completa, en orden.":"Leaders, governments and organizations from 10+ countries shaping the regional blockchain agenda. The full series, in order.",
-"Ver lista en YouTube":"View playlist on YouTube",
+"Ver la serie en YouTube":"Watch the series on YouTube",
 "São Paulo · Brasil":"São Paulo · Brazil","16–17 Mar 2027":"Mar 16–17, 2027",
 "GITEX AI LATAM · São Paulo":"GITEX AI LATAM · São Paulo",
 "La feria de tecnología e inteligencia artificial más grande del mundo llega a Latinoamérica: 500+ empresas y startups, 200+ speakers globales y 100+ inversionistas activos conectando talento y oportunidades en la región.":"The world's largest technology and AI expo arrives in Latin America: 500+ companies and startups, 200+ global speakers and 100+ active investors connecting talent and opportunity across the region.",
 "Delegación LATAM":"LATAM delegation","Quiero participar →":"I want to take part →",
+"Ver la serie en YouTube →":"Watch the series on YouTube →","Ver en YouTube":"Watch on YouTube",
 /* --- Videos --- */
 "Café Blockchain, sesiones del CLIE, masterclasses y demos de producto. Toda la biblioteca se reproduce aquí mismo, sin salir del sitio.":"Café Blockchain, CLIE sessions, masterclasses and product demos. The whole library plays right here, without leaving the site.",
-"Ver más videos":"Load more videos","Último publicado":"Latest release","Todos":"All",
-"Cada sesión nueva, primero en tu bolsillo":"Every new session, first in your pocket",
-"Publicamos una edición nueva cada mes. Únete a la comunidad y recibe el enlace, el resumen y los materiales antes de que salgan al público.":"We publish a new edition every month. Join the community and get the link, the recap and the materials before they go public.",
-"Recibir por WhatsApp":"Get it on WhatsApp","Canal de Telegram":"Telegram channel","Suscribirme":"Subscribe",
 
 "Videos y contenido educativo":"Videos and educational content",
 "Conocimiento abierto para toda la región":"Open knowledge for the entire region",
@@ -1614,7 +1558,7 @@ var DICT = {
 "Últimas publicaciones del canal oficial de Horizonte Blockchain":"Latest posts from the official Horizonte Blockchain channel",
 "Café Blockchain — Temporada 1":"Café Blockchain — Season 1",
 "Conversaciones con especialistas sobre adopción, regulación y tendencias del ecosistema.":"Conversations with specialists on adoption, regulation and ecosystem trends.",
-"Ver lista en YouTube":"View playlist on YouTube","CLIE — Sesiones del comité":"CLIE — Committee sessions",
+"Ver la serie en YouTube":"Watch the series on YouTube","CLIE — Sesiones del comité":"CLIE — Committee sessions",
 "Líderes, gobiernos y organizaciones de +10 países articulando la agenda blockchain regional.":"Leaders, governments and organizations from 10+ countries shaping the regional blockchain agenda.",
 "Ver todo el contenido en YouTube":"See all content on YouTube",
 /* --- Aliados --- */
@@ -1909,257 +1853,32 @@ else if(!guardado && navigator.language && navigator.language.slice(0,2) !== "es
 })();
 </script>
 <script>
-/* ==========================================================================
-   VIDEOTECA — Horizonte Blockchain
-   --------------------------------------------------------------------------
-   COMO AGREGAR UN VIDEO NUEVO (manual, 20 segundos):
-     1. Copia el enlace del video en YouTube: youtube.com/watch?v=ABC123xyz_0
-     2. El ID es lo que va despues de "v=" -> ABC123xyz_0
-     3. Agrega una linea ARRIBA DE TODO en la lista HB_VIDEOS:
-        {id:"ABC123xyz_0", t:"Titulo del video", d:"12:34", s:"cafe"}
-     4. Series validas para "s":  cafe | clie | edu | demo | evento
-     Listo. La miniatura, el reproductor y los filtros se actualizan solos.
-
-   MODO AUTOMATICO (opcional, recomendado):
-     Publica el Worker de Cloudflare (archivo worker-youtube-feed.js) y pega
-     su URL en HB_VIDEO_FEED. El sitio jalara los videos del canal solo y la
-     lista de abajo quedara unicamente como respaldo si el feed falla.
-     Recuerda agregar el dominio del Worker a connect-src en _headers.
-   ========================================================================== */
+/* Vista previa silenciosa del video de evento al entrar en pantalla.
+   Al tocar la tarjeta se abre el video en YouTube. */
 (function(){
 try{
-
-var HB_VIDEO_FEED = ""; /* <-- pega aqui la URL de tu Worker cuando lo publiques */
-
-var HB_SERIES = [
-  {k:"all",  es:"Todos",              en:"All"},
-  {k:"cafe", es:"Café Blockchain",    en:"Café Blockchain"},
-  {k:"clie", es:"CLIE",               en:"CLIE"},
-  {k:"edu",  es:"Formación",          en:"Training"},
-  {k:"demo", es:"Producto y demos",   en:"Product & demos"}
-];
-
-var HB_VIDEOS = [
-  {id:"z4EWAx7iNvc", t:"Café Blockchain Ed. 5 | Stablecoins vs CBDC: ¿quién dominará el dinero del futuro?", d:"1:17:03", s:"cafe"},
-  {id:"XdVJXii2sjQ", t:"Juicio a Blockchain: ¿pueden las elecciones ser más seguras con blockchain?", d:"1:15:52", s:"clie"},
-  {id:"WZmJoi2dS74", t:"Voto Digital y Blockchain en el Perú — El momento que lo cambia todo | Proof of Builders", d:"49:16", s:"clie"},
-  {id:"DFvi-RJ7Xog", t:"¿Estamos preparados para una democracia verificable en blockchain? | CLIE Serie Internacional #2", d:"56:28", s:"clie"},
-  {id:"u8tcipcrdSY", t:"Horizon Prime — AI-Powered Tokenization Bot | Live Demo", d:"7:45", s:"demo"},
-  {id:"ktNs-KueL2Q", t:"¿Es el fin de la desconfianza electoral? La revolución blockchain en la gobernanza global", d:"1:12:40", s:"clie"},
-  {id:"L1NGY4mlps4", t:"Café Blockchain Ed. 3 | Sandbox regulatorio: cómo impacta la regulación cripto a bancos y fintech", d:"1:20:39", s:"cafe"},
-  {id:"Fbesjqn_cbE", t:"Arquitectura Avalanche: infraestructura blockchain para entornos institucionales | CLIE Parte 2", d:"1:26:41", s:"clie"},
-  {id:"p0rQZ-5SHVw", t:"CLIE | Avalanche y soluciones blockchain (Parte 1)", d:"1:29:53", s:"clie"},
-  {id:"PXfbwDzp1dI", t:"CLIE | Syscoin en gobernanza y procesos electorales", d:"57:44", s:"clie"},
-  {id:"wa7fPNoxKDY", t:"Blockchain y democracia: análisis del caso Tu Voto Decide desde CLIE", d:"1:11:06", s:"clie"},
-  {id:"EwaNrcffqag", t:"SWIFT y blockchain: la jugada que reconfigura el sistema financiero mundial | Café Blockchain", d:"38:34", s:"cafe"},
-  {id:"Ht8ZQ260xCk", t:"Café Blockchain Ed. 2 | Tokenización en El Salvador con Dayana Salinas y Alejandro Muñoz", d:"1:13:31", s:"cafe"},
-  {id:"u0I_sE0v6Uk", t:"Café Blockchain Ed. 1 | GENIUS ACT: ¿fin de las stablecoins? con Abel Revoredo y Dayana Salinas", d:"1:08:18", s:"cafe"},
-  {id:"WAv6OaD6Ecw", t:"De Cero a Bitcoin — Sesión 3", d:"57:43", s:"edu"}
-];
-
-var PAGE = 6, shown = PAGE, filter = "all", data = HB_VIDEOS.slice(), ctaShown = false;
-var elHero = document.getElementById("vtHero"),
-    elFilters = document.getElementById("vtFilters"),
-    elGrid = document.getElementById("vtGrid"),
-    elMore = document.getElementById("vtMore"),
-    elCta  = document.getElementById("vtCta"),
-    modal  = document.getElementById("vtModal"),
-    frame  = document.getElementById("vtFrame"),
-    mTitle = document.getElementById("vtTitle"),
-    mClose = document.getElementById("vtClose");
-if(!elGrid || !elHero) return;
-
-function T(es){ return (window.hbT ? window.hbT(es) : es); }
-function serieName(k){
-  var s = HB_SERIES.filter(function(x){return x.k===k;})[0];
-  if(!s) return "";
-  return (window.hbLang === "en") ? s.en : s.es;
-}
-function esc(s){ return String(s).replace(/[&<>"]/g, function(c){
-  return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
-
-var PLAY_SVG = '<span class="vt-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>';
-
-function thumb(id, cls){
-  var im = document.createElement("img");
-  im.src = "https://i.ytimg.com/vi/" + id + "/maxresdefault.jpg";
-  im.loading = "lazy"; im.decoding = "async"; im.alt = "";
-  if(cls) im.className = cls;
-  im.addEventListener("error", function(){
-    if(im.dataset.fb) return; im.dataset.fb = "1";
-    im.src = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg";
-  });
-  return im;
-}
-
-/* ---------- Destacado ---------- */
-function renderHero(){
-  var v = data[0]; if(!v) return;
-  elHero.className = "vt-hero reveal visible";
-  elHero.setAttribute("role","button");
-  elHero.setAttribute("tabindex","0");
-  elHero.innerHTML = "";
-  elHero.appendChild(thumb(v.id));
-  var sh = document.createElement("div"); sh.className = "vt-shade"; elHero.appendChild(sh);
-  var body = document.createElement("div"); body.className = "vt-hero-body";
-  body.innerHTML = '<span class="tag">' + esc(T("Último publicado")) + '</span>' +
-    '<h3>' + esc(v.t) + '</h3>' +
-    '<div class="vt-meta"><span>' + esc(serieName(v.s)) + '</span><span class="dot"></span><span>' + esc(v.d) + '</span></div>';
-  elHero.appendChild(body);
-  elHero.insertAdjacentHTML("beforeend", PLAY_SVG);
-  elHero.onclick = function(){ open(v); };
-  elHero.onkeydown = function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); open(v); } };
-}
-
-/* ---------- Filtros ---------- */
-function renderFilters(){
-  elFilters.innerHTML = "";
-  HB_SERIES.forEach(function(s){
-    var n = (s.k === "all") ? data.length
-          : data.filter(function(v){ return v.s === s.k; }).length;
-    if(n <= 0) return;
-    var b = document.createElement("button");
-    b.type = "button";
-    b.className = "vt-chip" + (filter === s.k ? " on" : "");
-    b.innerHTML = esc(serieName(s.k) || T("Todos")) + '<span class="n">' + n + '</span>';
-    b.onclick = function(){ filter = s.k; shown = PAGE; renderFilters(); renderGrid(); };
-    elFilters.appendChild(b);
-  });
-}
-
-/* ---------- Grid ---------- */
-function list(){
-  return (filter === "all") ? data : data.filter(function(v){ return v.s === filter; });
-}
-function renderGrid(){
-  var all = list(), vis = all.slice(0, shown);
-  elGrid.innerHTML = "";
-  vis.forEach(function(v){
-    var c = document.createElement("button");
-    c.type = "button"; c.className = "vt-card glass";
-    var shot = document.createElement("div"); shot.className = "vt-shot";
-    shot.appendChild(thumb(v.id));
-    shot.insertAdjacentHTML("beforeend", PLAY_SVG + '<span class="vt-dur">' + esc(v.d) + '</span>');
-    c.appendChild(shot);
-    var b = document.createElement("div"); b.className = "vt-body";
-    b.innerHTML = '<span class="tag">' + esc(serieName(v.s)) + '</span><h3>' + esc(v.t) + '</h3>';
-    c.appendChild(b);
-    c.onclick = function(){ open(v); };
-    elGrid.appendChild(c);
-  });
-  if(elMore){
-    var hay = all.length > shown;
-    elMore.parentElement.style.display = hay ? "" : "none";
-    elMore.textContent = T("Ver más videos");
-  }
-}
-if(elMore) elMore.onclick = function(){ shown += PAGE; renderGrid(); };
-
-/* ---------- Reproductor ---------- */
-function show(src, title){
-  frame.innerHTML = '<iframe src="' + src + '" title="' + esc(title) +
-    '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-  mTitle.textContent = title;
-  modal.hidden = false;
-  document.body.classList.add("vt-open");
-  requestAnimationFrame(function(){ modal.classList.add("on"); });
-  mClose.focus();
-  try{
-    var k = "hb_track_video-play";
-    localStorage.setItem(k, String((parseInt(localStorage.getItem(k),10) || 0) + 1));
-  }catch(e){}
-}
-window.hbPlay = show;
-function open(v){
-  show("https://www.youtube-nocookie.com/embed/" + v.id + "?autoplay=1&rel=0&modestbranding=1&playsinline=1", v.t);
-}
-function close(){
-  modal.classList.remove("on");
-  document.body.classList.remove("vt-open");
-  setTimeout(function(){ frame.innerHTML = ""; modal.hidden = true; }, 280);
-  if(!ctaShown && elCta){
-    ctaShown = true;
-    elCta.classList.add("pulse");
-    setTimeout(function(){ elCta.classList.remove("pulse"); }, 3200);
-  }
-}
-mClose.onclick = close;
-modal.onclick = function(e){ if(e.target === modal) close(); };
-document.addEventListener("keydown", function(e){
-  if(e.key === "Escape" && !modal.hidden) close();
-});
-
-/* ---------- Datos automáticos desde el canal (si hay Worker) ---------- */
-function sync(){
-  if(!HB_VIDEO_FEED) return;
-  fetch(HB_VIDEO_FEED, {mode:"cors"})
-    .then(function(r){ return r.ok ? r.json() : null; })
-    .then(function(j){
-      if(!j || !j.length) return;
-      var known = {}; HB_VIDEOS.forEach(function(v){ known[v.id] = v; });
-      data = j.map(function(v){
-        var prev = known[v.id] || {};
-        return {id:v.id, t:v.t || prev.t, d:v.d || prev.d || "", s:v.s || prev.s || "evento"};
+  if(!("IntersectionObserver" in window)) return;
+  try{ if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return; }catch(e){}
+  document.querySelectorAll("[data-hb-auto]").forEach(function(el){
+    var id = el.getAttribute("data-hb-auto"); if(!id) return;
+    var obs = new IntersectionObserver(function(ent){
+      ent.forEach(function(en){
+        if(!en.isIntersecting || el.querySelector(".ec-auto")) return;
+        obs.disconnect();
+        var f = document.createElement("iframe");
+        f.className = "ec-auto"; f.tabIndex = -1; f.title = "";
+        f.setAttribute("aria-hidden","true");
+        f.setAttribute("allow","autoplay; encrypted-media; picture-in-picture");
+        f.src = "https://www.youtube-nocookie.com/embed/" + id +
+                "?autoplay=1&mute=1&loop=1&playlist=" + id +
+                "&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&fs=0";
+        el.appendChild(f);
+        requestAnimationFrame(function(){ el.classList.add("playing"); });
       });
-      shown = PAGE; renderHero(); renderFilters(); renderGrid();
-    })
-    .catch(function(){});
-}
-
-/* ---------- SEO: datos estructurados ---------- */
-function schema(){
-  var s = document.createElement("script");
-  s.type = "application/ld+json";
-  s.textContent = JSON.stringify({
-    "@context":"https://schema.org","@type":"ItemList",
-    "name":"Videoteca Horizonte Blockchain",
-    "itemListElement": data.slice(0,10).map(function(v,i){
-      return {"@type":"ListItem","position":i+1,
-        "url":"https://www.youtube.com/watch?v="+v.id,
-        "name":v.t};
-    })
+    }, {threshold: 0.35});
+    obs.observe(el);
   });
-  document.head.appendChild(s);
-}
-
-function boot(){ renderHero(); renderFilters(); renderGrid(); }
-boot(); schema(); sync();
-
-
-/* ---------- Series completas y videos fuera de la videoteca ---------- */
-function bindKey(el, go){
-  el.addEventListener("click", go);
-  el.addEventListener("keydown", function(e){
-    if(e.key === "Enter" || e.key === " "){ e.preventDefault(); go(); }
-  });
-}
-document.querySelectorAll("[data-hb-playlist]").forEach(function(el){
-  var cover = el.getAttribute("data-hb-cover");
-  if(cover) el.insertBefore(thumb(cover), el.firstChild);
-  var c = el.querySelector("[data-hb-count]");
-  if(c){
-    var n = HB_VIDEOS.filter(function(v){ return v.s === c.getAttribute("data-hb-count"); }).length;
-    c.textContent = n + " " + T(n === 1 ? "episodio" : "episodios");
-  }
-  bindKey(el, function(){
-    show("https://www.youtube-nocookie.com/embed/videoseries?list=" +
-         el.getAttribute("data-hb-playlist") + "&rel=0&modestbranding=1&playsinline=1",
-         el.getAttribute("data-hb-name") || "");
-  });
-});
-document.querySelectorAll("[data-hb-video]").forEach(function(el){
-  bindKey(el, function(){
-    show("https://www.youtube-nocookie.com/embed/" + el.getAttribute("data-hb-video") +
-         "?autoplay=1&rel=0&modestbranding=1&playsinline=1",
-         el.getAttribute("data-hb-name") || "");
-  });
-});
-
-/* Re-render al cambiar de idioma (los títulos quedan en su idioma original) */
-var lb = document.getElementById("langBtn");
-if(lb) lb.addEventListener("click", function(){ setTimeout(function(){ renderHero(); renderFilters(); renderGrid(); }, 60); });
-
-}catch(e){ if(window.console) console.warn("videoteca:", e); }
+}catch(e){}
 })();
 </script>
 </body>
