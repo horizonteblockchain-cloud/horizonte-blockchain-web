@@ -629,6 +629,36 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 .aca-p1 .n{background:var(--accent-soft);color:var(--accent)}.aca-p1 .pr{background:var(--accent-soft);color:var(--accent)}
 .aca-p2 .n{background:var(--gold-soft);color:var(--gold)}.aca-p2 .pr{background:var(--gold-soft);color:var(--gold)}
 .aca-p3 .n{background:rgba(139,124,246,.15);color:#B7ADFF}.aca-p3 .pr{background:rgba(139,124,246,.15);color:#B7ADFF}
+/* ===== Noticias en el inicio ===== */
+.home-news{padding-bottom:40px}
+.hn-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.hn-head .section-lead{margin-bottom:34px}
+.hn-all{margin-bottom:34px;white-space:nowrap}
+.hn-all-m{display:none}
+.hn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.hn-card{display:flex;flex-direction:column;padding:24px 24px 22px;color:inherit;text-decoration:none;transition:transform .35s,border-color .35s,box-shadow .35s}
+.hn-card:hover{transform:translateY(-6px);border-color:rgba(47,212,230,.35);box-shadow:0 24px 56px rgba(0,0,0,.45)}
+.hn-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.hn-cat{padding:4px 12px;border-radius:100px;background:var(--accent-soft);border:1px solid rgba(47,212,230,.25);color:var(--accent);font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.hn-cat.reg{background:var(--gold-soft);border-color:rgba(255,176,32,.3);color:var(--gold2)}
+.hn-fecha{color:var(--muted);font-size:.78rem}
+.hn-t{font-family:"Space Grotesk",Inter,sans-serif;font-weight:600;font-size:1.05rem;line-height:1.35;color:var(--text);margin-bottom:10px}
+.hn-r{color:var(--muted);font-size:.88rem;line-height:1.55;max-height:4.65em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.hn-mas{margin-top:auto;padding-top:16px;color:var(--accent2);font-size:.86rem;font-weight:600}
+.hn-card:hover .hn-mas{color:var(--accent)}
+@media(max-width:900px){.hn-grid{grid-template-columns:1fr 1fr}.hn-grid .hn-card:nth-child(3){display:none}}
+@media(max-width:620px){
+  .hn-grid{grid-template-columns:1fr;gap:14px}
+  .hn-grid .hn-card:nth-child(3){display:flex}
+  .hn-card{padding:20px 18px}
+  .hn-r{display:none}
+  .hn-mas{padding-top:12px}
+  .hn-head{display:block}
+  .hn-head .section-lead{margin-bottom:22px}
+  .hn-all{display:none}
+  .hn-all-m{display:flex;width:100%;justify-content:center;margin-top:18px}
+}
+
 /* ===== Ajustes de móvil (al final para que prevalezcan sobre el resto) ===== */
 @media(max-width:560px){
   /* Dos columnas dejaban el texto en tiras muy angostas */
@@ -1084,6 +1114,41 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
   </div>
 </section>
 
+<!-- ================= 5B. NOTICIAS (resumen en el inicio) ================= -->
+<section class="home-news" id="noticias-home">
+  <div class="container">
+    <div class="hn-head">
+      <div>
+        <span class="kicker reveal">Noticias</span>
+        <h2 class="section-title reveal">Mantente informado</h2>
+        <p class="section-lead reveal">Lo más importante de blockchain, inteligencia artificial y Web3, explicado para las empresas e instituciones de Latinoamérica.</p>
+      </div>
+      <a class="btn btn-ghost hn-all reveal" href="noticias.html" data-hb-track="home-noticias-todas">Ver todas las noticias →</a>
+    </div>
+    <div class="hn-grid reveal" id="hnGrid">
+      <a class="hn-card glass" href="noticia-peru-ley-ia-obligaciones.html" data-hb-track="home-noticia">
+        <span class="hn-top"><span class="hn-cat">Inteligencia artificial</span><span class="hn-fecha">22 de septiembre de 2026</span></span>
+        <span class="hn-t">Perú activa las primeras obligaciones de su Ley de IA: bancos, salud y educación ya deben cumplir</span>
+        <span class="hn-r">Desde el 10 de septiembre, quienes usan IA en salud, educación, justicia, seguridad, y economía y finanzas deben informar al usuario, explicar sus sistemas de alto riesgo y garantizar supervisión humana.</span>
+        <span class="hn-mas">Leer la nota →</span>
+      </a>
+      <a class="hn-card glass" href="noticia-dbs-citi-depositos-tokenizados.html" data-hb-track="home-noticia">
+        <span class="hn-top"><span class="hn-cat">Blockchain</span><span class="hn-fecha">22 de septiembre de 2026</span></span>
+        <span class="hn-t">DBS y Citi mueven dólares entre Singapur y Nueva York un sábado, en minutos, con depósitos tokenizados</span>
+        <span class="hn-r">Dos bancos regulados liquidaron en minutos, con los mercados cerrados, un pago que suele tardar dos días hábiles. La banca tradicional ya tiene su propia respuesta a las stablecoins.</span>
+        <span class="hn-mas">Leer la nota →</span>
+      </a>
+      <a class="hn-card glass" href="noticia-brasil-retencion-cripto-24-horas.html" data-hb-track="home-noticia">
+        <span class="hn-top"><span class="hn-cat">Web3</span><span class="hn-fecha">22 de septiembre de 2026</span></span>
+        <span class="hn-t">Brasil retendrá hasta 24 horas las transferencias cripto de más de US$10.000 hacia el exterior o billeteras propias</span>
+        <span class="hn-r">Desde enero de 2027, las plataformas podrán frenar un día las salidas grandes de bitcoin, ether o stablecoins hacia otro país o hacia una billetera propia. La autocustodia pasa a ser una categoría de riesgo.</span>
+        <span class="hn-mas">Leer la nota →</span>
+      </a>
+    </div>
+    <a class="btn btn-ghost hn-all-m" href="noticias.html" data-hb-track="home-noticias-todas">Ver todas las noticias →</a>
+  </div>
+</section>
+
 <!-- ================= 6. CONTENIDO EDUCATIVO ================= -->
 <section class="videos-section" id="videos">
   <div class="container">
@@ -1495,6 +1560,8 @@ document.getElementById("leadForm").addEventListener("submit", async function(e)
 (function(){
 try{
 var DICT = {
+/* --- Noticias en el inicio --- */
+"Mantente informado":"Stay informed","Lo más importante de blockchain, inteligencia artificial y Web3, explicado para las empresas e instituciones de Latinoamérica.":"The most important news in blockchain, artificial intelligence and Web3, explained for companies and institutions in Latin America.","Ver todas las noticias →":"See all news →","Leer la nota →":"Read the story →",
 /* --- Academia --- */
 "Academia":"Academy","Nuevo · Academia Digital":"New · Digital Academy","Academia Blockchain LATAM":"Academia Blockchain LATAM",
 "Cámara Blockchain Chile":"Cámara Blockchain Chile",
@@ -1957,6 +2024,30 @@ try{
     obs.observe(el);
   });
 }catch(e){}
+})();
+</script>
+
+<script>
+/* Noticias en el inicio: lee noticias.html y muestra las 3 mas recientes.
+   Si no puede leerla, se quedan las tarjetas que ya estan escritas arriba. */
+(function(){
+  var g=document.getElementById("hnGrid"); if(!g||!window.fetch) return;
+  var CAT={regulacion:"Regulación",blockchain:"Blockchain",ia:"Inteligencia artificial",web3:"Web3",mercados:"Mercados"};
+  var M=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+  function fe(f){var p=f.split("-");return (+p[2])+" de "+M[+p[1]-1]+" de "+p[0];}
+  fetch("noticias.html",{cache:"no-cache"}).then(function(r){return r.ok?r.text():Promise.reject();}).then(function(txt){
+    var i=txt.indexOf("var HB_NOTICIAS"); if(i<0) return; txt=txt.slice(i, txt.indexOf("];",i));
+    var rx=/\{f:"([^"]+)",\s*c:"([^"]+)",\s*t:("(?:[^"\\]|\\.)*"),\s*r:("(?:[^"\\]|\\.)*"),\s*u:"([^"]+)"\}/g, m, L=[];
+    while((m=rx.exec(txt))){try{L.push({f:m[1],c:m[2],t:JSON.parse(m[3]),r:JSON.parse(m[4]),u:m[5]});}catch(e){}}
+    if(!L.length) return;
+    L.sort(function(a,b){return a.f<b.f?1:a.f>b.f?-1:0;});
+    g.innerHTML=L.slice(0,3).map(function(n){
+      return '<a class="hn-card glass" href="'+esc(n.u)+'" data-hb-track="home-noticia">'+
+        '<span class="hn-top"><span class="hn-cat'+(n.c==="regulacion"?" reg":"")+'">'+esc(window.hbT?window.hbT(CAT[n.c]||n.c):(CAT[n.c]||n.c))+'</span><span class="hn-fecha">'+fe(n.f)+'</span></span>'+
+        '<span class="hn-t">'+esc(n.t)+'</span><span class="hn-r">'+esc(n.r)+'</span><span class="hn-mas">'+(window.hbT?window.hbT("Leer la nota →"):"Leer la nota →")+'</span></a>';
+    }).join("");
+  }).catch(function(){});
 })();
 </script>
 </body>
