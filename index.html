@@ -636,23 +636,25 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 .hn-all{margin-bottom:34px;white-space:nowrap}
 .hn-all-m{display:none}
 .hn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.hn-card{display:flex;flex-direction:column;padding:24px 24px 22px;color:inherit;text-decoration:none;transition:transform .35s,border-color .35s,box-shadow .35s}
+.hn-card{display:flex;flex-direction:column;padding:24px 24px 0;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
 .hn-card:hover{transform:translateY(-6px);border-color:rgba(47,212,230,.35);box-shadow:0 24px 56px rgba(0,0,0,.45)}
-.hn-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-.hn-cat{padding:4px 12px;border-radius:100px;background:var(--accent-soft);border:1px solid rgba(47,212,230,.25);color:var(--accent);font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.hn-cat.reg{background:var(--gold-soft);border-color:rgba(255,176,32,.3);color:var(--gold2)}
-.hn-fecha{color:var(--muted);font-size:.78rem}
+.hn-cat{align-self:flex-start;padding:5px 13px;border-radius:100px;background:var(--accent-soft);border:1px solid rgba(47,212,230,.25);color:var(--accent);font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px}
+.hn-link{display:flex;flex-direction:column;flex:1;color:inherit;text-decoration:none}
+.hn-fecha{color:var(--muted);font-size:.78rem;margin-bottom:8px}
 .hn-t{font-family:"Space Grotesk",Inter,sans-serif;font-weight:600;font-size:1.05rem;line-height:1.35;color:var(--text);margin-bottom:10px}
+.hn-link:hover .hn-t{color:var(--accent2)}
 .hn-r{color:var(--muted);font-size:.88rem;line-height:1.55;max-height:4.65em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .hn-mas{margin-top:auto;padding-top:16px;color:var(--accent2);font-size:.86rem;font-weight:600}
-.hn-card:hover .hn-mas{color:var(--accent)}
-@media(max-width:900px){.hn-grid{grid-template-columns:1fr 1fr}.hn-grid .hn-card:nth-child(3){display:none}}
+.hn-vacio{color:var(--muted);font-size:.9rem;flex:1;margin:0}
+.hn-more{display:block;margin:20px -24px 0;padding:14px 24px;border-top:1px solid var(--line);color:var(--muted);font-size:.84rem;font-weight:600;text-decoration:none;transition:color .25s,background .25s}
+.hn-more:hover{color:var(--accent);background:rgba(47,212,230,.05)}
+@media(max-width:900px){.hn-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){
   .hn-grid{grid-template-columns:1fr;gap:14px}
-  .hn-grid .hn-card:nth-child(3){display:flex}
-  .hn-card{padding:20px 18px}
+  .hn-card{padding:20px 18px 0}
   .hn-r{display:none}
   .hn-mas{padding-top:12px}
+  .hn-more{margin:16px -18px 0;padding:13px 18px}
   .hn-head{display:block}
   .hn-head .section-lead{margin-bottom:22px}
   .hn-all{display:none}
@@ -1126,24 +1128,36 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
       <a class="btn btn-ghost hn-all reveal" href="noticias.html" data-hb-track="home-noticias-todas">Ver todas las noticias →</a>
     </div>
     <div class="hn-grid reveal" id="hnGrid">
-      <a class="hn-card glass" href="noticia-peru-ley-ia-obligaciones.html" data-hb-track="home-noticia">
-        <span class="hn-top"><span class="hn-cat">Inteligencia artificial</span><span class="hn-fecha">22 de septiembre de 2026</span></span>
-        <span class="hn-t">Perú activa las primeras obligaciones de su Ley de IA: bancos, salud y educación ya deben cumplir</span>
-        <span class="hn-r">Desde el 10 de septiembre, quienes usan IA en salud, educación, justicia, seguridad, y economía y finanzas deben informar al usuario, explicar sus sistemas de alto riesgo y garantizar supervisión humana.</span>
-        <span class="hn-mas">Leer la nota →</span>
-      </a>
-      <a class="hn-card glass" href="noticia-dbs-citi-depositos-tokenizados.html" data-hb-track="home-noticia">
-        <span class="hn-top"><span class="hn-cat">Blockchain</span><span class="hn-fecha">22 de septiembre de 2026</span></span>
-        <span class="hn-t">DBS y Citi mueven dólares entre Singapur y Nueva York un sábado, en minutos, con depósitos tokenizados</span>
-        <span class="hn-r">Dos bancos regulados liquidaron en minutos, con los mercados cerrados, un pago que suele tardar dos días hábiles. La banca tradicional ya tiene su propia respuesta a las stablecoins.</span>
-        <span class="hn-mas">Leer la nota →</span>
-      </a>
-      <a class="hn-card glass" href="noticia-brasil-retencion-cripto-24-horas.html" data-hb-track="home-noticia">
-        <span class="hn-top"><span class="hn-cat">Web3</span><span class="hn-fecha">22 de septiembre de 2026</span></span>
-        <span class="hn-t">Brasil retendrá hasta 24 horas las transferencias cripto de más de US$10.000 hacia el exterior o billeteras propias</span>
-        <span class="hn-r">Desde enero de 2027, las plataformas podrán frenar un día las salidas grandes de bitcoin, ether o stablecoins hacia otro país o hacia una billetera propia. La autocustodia pasa a ser una categoría de riesgo.</span>
-        <span class="hn-mas">Leer la nota →</span>
-      </a>
+      <div class="hn-card glass" data-tema="ia">
+        <span class="hn-cat">Inteligencia artificial</span>
+        <a class="hn-link" href="noticia-peru-ley-ia-obligaciones.html" data-hb-track="home-noticia-ia">
+          <span class="hn-fecha">22 de septiembre de 2026</span>
+          <span class="hn-t">Perú activa las primeras obligaciones de su Ley de IA: bancos, salud y educación ya deben cumplir</span>
+          <span class="hn-r">Desde el 10 de septiembre, quienes usan IA en salud, educación, justicia, seguridad, y economía y finanzas deben informar al usuario, explicar sus sistemas de alto riesgo y garantizar supervisión humana.</span>
+          <span class="hn-mas">Leer la nota →</span>
+        </a>
+        <a class="hn-more" href="noticias.html?tema=ia" data-hb-track="home-noticias-ia">Más noticias de IA →</a>
+      </div>
+      <div class="hn-card glass" data-tema="blockchain">
+        <span class="hn-cat">Blockchain</span>
+        <a class="hn-link" href="noticia-dbs-citi-depositos-tokenizados.html" data-hb-track="home-noticia-blockchain">
+          <span class="hn-fecha">22 de septiembre de 2026</span>
+          <span class="hn-t">DBS y Citi mueven dólares entre Singapur y Nueva York un sábado, en minutos, con depósitos tokenizados</span>
+          <span class="hn-r">Dos bancos regulados liquidaron en minutos, con los mercados cerrados, un pago que suele tardar dos días hábiles. La banca tradicional ya tiene su propia respuesta a las stablecoins.</span>
+          <span class="hn-mas">Leer la nota →</span>
+        </a>
+        <a class="hn-more" href="noticias.html?tema=blockchain" data-hb-track="home-noticias-blockchain">Más noticias de Blockchain →</a>
+      </div>
+      <div class="hn-card glass" data-tema="web3">
+        <span class="hn-cat">Web3</span>
+        <a class="hn-link" href="noticia-brasil-retencion-cripto-24-horas.html" data-hb-track="home-noticia-web3">
+          <span class="hn-fecha">22 de septiembre de 2026</span>
+          <span class="hn-t">Brasil retendrá hasta 24 horas las transferencias cripto de más de US$10.000 hacia el exterior o billeteras propias</span>
+          <span class="hn-r">Desde enero de 2027, las plataformas podrán frenar un día las salidas grandes de bitcoin, ether o stablecoins hacia otro país o hacia una billetera propia. La autocustodia pasa a ser una categoría de riesgo.</span>
+          <span class="hn-mas">Leer la nota →</span>
+        </a>
+        <a class="hn-more" href="noticias.html?tema=web3" data-hb-track="home-noticias-web3">Más noticias de Web3 →</a>
+      </div>
     </div>
     <a class="btn btn-ghost hn-all-m" href="noticias.html" data-hb-track="home-noticias-todas">Ver todas las noticias →</a>
   </div>
@@ -1561,7 +1575,7 @@ document.getElementById("leadForm").addEventListener("submit", async function(e)
 try{
 var DICT = {
 /* --- Noticias en el inicio --- */
-"Mantente informado":"Stay informed","Lo más importante de blockchain, inteligencia artificial y Web3, explicado para las empresas e instituciones de Latinoamérica.":"The most important news in blockchain, artificial intelligence and Web3, explained for companies and institutions in Latin America.","Ver todas las noticias →":"See all news →","Leer la nota →":"Read the story →",
+"Mantente informado":"Stay informed","Lo más importante de blockchain, inteligencia artificial y Web3, explicado para las empresas e instituciones de Latinoamérica.":"The most important news in blockchain, artificial intelligence and Web3, explained for companies and institutions in Latin America.","Ver todas las noticias →":"See all news →","Leer la nota →":"Read the story →","Más noticias de IA →":"More AI news →","Más noticias de Blockchain →":"More Blockchain news →","Más noticias de Web3 →":"More Web3 news →","Muy pronto, nuevas noticias en este tema.":"New stories on this topic coming soon.",
 /* --- Academia --- */
 "Academia":"Academy","Nuevo · Academia Digital":"New · Digital Academy","Academia Blockchain LATAM":"Academia Blockchain LATAM",
 "Cámara Blockchain Chile":"Cámara Blockchain Chile",
@@ -2028,12 +2042,13 @@ try{
 </script>
 
 <script>
-/* Noticias en el inicio: lee noticias.html y muestra las 3 mas recientes.
-   Si no puede leerla, se quedan las tarjetas que ya estan escritas arriba. */
+/* Noticias en el inicio: muestra la ultima noticia de cada tema (IA, Blockchain, Web3).
+   Todas las noticias quedan guardadas en noticias.html; aqui solo se muestran las mas recientes.
+   Si no puede leer noticias.html, se quedan las tarjetas escritas arriba. */
 (function(){
   var g=document.getElementById("hnGrid"); if(!g||!window.fetch) return;
-  var CAT={regulacion:"Regulación",blockchain:"Blockchain",ia:"Inteligencia artificial",web3:"Web3",mercados:"Mercados"};
   var M=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  function T(x){return window.hbT?window.hbT(x):x;}
   function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
   function fe(f){var p=f.split("-");return (+p[2])+" de "+M[+p[1]-1]+" de "+p[0];}
   fetch("noticias.html",{cache:"no-cache"}).then(function(r){return r.ok?r.text():Promise.reject();}).then(function(txt){
@@ -2042,11 +2057,16 @@ try{
     while((m=rx.exec(txt))){try{L.push({f:m[1],c:m[2],t:JSON.parse(m[3]),r:JSON.parse(m[4]),u:m[5]});}catch(e){}}
     if(!L.length) return;
     L.sort(function(a,b){return a.f<b.f?1:a.f>b.f?-1:0;});
-    g.innerHTML=L.slice(0,3).map(function(n){
-      return '<a class="hn-card glass" href="'+esc(n.u)+'" data-hb-track="home-noticia">'+
-        '<span class="hn-top"><span class="hn-cat'+(n.c==="regulacion"?" reg":"")+'">'+esc(window.hbT?window.hbT(CAT[n.c]||n.c):(CAT[n.c]||n.c))+'</span><span class="hn-fecha">'+fe(n.f)+'</span></span>'+
-        '<span class="hn-t">'+esc(n.t)+'</span><span class="hn-r">'+esc(n.r)+'</span><span class="hn-mas">'+(window.hbT?window.hbT("Leer la nota →"):"Leer la nota →")+'</span></a>';
-    }).join("");
+    [].forEach.call(g.querySelectorAll(".hn-card[data-tema]"),function(card){
+      var k=card.getAttribute("data-tema");
+      var n=L.filter(function(x){return x.c===k;})[0]; if(!n) return;
+      var old=card.querySelector(".hn-link,.hn-vacio"); if(!old) return;
+      var a=document.createElement("a");
+      a.className="hn-link"; a.href=n.u; a.setAttribute("data-hb-track","home-noticia-"+k);
+      a.innerHTML='<span class="hn-fecha">'+fe(n.f)+'</span><span class="hn-t">'+esc(n.t)+'</span>'+
+        '<span class="hn-r">'+esc(n.r)+'</span><span class="hn-mas">'+esc(T("Leer la nota →"))+'</span>';
+      card.replaceChild(a,old);
+    });
   }).catch(function(){});
 })();
 </script>
