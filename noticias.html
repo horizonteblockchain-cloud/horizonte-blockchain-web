@@ -146,6 +146,8 @@ footer a{color:var(--accent2)}
 .nt-card p{color:var(--muted);font-size:.93rem;line-height:1.6;flex:1}
 .nt-mas{margin-top:18px;color:var(--accent2);font-size:.88rem;font-weight:600;transition:color .25s}
 .nt-card:hover .nt-mas{color:var(--accent)}
+.nt-cargar{display:flex;justify-content:center;margin-top:34px}
+.nt-cargar:empty{display:none}
 .nt-vacio{color:var(--muted);padding:40px 0;text-align:center;grid-column:1/-1}
 @media(max-width:760px){.nt-grid{grid-template-columns:1fr;gap:18px}.nt-card{padding:24px 22px}}
 /* ============ ARTÍCULO ============ */
@@ -225,6 +227,22 @@ var HB_CATS = [
 ];
 
 var HB_NOTICIAS = [
+  {f:"2026-09-23", c:"blockchain",
+   t:"Los seis bancos más grandes de Canadá se unen para mover depósitos tokenizados entre ellos",
+   r:"Los seis bancos más grandes del país construirán una infraestructura común. El proyecto se destrabó cuando el supervisor aclaró que un depósito tokenizado es, legalmente, un depósito.",
+   u:"noticia-canada-depositos-tokenizados.html"},
+  {f:"2026-09-24", c:"ia",
+   t:"PwC calcula que Chile puede atraer hasta US$162 mil millones en centros de datos, y pone a Latinoamérica frente a una decisión",
+   r:"La inteligencia artificial se volvió un asunto de infraestructura física: energía, permisos y cómputo. Brasil, México y Chile ya compiten por esa inversión y lo que decidan ahora define dónde aterriza.",
+   u:"noticia-pwc-data-centers-ia-chile.html"},
+  {f:"2026-09-26", c:"regulacion",
+   t:"La Reserva Federal propone las reglas de reservas y capital para las stablecoins de dólar: 60 días de comentarios y vigencia en enero de 2027",
+   r:"La Junta puso a consulta el respaldo uno a uno, los requisitos de capital y la vía de autorización para emitir. La GENIUS Act entra en vigor el 18 de enero de 2027 y en 2028 se cierra la puerta a los emisores no calificados.",
+   u:"noticia-fed-reglas-stablecoins-genius-act.html"},
+  {f:"2026-09-25", c:"web3",
+   t:"América Latina movió US$593.800 millones en criptoactivos en un año y Brasil quedó primero del mundo en adopción",
+   r:"El informe LATAM 2026 de Chainalysis midió un alza de 9,8% en la región. Las stablecoins ya explican 32,1% del valor transfronterizo y el 71,2% de los saldos está en manos de un intermediario.",
+   u:"noticia-chainalysis-adopcion-latam-2026.html"},
   {f:"2026-09-22", c:"ia",
    t:"Perú activa las primeras obligaciones de su Ley de IA: bancos, salud y educación ya deben cumplir",
    r:"Desde el 10 de septiembre, quienes usan IA en salud, educación, justicia, seguridad, y economía y finanzas deben informar al usuario, explicar sus sistemas de alto riesgo y garantizar supervisión humana.",
@@ -245,9 +263,18 @@ var HB_NOTICIAS = [
 
 (function(){
 try{
-  var filtro = "todas";
+  var filtro = "todas", POR_PAGINA = 12, mostrar = POR_PAGINA;
   var elF = document.getElementById("ntFiltros"), elG = document.getElementById("ntGrid");
   if(!elF || !elG) return;
+  /* Filtro inicial desde el enlace: noticias.html?tema=ia */
+  try{
+    var t = new URLSearchParams(location.search).get("tema");
+    if(t && HB_CATS.some(function(x){return x.k===t;})) filtro = t;
+  }catch(e){}
+  /* Boton "Ver más noticias" debajo de la lista */
+  var elMas = document.createElement("div");
+  elMas.className = "nt-cargar";
+  elG.parentNode.insertBefore(elMas, elG.nextSibling);
 
   function esc(s){ return String(s).replace(/[&<>"]/g, function(c){
     return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
@@ -273,16 +300,20 @@ try{
       b.type = "button";
       b.className = "nt-chip" + (filtro===c.k ? " on" : "");
       b.innerHTML = esc(c.n) + '<span class="n">' + n + '</span>';
-      b.onclick = function(){ filtro = c.k; pintarFiltros(); pintarGrid(); };
+      b.onclick = function(){
+        filtro = c.k; mostrar = POR_PAGINA; pintarFiltros(); pintarGrid();
+        try{ history.replaceState(null, "", filtro==="todas" ? location.pathname : "?tema="+filtro); }catch(e){}
+      };
       elF.appendChild(b);
     });
   }
 
   function pintarGrid(){
     var lista = (filtro==="todas") ? HB_NOTICIAS : HB_NOTICIAS.filter(function(x){return x.c===filtro;});
-    elG.innerHTML = "";
+    elG.innerHTML = ""; elMas.innerHTML = "";
     if(!lista.length){ elG.innerHTML = '<p class="nt-vacio">Todavía no hay noticias en esta categoría.</p>'; return; }
-    lista.forEach(function(n){
+    var restantes = lista.length - mostrar;
+    lista.slice(0, mostrar).forEach(function(n){
       var a = document.createElement("a");
       a.className = "nt-card glass";
       a.href = n.u;
@@ -295,6 +326,14 @@ try{
         '<span class="nt-mas">Leer la nota completa →</span>';
       elG.appendChild(a);
     });
+    if(restantes > 0){
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "btn btn-ghost";
+      btn.textContent = "Ver más noticias (" + restantes + ")";
+      btn.onclick = function(){ mostrar += POR_PAGINA; pintarGrid(); };
+      elMas.appendChild(btn);
+    }
   }
 
   pintarFiltros(); pintarGrid();
