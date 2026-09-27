@@ -602,35 +602,78 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 
-/* --- Academia Blockchain LATAM (sección en el inicio) --- */
-.aca-box{display:grid;grid-template-columns:1.05fr .95fr;gap:0;border-color:rgba(47,212,230,.22);box-shadow:0 30px 80px rgba(0,0,0,.35)}
-.aca-box::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 80% at 100% 0%,rgba(139,124,246,.14),transparent 70%),radial-gradient(50% 70% at 0% 100%,rgba(47,212,230,.10),transparent 70%)}
+/* --- Academia Blockchain LATAM (sección en el inicio) · paleta HB dorada --- */
+#academia{position:relative;background:#FFFFFF;border-top:2px solid var(--accent);border-bottom:2px solid var(--accent)}
+#academia::before{content:none}
+/* --- Academia sobre fondo claro --- */
+#academia .aca-box{background:#FBFCFE;border:1px solid rgba(16,32,56,.12);box-shadow:0 18px 44px rgba(12,30,52,.10)}
+#academia .aca-box::before{content:none}
+#academia .aca-new{background:rgba(247,148,29,.12);border:1px solid rgba(247,148,29,.35);color:#A75E06}
+#academia .aca-l h2{background:none;-webkit-text-fill-color:currentColor;color:#0F2544;animation:none}
+#academia .aca-l h2 span.g{color:#E0820A}
+#academia .aca-l>p{color:#4A5A75}
+#academia .aca-l>p b{color:#0F2544 !important}
+#academia .aca-points li{color:#33415C}
+#academia .aca-points li::before{color:#E0820A}
+#academia .aca-r{border-left:1px solid rgba(16,32,56,.12);background:#fff}
+#academia .aca-prod{border:1px solid rgba(16,32,56,.12);background:#fff}
+#academia .aca-prod:hover{border-color:rgba(47,212,230,.65);background:rgba(47,212,230,.06)}
+#academia .aca-prod b{color:#0F2544}
+#academia .aca-prod small{color:#5A6B8C}
+#academia .aca-p1 .n{background:rgba(247,148,29,.14);color:#C96F0C}
+#academia .aca-p1 .pr{background:rgba(23,166,120,.14);color:#0E8A5F}
+#academia .aca-p2 .n{background:linear-gradient(135deg,#F7941D,#FFC948);color:#2A1B03}
+#academia .aca-p2 .pr{background:rgba(247,148,29,.14);color:#A75E06}
+#academia .aca-p3 .n{background:rgba(16,32,56,.07);color:#5A6B8C}
+#academia .aca-p3 .pr{background:rgba(16,32,56,.07);color:#5A6B8C}
+#academia .aca-logos{gap:18px;margin-top:12px}
+#academia .aca-logos .pill{background:transparent;border:none;padding:0;height:auto}
+#academia .aca-logos img{height:34px}
+#academia .aca-logos a.pill:hover{transform:translateY(-3px);box-shadow:none;filter:brightness(1.05)}
+#academia .aca-logos .x{color:#8899B3}
+#academia .btn-ghost{border-color:rgba(16,32,56,.22);color:#0F2544;background:#fff}
+#academia .btn-ghost:hover{border-color:var(--accent);background:rgba(47,212,230,.08);color:#0F2544}
+.aca-box{display:grid;grid-template-columns:1.05fr .95fr;gap:0;border-color:rgba(247,148,29,.32);box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.aca-box::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 80% at 100% 0%,rgba(247,148,29,.16),transparent 70%),radial-gradient(50% 70% at 0% 100%,rgba(255,201,72,.08),transparent 70%)}
 .aca-l{padding:48px 44px;position:relative}
-.aca-new{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px}
+.aca-new{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;background:var(--gold-soft);border-color:rgba(247,148,29,.35);color:var(--gold2)}
 .aca-new .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(247,148,29,.2);animation:acaPulse 2s infinite}
 @keyframes acaPulse{50%{box-shadow:0 0 0 8px rgba(247,148,29,0)}}
-.aca-l h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:14px}
+.aca-l h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:14px;background:linear-gradient(100deg,var(--gold) 0%,var(--gold2) 40%,#FFE9C2 60%,var(--gold) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:titleSweep 7s linear infinite}
 .aca-l>p{color:var(--muted);margin-bottom:22px}
 .aca-points{list-style:none;display:grid;gap:10px;margin-bottom:28px}
 .aca-points li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
-.aca-points li::before{content:"✓";color:var(--accent);font-weight:700}
+.aca-points li::before{content:"\2713";color:var(--gold2);font-weight:700}
 .aca-ctas{display:flex;gap:12px;flex-wrap:wrap}
-.aca-r{padding:40px 36px;position:relative;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:14px;justify-content:center;background:rgba(6,11,22,.35)}
-.aca-logos{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.aca-logos .pill{background:#fff;border-radius:10px;padding:8px 12px;height:48px;display:flex;align-items:center}
-.aca-logos img{height:30px;width:auto}
+.aca-r{padding:30px 32px 34px;position:relative;border-left:1px solid rgba(247,148,29,.18);display:flex;flex-direction:column;gap:12px;justify-content:center;background:linear-gradient(180deg,rgba(247,148,29,.07),rgba(6,11,22,.45) 60%)}
+.aca-grad{display:block;width:100%;max-width:260px;margin:0 auto 4px;overflow:visible}
+.aca-cap{animation:acaFloat 4.5s ease-in-out infinite;transform-origin:120px 62px}
+.aca-tassel{animation:acaSwing 3.2s ease-in-out infinite;transform-origin:150px 42px}
+.aca-node{animation:acaNode 2.8s ease-in-out infinite}
+.aca-node2{animation-delay:.45s}.aca-node3{animation-delay:.9s}
+.aca-spark{animation:acaSpark 3.6s ease-in-out infinite}
+.aca-spark2{animation-delay:1.2s}.aca-spark3{animation-delay:2.1s}
+@keyframes acaFloat{50%{transform:translateY(-7px)}}
+@keyframes acaSwing{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+@keyframes acaNode{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes acaSpark{0%,100%{opacity:0;transform:translateY(0)}35%{opacity:.9}70%{opacity:0;transform:translateY(-14px)}}
+@media (prefers-reduced-motion:reduce){.aca-cap,.aca-tassel,.aca-node,.aca-spark,.aca-l h2{animation:none}}
+.aca-logos{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:8px}
+.aca-logos .pill{background:#fff;border-radius:10px;padding:7px 11px;height:42px;display:flex;align-items:center}
+.aca-logos img{height:26px;width:auto}
 .aca-logos a.pill{transition:transform .25s,box-shadow .25s}
-.aca-logos a.pill:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.35),0 0 0 2px rgba(47,212,230,.5)}
-.aca-logos .x{color:var(--muted);font-size:1.2rem}
-.aca-prod{display:flex;gap:14px;align-items:center;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);transition:border-color .25s,transform .25s}
-.aca-prod:hover{border-color:rgba(47,212,230,.4);transform:translateX(4px)}
-.aca-prod .n{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:none;font-family:"Space Grotesk",Inter,sans-serif;font-weight:700}
-.aca-prod b{display:block;font-size:.98rem}
-.aca-prod small{color:var(--muted);font-size:.84rem}
+.aca-logos a.pill:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.35),0 0 0 2px rgba(247,148,29,.5)}
+.aca-logos .x{color:var(--muted);font-size:1.1rem}
+.aca-prod{display:flex;gap:14px;align-items:center;padding:14px 16px;border-radius:14px;border:1px solid rgba(247,148,29,.16);background:rgba(255,255,255,.035);transition:border-color .25s,transform .25s,background .25s}
+.aca-prod:hover{border-color:rgba(247,148,29,.5);background:rgba(247,148,29,.07);transform:translateX(4px)}
+.aca-prod .n{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;flex:none;font-family:"Space Grotesk",Inter,sans-serif;font-weight:700}
+.aca-prod b{display:block;font-size:.96rem}
+.aca-prod small{color:var(--muted);font-size:.83rem}
 .aca-prod .pr{margin-left:auto;font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:100px;white-space:nowrap}
-.aca-p1 .n{background:var(--accent-soft);color:var(--accent)}.aca-p1 .pr{background:var(--accent-soft);color:var(--accent)}
-.aca-p2 .n{background:var(--gold-soft);color:var(--gold)}.aca-p2 .pr{background:var(--gold-soft);color:var(--gold)}
-.aca-p3 .n{background:rgba(139,124,246,.15);color:#B7ADFF}.aca-p3 .pr{background:rgba(139,124,246,.15);color:#B7ADFF}
+.aca-p1 .n{background:var(--gold-soft);color:var(--gold2)}.aca-p1 .pr{background:rgba(47,212,230,.14);color:var(--accent)}
+.aca-p2 .n{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1204}.aca-p2 .pr{background:var(--gold-soft);color:var(--gold2)}
+.aca-p3 .n{background:rgba(255,255,255,.07);color:var(--muted)}.aca-p3 .pr{background:rgba(255,255,255,.07);color:var(--muted)}
+
 /* ===== Noticias en el inicio ===== */
 .home-news{padding-bottom:40px}
 .hn-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
@@ -680,7 +723,8 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 @media (max-width:760px){
   /* Academia: una columna en móvil */
   .aca-box{grid-template-columns:1fr}
-  .aca-r{border-left:none;border-top:1px solid var(--line);padding:26px 18px}
+  .aca-r{border-left:none;border-top:1px solid rgba(247,148,29,.18);padding:26px 18px}
+  .aca-grad{max-width:210px}
   .aca-l{padding:30px 20px}
   .aca-ctas .btn{width:100%}
   .aca-logos .pill{height:42px;padding:6px 10px}
@@ -1084,7 +1128,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
     <div class="aca-box glass reveal">
       <div class="aca-l">
         <span class="tag aca-new"><span class="dot"></span>Nuevo · Academia Digital</span>
-        <h2>Academia Blockchain LATAM</h2>
+        <h2>Academia <span class="g">Blockchain</span> LATAM</h2>
         <p>Junto a la <b style="color:var(--text);font-weight:600">Cámara Blockchain Chile</b> creamos una academia binacional con rutas de aprendizaje en blockchain, tokenización e inteligencia artificial, en español y con certificación de doble sello Chile · Perú.</p>
         <ul class="aca-points">
           <li>Rutas para empresarios, finanzas, legal y perfiles técnicos</li>
@@ -1097,14 +1141,43 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
         </div>
       </div>
       <div class="aca-r">
+        <svg class="aca-grad" viewBox="0 0 240 150" role="img" aria-label="Birrete de graduacion sobre una cadena de bloques">
+          <defs>
+            <linearGradient id="acaG1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFC948"/><stop offset="100%" stop-color="#F7941D"/></linearGradient>
+            <linearGradient id="acaG2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F7941D"/><stop offset="100%" stop-color="#C96F0C"/></linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#acaG1)" stroke-width="2">
+            <path d="M84 118h16M140 118h16" stroke="rgba(247,148,29,.45)"/>
+            <g class="aca-node"><path d="M70 106l14-8 14 8v16l-14 8-14-8z"/></g>
+            <g class="aca-node aca-node2"><path d="M106 106l14-8 14 8v16l-14 8-14-8z"/></g>
+            <g class="aca-node aca-node3"><path d="M142 106l14-8 14 8v16l-14 8-14-8z"/></g>
+          </g>
+          <circle class="aca-node" cx="84" cy="114" r="2.5" fill="#FFC948"/>
+          <circle class="aca-node aca-node2" cx="120" cy="114" r="2.5" fill="#FFC948"/>
+          <circle class="aca-node aca-node3" cx="156" cy="114" r="2.5" fill="#FFC948"/>
+          <g fill="#FFC948">
+            <circle class="aca-spark" cx="62" cy="70" r="2"/>
+            <circle class="aca-spark aca-spark2" cx="184" cy="62" r="2.4"/>
+            <circle class="aca-spark aca-spark3" cx="196" cy="92" r="1.8"/>
+          </g>
+          <g class="aca-cap">
+            <path d="M120 26 60 50l60 24 60-24z" fill="url(#acaG1)"/>
+            <path d="M120 74 60 50v6l60 24 60-24v-6z" fill="url(#acaG2)" opacity=".85"/>
+            <path d="M96 64v16c0 7 11 12 24 12s24-5 24-12V64l-24 10z" fill="url(#acaG2)"/>
+            <g class="aca-tassel">
+              <path d="M150 42v22" stroke="#FFC948" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+              <circle cx="150" cy="68" r="4.5" fill="#FFC948"/>
+            </g>
+          </g>
+        </svg>
+        <a class="aca-prod aca-p1" href="https://academia.horizonteblockchain.org/#webinar" target="_blank" rel="noopener" data-hb-track="academia-prod-webinar"><span class="n">01</span><span><b>Blockchain en 60 minutos</b><small>Webinar de introducción</small></span><span class="pr">Gratis</span></a>
+        <a class="aca-prod aca-p2" href="https://academia.horizonteblockchain.org/#programas" target="_blank" rel="noopener" data-hb-track="academia-prod-empresarios"><span class="n">02</span><span><b>Blockchain para Empresarios</b><small>Programa insignia</small></span><span class="pr">Preventa</span></a>
+        <a class="aca-prod aca-p3" href="https://academia.horizonteblockchain.org/#programas" target="_blank" rel="noopener" data-hb-track="academia-prod-acelerador"><span class="n">03</span><span><b>Acelerador Plus</b><small>Programa técnico avanzado</small></span><span class="pr">Próximamente</span></a>
         <div class="aca-logos">
           <a class="pill" href="https://www.linkedin.com/company/horizonte-blockchain/" target="_blank" rel="noopener" aria-label="Horizonte Blockchain en LinkedIn" data-hb-track="academia-logo-hb"><img src="logo-hb-dark.png" alt="Horizonte Blockchain" loading="lazy"></a>
           <span class="x">×</span>
           <a class="pill" href="https://www.linkedin.com/company/camara-blockchain-chile/" target="_blank" rel="noopener" aria-label="Cámara Blockchain Chile en LinkedIn" data-hb-track="academia-logo-camara"><img src="assets/img/aliados/camara-blockchain-chile.png" alt="Cámara Blockchain Chile" loading="lazy"></a>
         </div>
-        <a class="aca-prod aca-p1" href="https://academia.horizonteblockchain.org/#webinar" target="_blank" rel="noopener" data-hb-track="academia-prod-webinar"><span class="n">01</span><span><b>Blockchain en 60 minutos</b><small>Webinar de introducción</small></span><span class="pr">Gratis</span></a>
-        <a class="aca-prod aca-p2" href="https://academia.horizonteblockchain.org/#programas" target="_blank" rel="noopener" data-hb-track="academia-prod-empresarios"><span class="n">02</span><span><b>Blockchain para Empresarios</b><small>Programa insignia</small></span><span class="pr">Preventa</span></a>
-        <a class="aca-prod aca-p3" href="https://academia.horizonteblockchain.org/#programas" target="_blank" rel="noopener" data-hb-track="academia-prod-acelerador"><span class="n">03</span><span><b>Acelerador Plus</b><small>Programa técnico avanzado</small></span><span class="pr">Próximamente</span></a>
       </div>
     </div>
   </div>
