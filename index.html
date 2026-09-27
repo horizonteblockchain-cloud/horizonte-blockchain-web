@@ -674,6 +674,22 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 .aca-p2 .n{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1204}.aca-p2 .pr{background:var(--gold-soft);color:var(--gold2)}
 .aca-p3 .n{background:rgba(255,255,255,.07);color:var(--muted)}.aca-p3 .pr{background:rgba(255,255,255,.07);color:var(--muted)}
 
+/* ===== Franja de precios en vivo ===== */
+.mkt{position:fixed;left:0;right:0;top:76px;z-index:99;overflow:hidden;background:linear-gradient(180deg,rgba(47,212,230,.06),rgba(6,11,22,.6));border-bottom:1px solid var(--line);padding:9px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.mkt-track{display:flex;width:max-content;gap:30px;padding-left:30px;animation:mktRun 46s linear infinite;will-change:transform}
+.mkt:hover .mkt-track{animation-play-state:paused}
+@keyframes mktRun{to{transform:translateX(-50%)}}
+.mkt-i{display:inline-flex;align-items:baseline;gap:8px;font-size:.84rem;white-space:nowrap;font-family:'Space Grotesk',Inter,sans-serif}
+.mkt-i .s{font-weight:700;color:var(--text);letter-spacing:.04em}
+.mkt-i .p{color:var(--muted);font-variant-numeric:tabular-nums}
+.mkt-i .c{font-weight:600;font-variant-numeric:tabular-nums}
+.mkt-i .c.up{color:#2BD99F}
+.mkt-i .c.dn{color:#FF7A7A}
+.mkt-i .c.up::before{content:"\25B2 ";font-size:.7em}
+.mkt-i .c.dn::before{content:"\25BC ";font-size:.7em}
+@media (prefers-reduced-motion:reduce){.mkt-track{animation:none;overflow-x:auto}}
+@media(max-width:560px){.mkt{padding:7px 0}.mkt-i{font-size:.78rem}.mkt-track{gap:22px;padding-left:22px}}
+
 /* ===== Noticias en el inicio ===== */
 .home-news{padding-bottom:40px}
 .hn-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
@@ -704,6 +720,18 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
   .hn-head .section-lead{margin-bottom:22px}
   .hn-all{display:none}
   .hn-all-m{display:flex;width:100%;justify-content:center;margin-top:18px}
+}
+
+body.has-event .mkt{top:122px}
+.hero{padding-top:238px}
+body.has-event .hero{padding-top:284px}
+section[id],[id^="empleado"],#formulario,#videos,#eventos{scroll-margin-top:162px}
+@media(max-width:720px){
+  .mkt{top:76px}
+  body.has-event .mkt{top:122px}
+  .hero{padding-top:186px}
+  body.has-event .hero{padding-top:232px}
+  section[id],[id^="empleado"],#formulario,#videos,#eventos{scroll-margin-top:140px}
 }
 
 /* ===== Ajustes de móvil (al final para que prevalezcan sobre el resto) ===== */
@@ -768,6 +796,11 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
     </div>
   </div>
 </nav>
+
+<!-- ================= FRANJA DE PRECIOS EN VIVO ================= -->
+<div class="mkt" id="mkt" aria-label="Precios de criptomonedas actualizados">
+  <div class="mkt-track" id="mktTrack"><span class="mkt-i"><span class="s">BTC</span><span class="p">--</span></span><span class="mkt-i"><span class="s">ETH</span><span class="p">--</span></span><span class="mkt-i"><span class="s">XRP</span><span class="p">--</span></span><span class="mkt-i"><span class="s">BNB</span><span class="p">--</span></span><span class="mkt-i"><span class="s">SOL</span><span class="p">--</span></span><span class="mkt-i"><span class="s">DOGE</span><span class="p">--</span></span><span class="mkt-i"><span class="s">ADA</span><span class="p">--</span></span><span class="mkt-i"><span class="s">XLM</span><span class="p">--</span></span><span class="mkt-i"><span class="s">LINK</span><span class="p">--</span></span><span class="mkt-i"><span class="s">AVAX</span><span class="p">--</span></span></div>
+</div>
 
 <!-- ================= 1. HERO ================= -->
 <header class="hero" id="inicio">
@@ -2182,6 +2215,63 @@ try{
       card.replaceChild(a,old);
     });
   }).catch(function(){});
+})();
+</script>
+
+<script>
+/* Franja de precios en vivo. Intenta CoinGecko y, si falla, Binance.
+   Se actualiza cada 60 s y guarda el ultimo dato para mostrarlo al instante en la proxima visita. */
+(function(){
+  var track=document.getElementById("mktTrack"); if(!track||!window.fetch) return;
+  var ORDEN=["BTC","ETH","XRP","BNB","SOL","DOGE","ADA","XLM","LINK","AVAX"];
+  var CG_IDS="bitcoin,ethereum,ripple,binancecoin,solana,dogecoin,cardano,stellar,chainlink,avalanche-2", CG_MAP={"bitcoin":"BTC","ethereum":"ETH","ripple":"XRP","binancecoin":"BNB","solana":"SOL","dogecoin":"DOGE","cardano":"ADA","stellar":"XLM","chainlink":"LINK","avalanche-2":"AVAX"};
+  var BI_PARES=["BTCUSDT","ETHUSDT","XRPUSDT","BNBUSDT","SOLUSDT","DOGEUSDT","ADAUSDT","XLMUSDT","LINKUSDT","AVAXUSDT"], BI_MAP={"BTCUSDT":"BTC","ETHUSDT":"ETH","XRPUSDT":"XRP","BNBUSDT":"BNB","SOLUSDT":"SOL","DOGEUSDT":"DOGE","ADAUSDT":"ADA","XLMUSDT":"XLM","LINKUSDT":"LINK","AVAXUSDT":"AVAX"};
+  var CLAVE="hb_mkt_v1";
+
+  function fmt(n){
+    if(n>=1000) return "$"+n.toLocaleString("en-US",{maximumFractionDigits:0});
+    if(n>=1)    return "$"+n.toFixed(2);
+    if(n>=0.01) return "$"+n.toFixed(3);
+    return "$"+n.toFixed(5);
+  }
+  function pintar(d){
+    var uno=ORDEN.filter(function(k){return d[k];}).map(function(k){
+      var v=d[k], cls=v.c>=0?"up":"dn", c=(v.c>=0?"+":"")+v.c.toFixed(2)+"%";
+      return '<span class="mkt-i"><span class="s">'+k+'</span><span class="p">'+fmt(v.p)+
+             '</span><span class="c '+cls+'">'+c+'</span></span>';
+    }).join("");
+    if(!uno) return;
+    track.innerHTML=uno+uno;   /* duplicado para que el desplazamiento sea continuo */
+  }
+  function guardar(d){ try{ localStorage.setItem(CLAVE, JSON.stringify({t:Date.now(),d:d})); }catch(e){} }
+  function cache(){ try{ var x=JSON.parse(localStorage.getItem(CLAVE)); return x&&x.d; }catch(e){ return null; } }
+
+  function coingecko(){
+    return fetch("https://api.coingecko.com/api/v3/simple/price?ids="+CG_IDS+"&vs_currencies=usd&include_24hr_change=true",{cache:"no-store"})
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(j){
+        var d={}, n=0;
+        for(var id in CG_MAP){ var v=j[id]; if(v&&typeof v.usd==="number"){ d[CG_MAP[id]]={p:v.usd,c:(v.usd_24h_change||0)}; n++; } }
+        if(!n) throw 0; return d;
+      });
+  }
+  function binance(){
+    return fetch("https://api.binance.com/api/v3/ticker/24hr?symbols=["+BI_PARES.map(function(p){return '%22'+p+'%22';}).join(",")+"]",{cache:"no-store"})
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(a){
+        var d={}, n=0;
+        (a||[]).forEach(function(x){ var k=BI_MAP[x.symbol]; if(k){ d[k]={p:parseFloat(x.lastPrice),c:parseFloat(x.priceChangePercent)}; n++; } });
+        if(!n) throw 0; return d;
+      });
+  }
+  function actualizar(){
+    coingecko().catch(binance).then(function(d){ pintar(d); guardar(d); }).catch(function(){});
+  }
+
+  var previo=cache(); if(previo) pintar(previo);
+  actualizar();
+  setInterval(function(){ if(!document.hidden) actualizar(); }, 60000);
+  document.addEventListener("visibilitychange",function(){ if(!document.hidden) actualizar(); });
 })();
 </script>
 </body>
