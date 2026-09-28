@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Noticias de blockchain, IA y regulación en Latinoamérica | Horizonte Blockchain</title>
-<meta name="description" content="Análisis de las decisiones regulatorias y tecnológicas que afectan a empresas e instituciones latinoamericanas. Blockchain, inteligencia artificial, Web3 y mercados.">
+<title>Noticias de blockchain, IA y Web3 en Latinoamérica | Horizonte Blockchain</title>
+<meta name="description" content="Análisis de las decisiones regulatorias y tecnológicas que afectan a empresas e instituciones latinoamericanas. Blockchain, inteligencia artificial y Web3.">
 <link rel="canonical" href="https://horizonteblockchain.org/noticias.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Horizonte Blockchain">
 <meta property="og:locale" content="es_419">
 <meta property="og:url" content="https://horizonteblockchain.org/noticias.html">
-<meta property="og:title" content="Noticias · Blockchain, IA y regulación para Latinoamérica">
-<meta property="og:description" content="Análisis de las decisiones regulatorias y tecnológicas que afectan a empresas e instituciones latinoamericanas. Blockchain, inteligencia artificial, Web3 y mercados.">
+<meta property="og:title" content="Noticias · Blockchain, IA y Web3 para Latinoamérica">
+<meta property="og:description" content="Análisis de las decisiones regulatorias y tecnológicas que afectan a empresas e instituciones latinoamericanas. Blockchain, inteligencia artificial y Web3.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -145,25 +145,37 @@ footer a{color:var(--accent2)}
 
 /* ============ NOTICIAS ============ */
 .nt-filtros{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+/* color por tema (paleta Aurora) */
+.nt-g[data-c="blockchain"]{--c:#6F8FFF;--cs:rgba(111,143,255,.13)}
+.nt-g[data-c="ia"]{--c:#FF3D9A;--cs:rgba(255,61,154,.12)}
+.nt-g[data-c="web3"]{--c:#FFD84D;--cs:rgba(255,216,77,.11)}
+#ntGrid.nt-grid.nt-g{background:none;border:none;padding:0;border-left:none}
+.nt-g{--c:#6F8FFF;--cs:rgba(111,143,255,.12);margin-bottom:46px;border-radius:20px;padding:26px 26px 30px;background:linear-gradient(180deg,var(--cs),rgba(255,255,255,.012));border:1px solid var(--line);border-left:3px solid var(--c)}
+.nt-g-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.nt-g-tit{display:flex;align-items:center;gap:12px}
+.nt-g-tit h2{font-family:'Sora','IBM Plex Sans',sans-serif;font-size:1.22rem;font-weight:700;color:var(--c);letter-spacing:-.01em}
+.nt-g-n{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.72rem;font-weight:600;letter-spacing:.14em;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:3px 10px}
+.nt-g-ver{color:var(--c);font-size:.85rem;font-weight:600;text-decoration:none;white-space:nowrap}
+.nt-g-ver:hover{text-decoration:underline}
 .nt-chip{padding:9px 18px;border-radius:100px;border:1px solid var(--line);background:rgba(255,255,255,.025);color:var(--muted);font-size:.84rem;font-weight:600;cursor:pointer;transition:border-color .25s,color .25s,background .25s;font-family:inherit}
 .nt-chip:hover{border-color:rgba(43,91,255,.45);color:var(--text)}
 .nt-chip.on{background:var(--accent-soft);border-color:rgba(43,91,255,.55);color:var(--accent2)}
 .nt-chip .n{opacity:.55;margin-left:7px;font-size:.76rem}
 .nt-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .nt-card{display:flex;flex-direction:column;overflow:hidden;color:inherit;text-decoration:none;padding:28px 28px 26px;transition:transform .35s,border-color .35s,box-shadow .35s}
-.nt-card:hover{transform:translateY(-6px);border-color:rgba(43,91,255,.35);box-shadow:0 24px 56px rgba(0,0,0,.5)}
+.nt-card:hover{transform:translateY(-6px);border-color:var(--c,rgba(43,91,255,.35));box-shadow:0 24px 56px rgba(0,0,0,.5)}
 .nt-top{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
-.nt-cat{padding:5px 14px;border-radius:100px;background:var(--accent-soft);border:1px solid rgba(43,91,255,.25);color:var(--accent);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.nt-cat{padding:5px 14px;border-radius:100px;background:var(--cs,var(--accent-soft));border:1px solid var(--c,var(--accent));color:var(--c,var(--accent));font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .nt-cat.reg{background:var(--gold-soft);border-color:rgba(255,216,77,.3);color:var(--gold2)}
-.nt-fecha{color:var(--muted);font-size:.8rem}
+.nt-fecha{color:var(--c,var(--muted));font-size:.8rem;font-weight:600;font-family:"IBM Plex Mono",ui-monospace,monospace;letter-spacing:.04em}
 .nt-card h3{font-size:1.14rem;line-height:1.32;margin-bottom:11px;color:var(--text)}
 .nt-card p{color:var(--muted);font-size:.93rem;line-height:1.6;flex:1}
-.nt-mas{margin-top:18px;color:var(--accent2);font-size:.88rem;font-weight:600;transition:color .25s}
+.nt-mas{margin-top:18px;color:var(--c,var(--accent2));font-size:.88rem;font-weight:600;transition:color .25s}
 .nt-card:hover .nt-mas{color:var(--accent)}
 .nt-cargar{display:flex;justify-content:center;margin-top:34px}
 .nt-cargar:empty{display:none}
 .nt-vacio{color:var(--muted);padding:40px 0;text-align:center;grid-column:1/-1}
-@media(max-width:760px){.nt-grid{grid-template-columns:1fr;gap:18px}.nt-card{padding:24px 22px}}
+@media(max-width:760px){.nt-grid{grid-template-columns:1fr;gap:18px}.nt-card{padding:24px 22px}.nt-g{padding:20px 16px 24px;margin-bottom:32px}.nt-g-tit h2{font-size:1.06rem}}
 /* ============ ARTÍCULO ============ */
 .art{max-width:760px}
 .art-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:22px}
@@ -207,7 +219,7 @@ footer a{color:var(--accent2)}
 <header style="padding:64px 0 0">
   <div class="container">
     <span class="kicker">Noticias</span>
-    <h1 style="font-size:clamp(1.9rem,4.4vw,3rem)">Lo que está pasando en <span class="grad">blockchain, IA y regulación</span></h1>
+    <h1 style="font-size:clamp(1.9rem,4.4vw,3rem)">Lo que está pasando en <span class="grad">blockchain, IA y Web3</span></h1>
     <p class="lead">Seguimos de cerca las decisiones que cambian las reglas del juego, y explicamos qué implican para las empresas e instituciones de Latinoamérica. Sin ruido y con fuentes a la vista.</p>
   </div>
 </header>
@@ -215,7 +227,7 @@ footer a{color:var(--accent2)}
 <section style="padding-top:44px">
   <div class="container">
     <div class="nt-filtros" id="ntFiltros" role="group" aria-label="Filtrar noticias por tema"></div>
-    <div class="nt-grid" id="ntGrid"></div>
+    <div id="ntGrid"></div>
   </div>
 </section>
 
@@ -226,18 +238,16 @@ footer a{color:var(--accent2)}
    PARA PUBLICAR UNA NOTICIA NUEVA:
      1. Crea el archivo de la noticia (copia una existente y cambia el texto).
      2. Agrega una linea ARRIBA DE TODO en la lista HB_NOTICIAS:
-        {f:"2026-09-20", c:"regulacion", t:"Titular", r:"Resumen de dos lineas.",
+        {f:"2026-09-20", c:"blockchain", t:"Titular", r:"Resumen de dos lineas.",
          u:"noticia-nombre-del-archivo.html"}
-     3. Categorias validas en "c":  regulacion | blockchain | ia | web3 | mercados
+     3. Categorias validas en "c":  blockchain | ia | web3   (solo estas tres)
      La fecha "f" va en formato AAAA-MM-DD y ordena la lista sola.
    ========================================================================== */
 var HB_CATS = [
   {k:"todas",      n:"Todas"},
-  {k:"regulacion", n:"Regulación"},
   {k:"blockchain", n:"Blockchain"},
   {k:"ia",         n:"Inteligencia artificial"},
-  {k:"web3",       n:"Web3"},
-  {k:"mercados",   n:"Mercados"}
+  {k:"web3",       n:"Web3"}
 ];
 
 var HB_NOTICIAS = [
@@ -253,7 +263,7 @@ var HB_NOTICIAS = [
    t:"PwC calcula que Chile puede atraer hasta US$162 mil millones en centros de datos, y pone a Latinoamérica frente a una decisión",
    r:"La inteligencia artificial se volvió un asunto de infraestructura física: energía, permisos y cómputo. Brasil, México y Chile ya compiten por esa inversión y lo que decidan ahora define dónde aterriza.",
    u:"noticia-pwc-data-centers-ia-chile.html"},
-  {f:"2026-09-26", c:"regulacion",
+  {f:"2026-09-26", c:"blockchain",
    t:"La Reserva Federal propone las reglas de reservas y capital para las stablecoins de dólar: 60 días de comentarios y vigencia en enero de 2027",
    r:"La Junta puso a consulta el respaldo uno a uno, los requisitos de capital y la vía de autorización para emitir. La GENIUS Act entra en vigor el 18 de enero de 2027 y en 2028 se cierra la puerta a los emisores no calificados.",
    u:"noticia-fed-reglas-stablecoins-genius-act.html"},
@@ -273,7 +283,7 @@ var HB_NOTICIAS = [
    t:"Brasil retendrá hasta 24 horas las transferencias cripto de más de US$10.000 hacia el exterior o billeteras propias",
    r:"Desde enero de 2027, las plataformas podrán frenar un día las salidas grandes de bitcoin, ether o stablecoins hacia otro país o hacia una billetera propia. La autocustodia pasa a ser una categoría de riesgo.",
    u:"noticia-brasil-retencion-cripto-24-horas.html"},
-  {f:"2026-09-16", c:"regulacion",
+  {f:"2026-09-16", c:"web3",
    t:"El Senado de Estados Unidos frena el Clarity Act y deja la regulación cripto en manos de los reguladores",
    r:"La votación se quedó en 50 a favor y 49 en contra, cuando hacían falta 60. El marco que repartía la supervisión entre la SEC y la CFTC queda sin camino en el Congreso, y la certeza regulatoria pasa a la vía administrativa.",
    u:"noticia-clarity-act-senado.html"}
@@ -326,24 +336,56 @@ try{
     });
   }
 
+  var POR_GRUPO = 4;
+
+  function tarjeta(n){
+    return '<a class="nt-card glass" href="' + esc(n.u) + '" data-hb-track="noticia-' + esc(n.u.replace(/\.html$/,"")) + '">' +
+      '<div class="nt-top"><span class="nt-cat">' + esc(nombreCat(n.c)) + '</span>' +
+      '<span class="nt-fecha">' + esc(fecha(n.f)) + '</span></div>' +
+      '<h3>' + esc(n.t) + '</h3><p>' + esc(n.r) + '</p>' +
+      '<span class="nt-mas">Leer la nota completa →</span></a>';
+  }
+
+  /* Vista "Todas": un bloque por tema, con su color y su propio fondo. */
+  function pintarGrupos(){
+    elG.className = "";
+    elG.innerHTML = "";
+    elMas.innerHTML = "";
+    HB_CATS.forEach(function(c){
+      if(c.k === "todas") return;
+      var lista = HB_NOTICIAS.filter(function(x){ return x.c === c.k; });
+      if(!lista.length) return;
+      var g = document.createElement("section");
+      g.className = "nt-g";
+      g.setAttribute("data-c", c.k);
+      var extra = lista.length - POR_GRUPO;
+      g.innerHTML =
+        '<div class="nt-g-top"><div class="nt-g-tit"><h2>' + esc(c.n) + '</h2>' +
+        '<span class="nt-g-n">' + lista.length + (lista.length === 1 ? " nota" : " notas") + '</span></div>' +
+        (extra > 0 ? '<a class="nt-g-ver" href="#" data-ver="' + c.k + '">Ver las ' + lista.length + ' de ' + esc(c.n) + ' →</a>' : '') +
+        '</div><div class="nt-grid">' + lista.slice(0, POR_GRUPO).map(tarjeta).join("") + '</div>';
+      elG.appendChild(g);
+    });
+    [].forEach.call(elG.querySelectorAll("[data-ver]"), function(a){
+      a.onclick = function(ev){
+        ev.preventDefault();
+        filtro = a.getAttribute("data-ver"); mostrar = POR_PAGINA;
+        pintarFiltros(); pintarGrid();
+        try{ history.replaceState(null, "", "?tema=" + filtro); }catch(e){}
+        window.scrollTo({top: elF.getBoundingClientRect().top + window.pageYOffset - 150, behavior: "smooth"});
+      };
+    });
+  }
+
   function pintarGrid(){
-    var lista = (filtro==="todas") ? HB_NOTICIAS : HB_NOTICIAS.filter(function(x){return x.c===filtro;});
+    if(filtro === "todas"){ pintarGrupos(); return; }
+    var lista = HB_NOTICIAS.filter(function(x){ return x.c === filtro; });
+    elG.className = "nt-grid nt-g";
+    elG.setAttribute("data-c", filtro);
     elG.innerHTML = ""; elMas.innerHTML = "";
     if(!lista.length){ elG.innerHTML = '<p class="nt-vacio">Todavía no hay noticias en esta categoría.</p>'; return; }
     var restantes = lista.length - mostrar;
-    lista.slice(0, mostrar).forEach(function(n){
-      var a = document.createElement("a");
-      a.className = "nt-card glass";
-      a.href = n.u;
-      a.setAttribute("data-hb-track", "noticia-" + n.u.replace(/\.html$/,""));
-      a.innerHTML =
-        '<div class="nt-top"><span class="nt-cat' + (n.c==="regulacion"?" reg":"") + '">' + esc(nombreCat(n.c)) + '</span>' +
-        '<span class="nt-fecha">' + esc(fecha(n.f)) + '</span></div>' +
-        '<h3>' + esc(n.t) + '</h3>' +
-        '<p>' + esc(n.r) + '</p>' +
-        '<span class="nt-mas">Leer la nota completa →</span>';
-      elG.appendChild(a);
-    });
+    elG.innerHTML = lista.slice(0, mostrar).map(tarjeta).join("");
     if(restantes > 0){
       var btn = document.createElement("button");
       btn.type = "button";
