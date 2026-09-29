@@ -651,7 +651,13 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 #academia{position:relative;background:#FFFFFF;border-top:2px solid var(--accent);border-bottom:2px solid var(--accent)}
 #academia::before{content:none}
 /* --- Academia: logo, distintivos y tamaños --- */
-#academia .aca-logo{display:block;width:100%;max-width:300px;margin:0 auto 16px}
+#academia .aca-logo{display:block;width:100%;height:auto;max-width:230px;margin:0 auto 16px}
+#academia .aca-dif{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:22px 0 26px}
+#academia .aca-dif>div{padding:15px 16px;border-radius:14px;background:#fff;border:1px solid rgba(16,32,56,.12);box-shadow:0 4px 14px rgba(12,30,52,.05)}
+#academia .aca-dif b{display:block;font-size:.94rem;color:#0F2544;margin-bottom:6px;line-height:1.35}
+#academia .aca-dif b i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#E0820A;margin-right:8px;vertical-align:middle}
+#academia .aca-dif span{display:block;font-size:.855rem;line-height:1.6;color:#4A5A75}
+@media (max-width:1000px){#academia .aca-dif{grid-template-columns:1fr}}
 #academia .aca-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 #academia .aca-badges span{font-size:.8rem;font-weight:600;padding:7px 13px;border-radius:100px;background:rgba(43,91,255,.08);border:1px solid rgba(43,91,255,.22);color:#1B4FD8}
 #academia .aca-badges span:last-child{background:rgba(247,148,29,.12);border-color:rgba(247,148,29,.35);color:#A75E06}
@@ -667,7 +673,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 #academia .aca-logos img{height:48px}
 #academia .aca-logos{gap:22px;margin-top:16px}
 #academia .aca-logos .x{font-size:1.4rem}
-@media (max-width:760px){#academia .aca-logo{max-width:230px}#academia .aca-logos img{height:38px}}
+@media (max-width:760px){#academia .aca-logo{max-width:185px}#academia .aca-logos img{height:34px}#academia .aca-dif>div{padding:14px}}
 /* --- Academia sobre fondo claro --- */
 #academia .aca-box{background:#FBFCFE;border:1px solid rgba(16,32,56,.12);box-shadow:0 18px 44px rgba(12,30,52,.10)}
 #academia .aca-box::before{content:none}
@@ -689,7 +695,12 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 #academia .aca-p2 .pr{background:rgba(247,148,29,.14);color:#A75E06}
 #academia .aca-p3 .n{background:rgba(16,32,56,.07);color:#5A6B8C}
 #academia .aca-p3 .pr{background:rgba(16,32,56,.07);color:#5A6B8C}
-#academia .aca-logos{gap:18px;margin-top:12px}
+#academia .aca-logos{gap:18px;margin-top:14px;justify-content:flex-start}
+#academia .aca-note{margin:16px 4px 0;padding-top:16px;border-top:1px dashed rgba(16,32,56,.16);font-size:.88rem;line-height:1.6;color:#5A6B8C;text-align:center}
+#academia .aca-note b{color:#0F2544;font-weight:600}
+#academia .aca-l{display:flex;flex-direction:column}
+#academia .aca-l .aca-badges{margin-top:26px}
+#academia .aca-r{justify-content:center;gap:13px}
 #academia .aca-logos .pill{background:transparent;border:none;padding:0;height:auto}
 #academia .aca-logos img{height:34px}
 #academia .aca-logos a.pill:hover{transform:translateY(-3px);box-shadow:none;filter:brightness(1.05)}
@@ -1250,22 +1261,16 @@ section[id],[id^="empleado"],#formulario,#videos,#eventos{scroll-margin-top:162p
         <span class="tag aca-new"><span class="dot"></span>Nuevo · Academia Digital</span>
         <h2>Academia <span class="g">Blockchain</span> LATAM</h2>
         <p>Junto a la <b style="color:var(--text);font-weight:600">Cámara Blockchain Chile</b> creamos una academia binacional con rutas de aprendizaje en blockchain, tokenización e inteligencia artificial, en español y con certificación de doble sello Chile · Perú.</p>
-        <ul class="aca-points">
-          <li>Rutas para empresarios, finanzas, legal y perfiles técnicos</li>
-          <li>Clases grabadas a tu ritmo + sesiones en vivo con especialistas</li>
-          <li>Certificación conjunta Horizonte Blockchain × Cámara Blockchain Chile</li>
-        </ul>
+        <div class="aca-dif">
+          <div><b><i></i>Respaldo gremial</b><span>Un gremio nacional y un hub regional firman cada certificado. Aquí la credencial pesa en una mesa de directorio.</span></div>
+          <div><b><i></i>Alineada a normas ISO</b><span>Currículo construido sobre ISO 27001, ISO/TC 307 e ISO 20022: el lenguaje que tu área de riesgo ya entiende.</span></div>
+          <div><b><i></i>Docentes que ejercen</b><span>Abogados, ingenieros y ejecutivos que trabajan hoy con empresas, gremios y reguladores de la región.</span></div>
+          <div><b><i></i>Casos de Latinoamérica</b><span>Normativa y casos reales de la región, en español, con aplicación directa a tu empresa desde la primera clase.</span></div>
+        </div>
         <div class="aca-ctas">
           <a href="https://academia.horizonteblockchain.org/" target="_blank" rel="noopener" class="btn btn-primary" data-hb-track="academia-mas-info">Conocer la Academia →</a>
           <a href="https://academia.horizonteblockchain.org/#webinar" target="_blank" rel="noopener" class="btn btn-ghost" data-hb-track="academia-webinar">Webinar gratis</a>
         </div>
-      </div>
-      <div class="aca-r">
-        <img class="aca-logo" src="logo-academia-full.png" alt="Academia Blockchain LATAM" width="1378" height="386" loading="lazy">
-        <a class="aca-prod aca-p1" href="https://academia.horizonteblockchain.org/#webinar" target="_blank" rel="noopener" data-hb-track="academia-prod-webinar"><span class="n">01</span><span><b>Blockchain en 60 minutos</b><small>Webinar de introducción</small></span><span class="pr">Gratis</span></a>
-        <a class="aca-prod aca-p2" href="https://academia.horizonteblockchain.org/programa-blockchain-empresarios.html" target="_blank" rel="noopener" data-hb-track="academia-prod-empresarios"><span class="n">02</span><span><b>Blockchain para Empresarios</b><small>Programa insignia</small></span><span class="pr">Preventa</span></a>
-        <a class="aca-prod aca-p3" href="https://academia.horizonteblockchain.org/programa-acelerador-plus.html" target="_blank" rel="noopener" data-hb-track="academia-prod-acelerador"><span class="n">03</span><span><b>Acelerador Plus</b><small>Programa técnico avanzado</small></span><span class="pr">Próximamente</span></a>
-        <a class="aca-prod aca-p4" href="https://academia.horizonteblockchain.org/programa-blockchain-corporativo.html" target="_blank" rel="noopener" data-hb-track="academia-prod-corporativo"><span class="n">04</span><span><b>Blockchain Corporativo</b><small>Para directorios y C-Level</small></span><span class="pr">A medida</span></a>
         <div class="aca-badges">
           <span>Certificación de doble sello Chile · Perú</span>
           <span>Currículo alineado a normas ISO</span>
@@ -1275,6 +1280,14 @@ section[id],[id^="empleado"],#formulario,#videos,#eventos{scroll-margin-top:162p
           <span class="x">×</span>
           <a class="pill" href="https://www.linkedin.com/company/camara-blockchain-chile/" target="_blank" rel="noopener" aria-label="Cámara Blockchain Chile en LinkedIn" data-hb-track="academia-logo-camara"><img src="assets/img/aliados/camara-blockchain-chile.png" alt="Cámara Blockchain Chile" loading="lazy"></a>
         </div>
+      </div>
+      <div class="aca-r">
+        <img class="aca-logo" src="logo-academia-full.png" alt="Academia Blockchain LATAM" width="1200" height="336" loading="lazy">
+        <a class="aca-prod aca-p1" href="https://academia.horizonteblockchain.org/#webinar" target="_blank" rel="noopener" data-hb-track="academia-prod-webinar"><span class="n">01</span><span><b>Blockchain en 60 minutos</b><small>Webinar de introducción</small></span><span class="pr">Gratis</span></a>
+        <a class="aca-prod aca-p2" href="https://academia.horizonteblockchain.org/programa-blockchain-empresarios.html" target="_blank" rel="noopener" data-hb-track="academia-prod-empresarios"><span class="n">02</span><span><b>Blockchain para Empresarios</b><small>Programa insignia</small></span><span class="pr">Preventa</span></a>
+        <a class="aca-prod aca-p3" href="https://academia.horizonteblockchain.org/programa-acelerador-plus.html" target="_blank" rel="noopener" data-hb-track="academia-prod-acelerador"><span class="n">03</span><span><b>Acelerador Plus</b><small>Programa técnico avanzado</small></span><span class="pr">Próximamente</span></a>
+        <a class="aca-prod aca-p4" href="https://academia.horizonteblockchain.org/programa-blockchain-corporativo.html" target="_blank" rel="noopener" data-hb-track="academia-prod-corporativo"><span class="n">04</span><span><b>Blockchain Corporativo</b><small>Para directorios y C-Level</small></span><span class="pr">A medida</span></a>
+        <p class="aca-note">Cada programa entrega una credencial digital verificable con el sello de <b>Horizonte Blockchain</b> y de la <b>Cámara Blockchain Chile</b>.</p>
       </div>
     </div>
   </div>
