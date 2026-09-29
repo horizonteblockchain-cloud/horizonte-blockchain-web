@@ -88,6 +88,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(4,16,46,.86);backdrop-filte
 .hero .lema b{background:linear-gradient(90deg,var(--cyan),var(--cyan2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero p.sub{color:var(--muted);font-size:1.08rem;max-width:660px;margin:0 auto 30px}
 .flyer{display:block;max-width:960px;margin:0 auto;border-radius:20px;overflow:hidden;border:1px solid rgba(41,211,247,.35);box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(41,211,247,.10);transition:transform .3s,box-shadow .3s;line-height:0}
+.flyer picture{display:block}
+.flyer img{width:100%;height:auto}
 .flyer:hover{transform:translateY(-5px);box-shadow:0 38px 90px rgba(0,0,0,.65),0 0 70px rgba(255,46,126,.18)}
 
 /* bloque del descuento */
@@ -191,7 +193,10 @@ footer a{color:var(--cyan2)}
     <p class="lema">Capital. <b>Alianzas.</b> Expansión.</p>
     <p class="sub">El retiro empresarial de alto nivel para Web3, inversión, finanzas y economía digital. Horizonte Blockchain participa como aliado estratégico.</p>
     <a class="flyer" href="https://www.gevme.com/blockcon-punta-cana-2026-69652010" target="_blank" rel="noopener" data-hb-track="blockcon-flyer" aria-label="Comprar entrada para BLOCKCON Punta Cana 2026">
-      <img src="blockcon-punta-cana-2026.jpg?v=1" alt="BLOCKCON Punta Cana 2026 · Capital. Alianzas. Expansión. · 25 al 28 de noviembre de 2026 · Barceló Hotels &amp; Resorts · 10% de descuento en tu entrada" width="1400" height="788">
+      <picture>
+        <source media="(max-width:760px)" srcset="blockcon-punta-cana-2026-movil.jpg?v=1" width="1080" height="1350">
+        <img src="blockcon-punta-cana-2026.jpg?v=1" alt="BLOCKCON Punta Cana 2026 · 25 al 28 de noviembre · Barceló Hotels &amp; Resorts · 10% de descuento con el código HORIZONTE" width="1400" height="788">
+      </picture>
     </a>
 
     <div class="desc">
