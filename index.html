@@ -683,22 +683,23 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 @media (max-width:760px){#academia .aca-logo{max-width:185px}#academia .aca-logos img{height:34px}#academia .aca-dif>div{padding:14px}}
 /* --- INLAB: logotipo, areas y bloque "Impulsado por" --- */
 #academia .aca-oculto{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-#academia .aca-inlab{display:block;width:100%;height:auto;max-width:430px;margin:2px 0 14px}
-#academia .aca-l>p.aca-areas{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.74rem;font-weight:600;line-height:1.5;letter-spacing:.13em;text-transform:uppercase;color:#1B4FD8;margin:0 0 18px}
+#academia .aca-inlab{display:block;width:100%;height:auto;max-width:430px;margin:2px 0 22px}
 #academia .aca-imp{display:inline-flex;align-self:center;align-items:center;padding:6px 16px;border-radius:100px;background:rgba(43,91,255,.09);border:1px solid rgba(43,91,255,.22);font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#1B4FD8;margin-bottom:4px}
 #academia .aca-r .aca-logos{justify-content:center;gap:26px;margin:10px 0 12px}
 #academia .aca-r .aca-logos img{height:46px}
+#academia .aca-r .aca-logos .cam img{height:62px}
 #academia .aca-aliados{text-align:center;font-size:.9rem;line-height:1.6;color:#5A6B8C;margin:0 4px 20px;padding-bottom:18px;border-bottom:1px dashed rgba(16,32,56,.16)}
 #academia .aca-aliados b{color:#0F2544;font-weight:600}
 @media (max-width:1000px){
   #academia .aca-r .aca-logos{gap:18px}
   #academia .aca-r .aca-logos img{height:38px}
+  #academia .aca-r .aca-logos .cam img{height:51px}
 }
 @media (max-width:760px){
   #academia .aca-inlab{max-width:300px;margin-left:auto;margin-right:auto}
-  #academia .aca-l>p.aca-areas{text-align:center;font-size:.66rem;letter-spacing:.1em}
   #academia .aca-inlab{max-width:320px}
   #academia .aca-r .aca-logos img{height:32px}
+  #academia .aca-r .aca-logos .cam img{height:43px}
 }
 /* --- Academia sobre fondo claro --- */
 #academia .aca-box{background:#FBFCFE;border:1px solid rgba(16,32,56,.12);box-shadow:0 18px 44px rgba(12,30,52,.10)}
@@ -1306,7 +1307,6 @@ section[id],[id^="empleado"],#formulario,#videos,#eventos{scroll-margin-top:162p
         <span class="tag aca-new"><span class="dot"></span>Instituto internacional</span>
         <h2 class="aca-oculto">INLAB · Instituto Iberoamericano para la Innovación y el Desarrollo Blockchain</h2>
         <img class="aca-inlab" src="logo-inlab.png?v=1" alt="INLAB · Instituto Iberoamericano para la Innovación y el Desarrollo Blockchain · Formación, especialización y aplicación empresarial" width="1200" height="373" loading="lazy" decoding="async">
-        <p class="aca-areas">Blockchain · IA · Web3 · Economía digital</p>
         <p>Una iniciativa binacional de <b style="color:var(--text);font-weight:600">Horizonte Blockchain</b> y la <b style="color:var(--text);font-weight:600">Cámara Blockchain Chile</b> para impulsar la formación, la especialización y la aplicación empresarial de tecnologías blockchain en Iberoamérica.</p>
         <div class="aca-dif">
           <div><b><i></i>Respaldo gremial</b><span>Un gremio nacional y un hub regional firman cada certificado. Aquí la credencial pesa en una mesa de directorio.</span></div>
@@ -1328,7 +1328,7 @@ section[id],[id^="empleado"],#formulario,#videos,#eventos{scroll-margin-top:162p
         <div class="aca-logos">
           <a class="pill" href="https://www.linkedin.com/company/horizonte-blockchain/" target="_blank" rel="noopener" aria-label="Horizonte Blockchain en LinkedIn" data-hb-track="academia-logo-hb"><img src="logo-hb-dark.png" alt="Horizonte Blockchain" loading="lazy"></a>
           <span class="x">×</span>
-          <a class="pill" href="https://www.linkedin.com/company/camara-blockchain-chile/" target="_blank" rel="noopener" aria-label="Cámara Blockchain Chile en LinkedIn" data-hb-track="academia-logo-camara"><img src="assets/img/aliados/camara-blockchain-chile.png" alt="Cámara Blockchain Chile" loading="lazy"></a>
+          <a class="pill cam" href="https://www.linkedin.com/company/camara-blockchain-chile/" target="_blank" rel="noopener" aria-label="Cámara Blockchain Chile en LinkedIn" data-hb-track="academia-logo-camara"><img src="assets/img/aliados/camara-blockchain-chile.png" alt="Cámara Blockchain Chile" loading="lazy"></a>
         </div>
         <p class="aca-aliados">Aliados estratégicos para el desarrollo del <b>talento blockchain</b> en Iberoamérica.</p>
         <a class="aca-prod aca-p1" href="https://academia.horizonteblockchain.org/#webinar" target="_blank" rel="noopener" data-hb-track="academia-prod-webinar"><span class="n">01</span><span><b>Blockchain en 60 minutos</b><small>Webinar de introducción</small></span><span class="pr">Gratis</span></a>
