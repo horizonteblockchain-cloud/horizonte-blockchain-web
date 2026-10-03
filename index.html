@@ -49,7 +49,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   color-scheme: dark;
@@ -702,7 +702,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
   #academia .aca-r .aca-logos .cam img{height:43px}
 }
 /* --- INLAB: tarjetas con icono, botones y filas de programa --- */
-#academia .container{max-width:1260px}
+#academia .container{max-width:1400px}
 .aca-box{grid-template-columns:1.1fr .9fr}
 #academia .aca-dif{gap:16px;margin:26px 0 30px}
 #academia .aca-dif>div{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:7px 13px;padding:18px;border-radius:18px;background:#fff;border:1px solid rgba(16,32,56,.09);box-shadow:0 6px 18px rgba(12,30,52,.045)}
@@ -738,7 +738,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
 #academia .aca-note{display:flex;align-items:center;gap:13px;text-align:left;margin:18px 2px 0;padding-top:18px;border-top:1px dashed rgba(16,32,56,.16)}
 #academia .aca-note p{margin:0;font-size:.88rem;line-height:1.6;color:#5A6B8C}
 #academia .aca-note b{color:#0F2544;font-weight:600}
-@media (max-width:1000px){#academia .container{max-width:1150px}}
+@media (max-width:1240px){#academia .container{max-width:1150px}}
 @media (max-width:760px){
   #academia .aca-ctas .btn{flex:1 1 100%}
   #academia .aca-badges span{width:100%}
@@ -747,6 +747,108 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg-
   #academia .aca-prod>span:nth-child(2){min-width:0;flex:1 1 auto}
   #academia .aca-prod b{font-size:.96rem}
   #academia .aca-prod .pr{font-size:.7rem;padding:4px 9px}
+}
+/* --- INLAB: dos paneles independientes, como la pieza de marca --- */
+#academia .aca-box{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;background:transparent!important;border:none!important;box-shadow:none!important;overflow:visible}
+#academia .aca-box::before{content:none}
+#academia .aca-l,#academia .aca-r{background:#FCFDFF;border:1px solid rgba(16,32,56,.10);border-radius:26px;box-shadow:0 14px 40px rgba(12,30,52,.07)}
+#academia .aca-l{padding:38px 34px}
+#academia .aca-r{padding:32px 30px 34px;border-left:1px solid rgba(16,32,56,.10);justify-content:flex-start;gap:12px}
+/* tarjetas */
+#academia .aca-dif{gap:16px;margin:26px 0 28px}
+#academia .aca-dif>div{display:flex;align-items:flex-start;gap:16px;padding:18px 18px;border-radius:20px;background:#F6F9FD;border:1px solid rgba(16,32,56,.055);box-shadow:none}
+#academia .aca-tx{min-width:0;flex:1 1 auto}
+#academia .aca-ic{flex:none;width:54px;height:54px;border-radius:17px;display:grid;place-items:center}
+#academia .aca-ic svg{width:27px;height:27px}
+#academia .aca-ic.ic-naranja{background:#FDEBD5;color:#F0860B}
+#academia .aca-ic.ic-azul{background:#E4ECFF;color:#2B5BFF}
+#academia .aca-ic.sm{width:46px;height:46px;border-radius:15px}
+#academia .aca-ic.sm svg{width:24px;height:24px}
+#academia .aca-dif b{display:block;margin:2px 0 6px;font-size:.98rem;line-height:1.3;color:#0F2544}
+#academia .aca-dif b i{display:none}
+#academia .aca-dif .aca-d{display:block;font-size:.855rem;line-height:1.55;color:#56688A}
+#academia .aca-dif .aca-d a{color:#1B4FD8;font-weight:600;white-space:nowrap}
+#academia .aca-dif .aca-d a:hover{text-decoration:underline}
+/* botones */
+#academia .aca-ctas{gap:14px;margin-top:4px}
+#academia .aca-ctas .btn{flex:1 1 200px;justify-content:center;padding:16px 26px;border-radius:14px;font-size:1rem}
+#academia .aca-ctas .btn-ghost{box-shadow:0 4px 14px rgba(12,30,52,.05)}
+/* distintivos, en una fila como la pieza */
+#academia .aca-badges{gap:12px;margin-top:14px;flex-wrap:wrap}
+#academia .aca-badges span{display:inline-flex;align-items:center;gap:9px;padding:11px 15px;border-radius:14px;font-size:.78rem;flex:1 1 230px}
+#academia .aca-badges svg{width:17px;height:17px;flex:none}
+/* impulsado por, con lineas a los lados */
+#academia .aca-imp{align-self:stretch;display:flex;align-items:center;justify-content:center;gap:14px;background:none;border:none;padding:0;margin-bottom:6px}
+#academia .aca-imp::before,#academia .aca-imp::after{content:"";height:1px;flex:1;background:rgba(16,32,56,.13)}
+#academia .aca-imp i{font-style:normal;padding:7px 18px;border-radius:100px;background:#E4ECFF;color:#1B4FD8;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+/* filas de programa */
+#academia .aca-prod{border-radius:18px;padding:16px 18px;gap:15px;border:1px solid rgba(16,32,56,.08);background:#FCFDFF}
+#academia .aca-prod:hover{transform:translateX(3px)}
+#academia .aca-prod .n{width:48px;height:48px;border-radius:15px;font-size:1.02rem}
+#academia .aca-prod b{font-size:1.02rem;line-height:1.3}
+#academia .aca-prod .pr{margin-left:auto;flex:none}
+#academia .aca-chev{display:grid;place-items:center;color:#9AA8C2;flex:none;transition:color .25s,transform .25s}
+#academia .aca-chev svg{width:20px;height:20px}
+#academia .aca-prod:hover .aca-chev{color:#1B4FD8;transform:translateX(2px)}
+/* nota de cierre */
+#academia .aca-note{display:flex;align-items:center;gap:14px;text-align:left;margin:16px 2px 0;padding-top:20px;border-top:1px dashed rgba(16,32,56,.16)}
+#academia .aca-note p{margin:0;font-size:.88rem;line-height:1.6;color:#56688A}
+#academia .aca-note b{color:#0F2544;font-weight:600}
+@media (max-width:1000px){
+  #academia .aca-box{grid-template-columns:1fr;gap:20px}
+  #academia .aca-r{border-left:1px solid rgba(16,32,56,.10)}
+}
+@media (max-width:760px){
+  #academia .aca-l{padding:28px 20px}
+  #academia .aca-r{padding:26px 18px 28px}
+  #academia .aca-ctas .btn{flex:1 1 100%}
+  #academia .aca-badges span{flex:1 1 100%}
+  #academia .aca-ic{width:48px;height:48px;border-radius:15px}
+  #academia .aca-ic svg{width:24px;height:24px}
+  #academia .aca-chev{display:none}
+}
+/* --- INLAB: tipografia y escala de la pieza de marca --- */
+#academia,#academia .aca-l,#academia .aca-r{font-family:'Poppins','IBM Plex Sans',system-ui,sans-serif}
+#academia b,#academia strong,#academia .btn,#academia h2,#academia h3{font-family:'Poppins','IBM Plex Sans',system-ui,sans-serif}
+#academia .aca-l>p{font-size:1.1rem;line-height:1.72;color:#4C5E7E}
+#academia .aca-l>p b{font-weight:600}
+/* tarjetas: icono grande, centrado con el bloque de texto */
+#academia .aca-dif{gap:18px;margin:28px 0 30px}
+#academia .aca-dif>div{display:flex;align-items:center;gap:16px;padding:20px 18px;border-radius:22px;background:#F7FAFE;border:1px solid rgba(16,32,56,.05);box-shadow:none}
+#academia .aca-tx{min-width:0;flex:1 1 auto}
+#academia .aca-ic{flex:none;width:64px;height:64px;border-radius:20px;display:flex;align-items:center;justify-content:center;align-self:center;line-height:0}
+#academia .aca-ic svg{width:35px;height:35px;display:block}
+#academia .aca-ic.ic-naranja{background:#FCE7CF;color:#F08500}
+#academia .aca-ic.ic-azul{background:#E2EAFE;color:#2B5BFF}
+#academia .aca-dif b{display:block;margin:0 0 7px;font-size:1.04rem;font-weight:600;line-height:1.3;color:#15284A}
+#academia .aca-dif b i{display:none}
+#academia .aca-dif .aca-d{display:block;font-size:.875rem;line-height:1.6;color:#5A6D8E;font-weight:400}
+#academia .aca-dif .aca-d a{color:#2B5BFF;font-weight:600;white-space:nowrap}
+/* botones */
+#academia .aca-ctas .btn{flex:1 1 200px;justify-content:center;padding:17px 26px;border-radius:16px;font-size:1.02rem;font-weight:600}
+/* distintivos: icono grande y centrado */
+#academia .aca-badges{gap:14px;margin-top:16px}
+#academia .aca-badges span{display:inline-flex;align-items:center;gap:12px;padding:14px 18px;border-radius:16px;font-size:.84rem;font-weight:600;flex:1 1 240px;line-height:1.35}
+#academia .aca-badges svg{width:26px;height:26px;flex:none;display:block}
+/* programas */
+#academia .aca-prod{border-radius:20px;padding:18px 18px;gap:14px;align-items:center}
+#academia .aca-prod .n{width:58px;height:58px;border-radius:18px;font-size:1.12rem;font-family:'Poppins','IBM Plex Sans',sans-serif}
+#academia .aca-prod b{font-size:1rem;font-weight:600;line-height:1.3}
+#academia .aca-prod small{font-size:.92rem}
+#academia .aca-prod .pr{font-size:.75rem;font-weight:600;padding:6px 12px;border-radius:100px;white-space:nowrap}
+#academia .aca-chev svg{width:22px;height:22px;stroke-width:2.4}
+/* nota de cierre */
+#academia .aca-note{gap:16px;align-items:center;padding-top:22px}
+#academia .aca-ic.sm{width:58px;height:58px;border-radius:19px}
+#academia .aca-ic.sm svg{width:31px;height:31px}
+#academia .aca-note p{font-size:.92rem;line-height:1.62;color:#5A6D8E}
+/* aliados */
+#academia .aca-aliados{font-size:.95rem;line-height:1.62;color:#5A6D8E}
+#academia .aca-imp i{font-family:'Poppins','IBM Plex Sans',sans-serif;font-size:.74rem;letter-spacing:.1em;padding:8px 20px}
+@media (max-width:760px){
+  #academia .aca-ic{width:60px;height:60px;border-radius:19px}
+  #academia .aca-ic svg{width:33px;height:33px}
+  #academia .aca-prod .n{width:50px;height:50px;border-radius:16px}
 }
 /* --- Academia sobre fondo claro --- */
 #academia .aca-box{background:#FBFCFE;border:1px solid rgba(16,32,56,.12);box-shadow:0 18px 44px rgba(12,30,52,.10)}
@@ -908,6 +1010,10 @@ section[id],[id^="empleado"],#formulario,#videos,#eventos{scroll-margin-top:162p
   .aca-prod{padding:14px;display:grid;grid-template-columns:40px 1fr auto;column-gap:12px;align-items:center}
   .aca-prod .pr{grid-column:3;justify-self:end;margin:0}
 }
+
+/* --- INLAB: el dibujo siempre centrado dentro de su cuadro --- */
+#academia .aca-ic{display:flex!important;align-items:center!important;justify-content:center!important;line-height:0!important;padding:0!important}
+#academia .aca-ic>svg{display:block!important;margin:0!important;flex:none}
 </style>
 </head>
 <body>
@@ -1351,27 +1457,27 @@ section[id],[id^="empleado"],#formulario,#videos,#eventos{scroll-margin-top:162p
   <div class="container">
     <div class="aca-box glass reveal">
       <div class="aca-l">
-        <span class="tag aca-new"><span class="dot"></span>Instituto internacional</span>
+        <span class="tag aca-new"><span class="dot"></span>Instituto Internacional</span>
         <h2 class="aca-oculto">INLAB · Instituto Iberoamericano para la Innovación y el Desarrollo Blockchain</h2>
         <img class="aca-inlab" src="logo-inlab.png?v=1" alt="INLAB · Instituto Iberoamericano para la Innovación y el Desarrollo Blockchain · Formación, especialización y aplicación empresarial" width="1200" height="373" loading="lazy" decoding="async">
         <p>Una iniciativa binacional de <b style="color:var(--text);font-weight:600">Horizonte Blockchain</b> y la <b style="color:var(--text);font-weight:600">Cámara Blockchain Chile</b> para impulsar la formación, la especialización y la aplicación empresarial de tecnologías blockchain en Iberoamérica.</p>
         <div class="aca-dif">
-          <div><span class="aca-ic ic-naranja"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><b>Respaldo gremial</b><span class="aca-d">Un gremio nacional y un hub regional firman cada certificado. Aquí la credencial pesa en una mesa de directorio.</span></div>
-          <div><span class="aca-ic ic-azul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8"/><path d="M14 2v6h6"/><path d="M20 8v4"/><circle cx="18" cy="17" r="3"/><path d="m16.5 19.3-.5 2.7 2-1 2 1-.5-2.7"/></svg></span><b>Alineada a normas ISO</b><span class="aca-d">Currículo construido sobre ISO 27001, ISO/TC 307 e ISO 20022: el lenguaje que tu área de riesgo ya entiende.</span></div>
-          <div><span class="aca-ic ic-azul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 5 2 9l10 4 10-4Z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span><b>Docentes que ejercen</b><span class="aca-d">Abogados, ingenieros y ejecutivos que trabajan hoy con empresas, gremios y reguladores, sobre normativa y casos reales de Latinoamérica.</span></div>
-          <div class="dif-wr"><span class="aca-ic ic-oro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><rect x="5" y="12" width="3.5" height="7" rx="1"/><rect x="10.2" y="8" width="3.5" height="11" rx="1"/><rect x="15.5" y="4" width="3.5" height="15" rx="1"/></svg></span><b>Metodología The War Room</b><span class="aca-d">El cierre que no existe en ningún otro programa de la región: equipos en formato de directorio resuelven un caso real bajo presión y defienden su decisión ante un panel. <a href="https://academia.horizonteblockchain.org/#warroom" target="_blank" rel="noopener" data-hb-track="academia-warroom">Ver cómo funciona →</a></span></div>
+          <div><span class="aca-ic ic-naranja"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="9.4" cy="8" r="3.6"/><path d="M3.4 19.6c0-3.4 2.7-5.2 6-5.2s6 1.8 6 5.2a1 1 0 0 1-1 1h-10a1 1 0 0 1-1-1Z"/><circle cx="17.2" cy="9.1" r="2.7" opacity=".55"/><path d="M17.2 13.4c2.6 0 4.4 1.5 4.4 3.8a.9.9 0 0 1-.9.9h-3.2c.1-.4.1-.8.1-1.3 0-1.3-.2-2.5-.8-3.4Z" opacity=".55"/></svg></span><div class="aca-tx"><b>Respaldo gremial</b><span class="aca-d">Un gremio nacional y un hub regional firman cada certificación. Aquí la credencial pesa en una mesa de directorio.</span></div></div>
+          <div><span class="aca-ic ic-azul"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 2.6h6.1l4 4v4.2a6.3 6.3 0 0 0-8.4 8.6H6a2 2 0 0 1-2-2V4.6a2 2 0 0 1 2-2Z" opacity=".45"/><path d="M12.1 2.6v3.2a.9.9 0 0 0 .9.9h3.1l-4-4.1Z"/><path d="M16.2 10.9a5.3 5.3 0 1 0 0 10.6 5.3 5.3 0 0 0 0-10.6Zm2.6 4-3.1 3.2a.9.9 0 0 1-1.3 0l-1.5-1.6a.9.9 0 0 1 1.3-1.2l.9.9 2.4-2.5a.9.9 0 0 1 1.3 1.2Z"/></svg></span><div class="aca-tx"><b>Alineada a normas ISO</b><span class="aca-d">Currículo construido sobre ISO 27001, ISO/TC 307 e ISO 20022, con enfoque en gobernanza y gestión de riesgo.</span></div></div>
+          <div><span class="aca-ic ic-azul"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.4 3.9a1 1 0 0 0-.8 0L2.8 7.8a.8.8 0 0 0 0 1.5l8.8 3.9a1 1 0 0 0 .8 0l8.8-3.9a.8.8 0 0 0 0-1.5L12.4 3.9Z"/><path d="M6.5 11.8v3.9c0 .7.4 1.3 1 1.7 1.2.8 2.8 1.2 4.5 1.2s3.3-.4 4.5-1.2c.6-.4 1-1 1-1.7v-3.9l-4.8 2.1a2.9 2.9 0 0 1-2.4 0l-3.8-1.7Z" opacity=".5"/><path d="M20.4 10.3a.8.8 0 0 1 .8.8v4.6a.8.8 0 0 1-1.6 0v-4.6a.8.8 0 0 1 .8-.8Z"/></svg></span><div class="aca-tx"><b>Docentes expertos</b><span class="aca-d">Abogados, ingenieros y ejecutivos que trabajan en empresas, gremios y reguladores de Latinoamérica.</span></div></div>
+          <div><span class="aca-ic ic-naranja"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3.6" y="13" width="4.2" height="7.4" rx="1.5" opacity=".45"/><rect x="9.9" y="8.6" width="4.2" height="11.8" rx="1.5" opacity=".72"/><rect x="16.2" y="3.6" width="4.2" height="16.8" rx="1.5"/></svg></span><div class="aca-tx"><b>Metodología aplicada</b><span class="aca-d">Aprendizaje práctico con casos reales de la región, en formato de directorio y evaluación por competencias. <a href="https://academia.horizonteblockchain.org/#warroom" target="_blank" rel="noopener" data-hb-track="academia-warroom">Ver The War Room →</a></span></div></div>
         </div>
         <div class="aca-ctas">
           <a href="https://academia.horizonteblockchain.org/" target="_blank" rel="noopener" class="btn btn-primary" data-hb-track="academia-mas-info">Conocer INLAB →</a>
           <a href="https://academia.horizonteblockchain.org/#webinar" target="_blank" rel="noopener" class="btn btn-ghost" data-hb-track="academia-webinar">Webinar gratis</a>
         </div>
         <div class="aca-badges">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> Certificación de doble sello Chile · Perú</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg> Currículo alineado a normas ISO</span>
+          <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.6 2.2a1 1 0 0 1 .8 0l7.1 2.9c.4.1.6.5.6.9v6c0 5.6-4.4 8.9-7.7 10.4a1 1 0 0 1-.8 0C8.3 20.9 4 17.6 4 12V6c0-.4.2-.8.6-.9l7-2.9Zm4.1 7.2a1 1 0 0 0-1.4 0l-3.4 3.5-1.2-1.3a1 1 0 1 0-1.4 1.4l1.9 2a1 1 0 0 0 1.4 0l4.1-4.2a1 1 0 0 0 0-1.4Z"/></svg> Certificación de doble sello Chile · Perú</span>
+          <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.2 2h11a.9.9 0 0 1 .9.9v13.4a.9.9 0 0 1-.9.9h-11a1.4 1.4 0 0 0 0 2.8h11a.9.9 0 0 1 0 1.9h-11A3.3 3.3 0 0 1 4 18.6V5.3A3.3 3.3 0 0 1 7.2 2Z"/></svg> Currículo alineado a normas ISO</span>
         </div>
       </div>
       <div class="aca-r">
-        <span class="aca-imp">Impulsado por</span>
+        <span class="aca-imp"><i>Impulsado por</i></span>
         <div class="aca-logos">
           <a class="pill" href="https://www.linkedin.com/company/horizonte-blockchain/" target="_blank" rel="noopener" aria-label="Horizonte Blockchain en LinkedIn" data-hb-track="academia-logo-hb"><img src="logo-hb-dark.png" alt="Horizonte Blockchain" loading="lazy"></a>
           <span class="x">×</span>
@@ -1382,7 +1488,7 @@ section[id],[id^="empleado"],#formulario,#videos,#eventos{scroll-margin-top:162p
         <a class="aca-prod aca-p2" href="https://academia.horizonteblockchain.org/programa-blockchain-empresarios.html" target="_blank" rel="noopener" data-hb-track="academia-prod-empresarios"><span class="n">02</span><span><b>Blockchain para Empresarios</b><small>Programa insignia</small></span><span class="pr">Preventa</span><span class="aca-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span></a>
         <a class="aca-prod aca-p3" href="https://academia.horizonteblockchain.org/programa-acelerador-plus.html" target="_blank" rel="noopener" data-hb-track="academia-prod-acelerador"><span class="n">03</span><span><b>Acelerador Plus</b><small>Programa técnico avanzado</small></span><span class="pr">Próximamente</span><span class="aca-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span></a>
         <a class="aca-prod aca-p4" href="https://academia.horizonteblockchain.org/programa-blockchain-corporativo.html" target="_blank" rel="noopener" data-hb-track="academia-prod-corporativo"><span class="n">04</span><span><b>Blockchain Corporativo</b><small>Para directorios y C-Level</small></span><span class="pr">A medida</span><span class="aca-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span></a>
-        <div class="aca-note"><span class="aca-ic ic-azul sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span><p>Cada programa entrega una credencial digital verificable con el sello de <b>Horizonte Blockchain</b> y de la <b>Cámara Blockchain Chile</b>.</p></div>
+        <div class="aca-note"><span class="aca-ic ic-azul sm"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.6 2.2a1 1 0 0 1 .8 0l7.1 2.9c.4.1.6.5.6.9v6c0 5.6-4.4 8.9-7.7 10.4a1 1 0 0 1-.8 0C8.3 20.9 4 17.6 4 12V6c0-.4.2-.8.6-.9l7-2.9Zm4.1 7.2a1 1 0 0 0-1.4 0l-3.4 3.5-1.2-1.3a1 1 0 1 0-1.4 1.4l1.9 2a1 1 0 0 0 1.4 0l4.1-4.2a1 1 0 0 0 0-1.4Z"/></svg></span><p>Cada programa entrega una credencial digital verificable con el sello de <b>Horizonte Blockchain</b> y de la <b>Cámara Blockchain Chile</b>.</p></div>
       </div>
     </div>
   </div>
