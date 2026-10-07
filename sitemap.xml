@@ -75,4 +75,49 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://horizonteblockchain.org/noticia-cftc-reglas-exchanges-cripto.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://horizonteblockchain.org/noticia-sec-etf-3x-bitcoin-ether.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://horizonteblockchain.org/noticia-open-usd-bancos-latam.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://horizonteblockchain.org/noticia-ocde-ia-productividad-latam.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://horizonteblockchain.org/noticia-sec-custodia-cripto-asesores-fondos.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://horizonteblockchain.org/noticia-brasil-plazo-regulatorio-540-dias.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://horizonteblockchain.org/noticia-labitconf-2026-buenos-aires.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://horizonteblockchain.org/noticia-csd-br-fondos-tokenizados-xrpl.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://horizonteblockchain.org/noticia-brasil-corte-exchanges-no-autorizados.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
