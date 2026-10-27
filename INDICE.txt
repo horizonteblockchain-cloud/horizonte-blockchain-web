@@ -5,4 +5,11 @@ EVENTOS — paginas de evento publicadas
                    blockcon-punta-cana-2026.jpg
                    Entradas: https://www.gevme.com/blockcon-punta-cana-2026-69652010
                    Sitio de la organizacion: https://www.blockcon.co/
-                   Codigo de descuento: HORIZONTE (10%)
+                   Codigo de descuento: HORIZONTE10 (10%)
+
+2026-11-04 al 06   Blockchain Summit LATAM · Colombia 2026
+                   (tarjeta dentro de index.html, sin pagina propia)
+                   bsl-colombia-2026.jpg
+                   Registro: https://tik-bsl.vercel.app/e/bsl-colombia-2026
+                   Codigo: HORIZONBLOCK (acceso gratis + certificado)
+                   Rol de HB: Community Partner
