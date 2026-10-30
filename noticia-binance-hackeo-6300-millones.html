@@ -237,7 +237,7 @@ footer a{color:var(--accent2)}
   <div class="art-meta">
     <span class="nt-cat">Web3</span>
     <span class="nt-fecha">30 de octubre de 2026</span>
-    <span class="nt-vivo">En desarrollo · actualizado 9:45 (hora de Costa Rica)</span>
+    <span class="nt-vivo">En desarrollo · actualizado 10:45 (hora de Costa Rica)</span>
   </div>
 
   <h1>Binance confirma un hackeo con impacto estimado de USD 6.300 millones: congela unos USD 3.000 millones y suspende retiros</h1>
@@ -269,17 +269,31 @@ footer a{color:var(--accent2)}
   <p>La hipótesis preliminar de Binance es que el atacante comprometió la <b>laptop de un ingeniero de DevOps</b>, obtuvo acceso a un <b>contenedor de servicio</b> y desde allí envió retiros no autorizados desde las hot wallets. La empresa afirma que <b>no encontró evidencia de filtración de claves privadas</b> de sus billeteras y que revocó la autorización de las direcciones afectadas.</p>
   <p>El co-CEO Richard Teng matizó que el atacante «no usó simplemente los permisos de un ingeniero» y que no fue una acción de un solo clic, sino un proceso complejo. El hallazgo de nuevos puntos de brecha confirma que el relato técnico puede cambiar. Binance promete un informe técnico detallado (post-mortem) y una nueva prueba de reservas cuando termine la investigación.</p>
 
-  <h2>Cuánto se robó: tres estimaciones</h2>
+  <h2>El truco técnico, explicado paso a paso</h2>
+  <p>El ataque no rompió la criptografía de Ethereum. Abusó de una función legítima llamada <b>EIP-7702</b>, activa desde la actualización Pectra del 7 de mayo de 2025, que permite que una billetera normal «delegue» su comportamiento a un contrato inteligente mediante una autorización firmada. Así funcionó, según el análisis on-chain de Blockaid y TRM Labs:</p>
+  <ol class="pasos-lista">
+    <li><b>Un contrato «barrendero».</b> El atacante desplegó un contrato diseñado para vaciar ETH y tokens de cualquier billetera que le delegara el control.</li>
+    <li><b>50 autorizaciones de una vez.</b> Una autorización EIP-7702 solo es válida si coincide con el contador de transacciones (nonce) de la billetera en ese instante. Como la hot wallet «Binance 14» operaba sin parar y su contador cambiaba cada segundo, el atacante envió en una sola transacción 50 autorizaciones firmadas, una para cada número consecutivo. Una acertó y las otras 49 se descartaron.</li>
+    <li><b>El vaciado.</b> Con la delegación activa, el contrato barrió unos 167.000 ETH, unos 1.600 millones de USDT y decenas de tokens.</li>
+    <li><b>La puerta quedó abierta.</b> La delegación siguió activa casi cuatro horas, hasta que Binance la revocó. Mientras tanto, la billetera siguió recibiendo depósitos de clientes, y el atacante también los barrió.</li>
+  </ol>
+  <p>La gran pregunta es quién firmó esas 50 autorizaciones. Ido Ben-Natan, CEO de Blockaid, cree que <b>no se filtró ninguna clave privada</b>: el atacante habría engañado o comprometido el <b>sistema que firma</b> las transacciones de Binance para que autorizara operaciones maliciosas. Encaja con lo que dice Binance (sin evidencia de fuga de claves) y con la entrada por la laptop de un ingeniero, pero solo el informe técnico final lo podrá confirmar.</p>
+
+  <h2>Cuánto se robó: las estimaciones</h2>
   <ul>
     <li><b>Binance:</b> unos USD 6.300 millones de impacto total. Es la cifra oficial preliminar.</li>
     <li><b>Arkham:</b> USD 6.010 millones extraídos de hot wallets en nueve blockchains.</li>
-    <li><b>Chainalysis:</b> unos USD 5.912 millones sustraídos, casi cuatro veces el robo a Bybit de febrero de 2025 (unos USD 1.500 millones), que era el récord hasta ahora.</li>
+    <li><b>TRM Labs:</b> unos USD 6.360 millones en diez blockchains, la mayor parte en unos 20 minutos.</li>
+    <li><b>Chainalysis:</b> su primera estimación fue de USD 5.912 millones; ahora habla de unos USD 6.400 millones. Es casi cuatro veces el robo a Bybit de febrero de 2025 (unos USD 1.500 millones), que era el récord hasta ahora.</li>
   </ul>
-  <p>La forma más precisa de resumirlo: Binance estima un impacto de unos USD 6.300 millones y los análisis independientes sitúan el robo entre USD 5.900 y 6.000 millones.</p>
+  <p>La forma más precisa de resumirlo: Binance estima un impacto de unos USD 6.300 millones y los análisis independientes lo sitúan entre USD 5.900 y 6.400 millones, según cuántas cadenas y qué precios cuenta cada uno.</p>
 
   <h2>Cuánto está congelado y cuánto sigue en manos del atacante</h2>
   <p>Binance calcula que cerca de <b>USD 3.000 millones</b> ya están congelados, en coordinación con emisores de stablecoins, firmas de inteligencia blockchain y autoridades que no ha identificado. Esa cifra incluye las stablecoins bloqueadas por Tether y Circle, más activos localizados con otros socios. Elliptic estima los congelamientos en USD 2.840 millones.</p>
   <p>Lo que no se puede congelar sigue moviéndose. Según Arkham, unos <b>USD 2.900 millones</b> siguen siendo movibles: el viernes por la mañana el atacante tenía alrededor de 18.270 BTC, 488.364 ETH, 663,6 millones de TRX y 970.551 SOL.</p>
+
+  <h2>El efecto dominó en DeFi</h2>
+  <p>Antes de que Tether congelara sus USDT, el atacante depositó 60 millones de USDT como garantía en Aave, el mayor protocolo de préstamos de DeFi, y pidió prestados 19.762 WETH (unos USD 44,6 millones). La posición quedó sobrecolateralizada, así que no puso en riesgo a los depositantes de Aave. Aun así, Aave congeló de forma preventiva 175 mercados de su versión V3 y 117 de V4 en 16 redes. Es una muestra de cómo un ataque a un exchange centralizado puede contagiar al resto del ecosistema en minutos.</p>
 
   <h2>Qué pasa con los fondos de los usuarios</h2>
   <ul>
@@ -289,7 +303,8 @@ footer a{color:var(--accent2)}
   </ul>
 
   <h2>¿Quién está detrás?</h2>
-  <p>Investigadores como ZachXBT, Blockaid y TRM Labs señalan a grupos vinculados a <b>Corea del Norte</b> como probables responsables. Binance, en cambio, dice que su investigación todavía no atribuye la responsabilidad a nadie. Por ahora la autoría es una hipótesis de investigación, no una conclusión confirmada.</p>
+  <p><b>TRM Labs</b> atribuye el ataque «con alta confianza» a <b>TraderTraitor</b>, un grupo vinculado a Corea del Norte al que el FBI ya responsabilizó del robo a Bybit. Se basa en el fondeo por Tornado Cash, en la preparación previa y en técnicas que coinciden con ataques anteriores. <b>Chainalysis</b> también dice tener alta confianza en que Corea del Norte está detrás: su evidencia más fuerte es que los fondos robados se mezclaron en tiempo real con los de un hackeo reciente a Bitget, ya atribuido a actores norcoreanos.</p>
+  <p>Binance, en cambio, dice que su investigación todavía no atribuye la responsabilidad a nadie y que trabaja con autoridades de Estados Unidos, entre ellas el FBI y el Servicio Secreto. Por ahora es una atribución de firmas privadas, no una conclusión oficial.</p>
 
   <h2>Cómo reaccionó el mercado</h2>
   <p>Bitcoin cayó a su nivel más bajo en seis semanas: el viernes cotizaba en torno a USD 77.300 tras tocar cerca de USD 76.400. BNB bajó un 5,6%, a unos USD 679. Según CoinGlass, en 24 horas se liquidaron más de USD 1.600 millones en posiciones cripto, USD 1.350 millones de ellas largas. En la preapertura de Wall Street, Strategy y Coinbase caían más de un 7%.</p>
@@ -297,6 +312,7 @@ footer a{color:var(--accent2)}
   <div class="lectura">
     <span class="et">Nuestra lectura</span>
     <p>Binance es el exchange con más usuarios en Latinoamérica, así que este caso toca a la región directamente. La primera lección es de seguridad operativa: según la propia empresa, el punto de entrada no fue la blockchain ni la criptografía, sino el equipo de una persona y los permisos internos. Es el mismo riesgo que enfrenta cualquier banco, fintech o empresa que maneje activos digitales.</p>
+    <p>Para equipos de tecnología y tesorería, el caso deja tareas concretas: que ninguna firma de alto valor salga sin una segunda capa de control independiente que revise destino, monto y tipo de operación; bloquear por defecto las delegaciones EIP-7702 en billeteras de tesorería; alertar en tiempo real cuando una billetera cambia de código o delegación; y aplicar acceso mínimo y temporal en los equipos de quienes administran infraestructura. El atacante necesitó menos de cuatro minutos entre la delegación y el primer barrido.</p>
     <p>La segunda lección está en los congelamientos. Que casi la mitad de lo robado esté bloqueada en un día muestra el poder de los emisores centralizados de stablecoins, algo que juega a favor de las víctimas en un caso como este. Lo que estaba en BTC, ETH, TRX o SOL, en cambio, no se puede congelar.</p>
     <p>Para usuarios y empresas de la región: informarse solo por los canales oficiales de Binance; desconfiar de cualquier mensaje que ofrezca «recuperar fondos» o pida claves, porque en estos días se multiplican las estafas; y revisar cuánto patrimonio o tesorería depende de un solo custodio. Esto es información, no una recomendación financiera ni legal.</p>
   </div>
@@ -306,11 +322,18 @@ footer a{color:var(--accent2)}
     <li><b>La reactivación de retiros</b>: el anuncio oficial y qué redes o activos se habilitan primero.</li>
     <li><b>El post-mortem técnico</b> y la nueva prueba de reservas que Binance prometió publicar.</li>
     <li><b>La recuperación de fondos</b>: el monto congelado puede crecer a medida que se rastreen más direcciones.</li>
-    <li><b>La atribución</b>: si autoridades o firmas forenses confirman la participación de Corea del Norte.</li>
+    <li><b>La atribución oficial</b>: si el FBI u otras autoridades confirman la participación de TraderTraitor.</li>
+    <li><b>Quién firmó las autorizaciones</b>: si fue una clave robada o el abuso del sistema de firma de Binance.</li>
   </ul>
 
   <div class="fuentes">
     <h3>Fuentes</h3>
+    <a href="https://decrypt.co/382224/trm-and-chainalysis-tie-6-4b-binance-hack-to-north-koreas-tradertraitor" target="_blank" rel="noopener">TRM and Chainalysis tie $6.4B Binance hack to North Korea's TraderTraitor · Decrypt</a>
+    <a href="https://www.trmlabs.com/resources/blog/north-korea-steals-usd-6-36-billion-from-binance-in-the-largest-hack-in-history" target="_blank" rel="noopener">North Korea steals USD 6.36 billion from Binance in the largest hack in history · TRM Labs</a>
+    <a href="https://cointelegraph.com/news/binance-hack-may-involve-private-key-misuse-not-theft-blockaid-ceo" target="_blank" rel="noopener">Binance hack may involve key misuse, not theft: Blockaid · Cointelegraph</a>
+    <a href="https://financefeeds.com/binance-works-with-fbi-as-eip-7702-helped-attackers-drain-wallet/" target="_blank" rel="noopener">Binance $6.3B hack: how 50 EIP-7702 signatures drained it · FinanceFeeds</a>
+    <a href="https://crypto-economy.com/aave-freezes-292-reserves-across-v3-v4-following-binance-breach/" target="_blank" rel="noopener">Aave freezes 292 reserves across V3 and V4 following Binance breach · Crypto Economy</a>
+    <a href="https://eips.ethereum.org/EIPS/eip-7702" target="_blank" rel="noopener">EIP-7702: Set Code for EOAs · Ethereum Improvement Proposals</a>
     <a href="https://www.foxbusiness.com/technology/binance-says-security-incident-had-estimated-6-3b-impact-3b-assets-frozen" target="_blank" rel="noopener">Binance freezes $3B after security incident, suspends withdrawals · Fox Business</a>
     <a href="https://thehackernews.com/2026/10/binance-suffers-security-breach.html" target="_blank" rel="noopener">Binance suffers security breach affecting $6.3 billion in assets, nearly $3 billion frozen · The Hacker News</a>
     <a href="https://decrypt.co/382203/binance-finds-additional-points-of-breach-in-6-3b-hack" target="_blank" rel="noopener">Binance finds 'additional points of breach' in $6.3B hack · Decrypt</a>
